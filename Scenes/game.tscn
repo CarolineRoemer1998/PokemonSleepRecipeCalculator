@@ -1,0 +1,178 @@
+[gd_scene load_steps=21 format=3 uid="uid://dfwtal43fxg01"]
+
+[ext_resource type="Texture2D" uid="uid://bvw1jde25nyye" path="res://Images/Ingredients/BeanSausage.webp" id="1_igqi2"]
+[ext_resource type="Texture2D" uid="uid://cwonw108svgyp" path="res://Images/Ingredients/FancyApple.webp" id="2_2dmkj"]
+[ext_resource type="PackedScene" uid="uid://duromskhojgnm" path="res://Components/amount_changer.tscn" id="2_j2l5s"]
+[ext_resource type="Texture2D" uid="uid://c2fyvo2wvrewq" path="res://Images/Ingredients/FancyEgg.webp" id="3_ydjp1"]
+[ext_resource type="Texture2D" uid="uid://cj31f2y36gobr" path="res://Images/Ingredients/FieryHerb.webp" id="4_dqmjl"]
+[ext_resource type="Texture2D" uid="uid://dltjk78lwb0sh" path="res://Images/Ingredients/GreengrassCorn.webp" id="5_dmusj"]
+[ext_resource type="Texture2D" uid="uid://cl4nmlpjrxivm" path="res://Images/Ingredients/GreengrassSoybean.webp" id="6_k5yh4"]
+[ext_resource type="Texture2D" uid="uid://datyllxh46js6" path="res://Images/Ingredients/Honey.webp" id="7_wg3g3"]
+[ext_resource type="Texture2D" uid="uid://prvg845vjos7" path="res://Images/Ingredients/LargeLeek.webp" id="8_qixsi"]
+[ext_resource type="Texture2D" uid="uid://oc8ck6315kgg" path="res://Images/Ingredients/MoomooMilk.webp" id="9_lpaym"]
+[ext_resource type="Texture2D" uid="uid://dtito0v8tbto0" path="res://Images/Ingredients/PureOil.webp" id="10_yiwl2"]
+[ext_resource type="Texture2D" uid="uid://jiciykbyr242" path="res://Images/Ingredients/SlowpokeTail.webp" id="11_fm64m"]
+[ext_resource type="Texture2D" uid="uid://53lfecwksajo" path="res://Images/Ingredients/SnoozyTomato.webp" id="12_qrwms"]
+[ext_resource type="Texture2D" uid="uid://bwf74xhe4iwv0" path="res://Images/Ingredients/SoftPotato.webp" id="13_5gjfr"]
+[ext_resource type="Texture2D" uid="uid://d4c7ue0b551lu" path="res://Images/Ingredients/SoothingCacao.webp" id="14_rixum"]
+[ext_resource type="Texture2D" uid="uid://dnondo0smchuk" path="res://Images/Ingredients/TastyMushroom.webp" id="15_qxgb4"]
+[ext_resource type="Texture2D" uid="uid://hc370f03s6bj" path="res://Images/Ingredients/WarmingGinger.webp" id="16_21vmw"]
+[ext_resource type="Script" path="res://Scenes/Inventory.gd" id="18_kl6p6"]
+[ext_resource type="PackedScene" uid="uid://ddiohxj36mfe8" path="res://Components/dish_results.tscn" id="19_5e6q5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ig3p1"]
+font_color = Color(0.494118, 0.211765, 0.0627451, 1)
+
+[node name="Game" type="Node2D"]
+
+[node name="IngredientSelection" type="CanvasLayer" parent="."]
+
+[node name="BeanSausage" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(96, 64)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("1_igqi2")
+
+[node name="AmountChanger" parent="IngredientSelection/BeanSausage" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="FancyApple" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(255.775, 63.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("2_2dmkj")
+
+[node name="AmountChanger" parent="IngredientSelection/FancyApple" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="FancyEgg" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(415.775, 63.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("3_ydjp1")
+
+[node name="AmountChanger" parent="IngredientSelection/FancyEgg" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="PureOil" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(575.775, 63.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("10_yiwl2")
+
+[node name="AmountChanger" parent="IngredientSelection/PureOil" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="FieryHerb" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(96, 224)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("4_dqmjl")
+
+[node name="AmountChanger" parent="IngredientSelection/FieryHerb" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="GreengrassSoybean" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(255.775, 223.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("6_k5yh4")
+
+[node name="AmountChanger" parent="IngredientSelection/GreengrassSoybean" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="Honey" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(415.775, 223.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("7_wg3g3")
+
+[node name="AmountChanger" parent="IngredientSelection/Honey" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="SlowpokeTail" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(575.775, 223.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("11_fm64m")
+
+[node name="AmountChanger" parent="IngredientSelection/SlowpokeTail" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="GreengrassCorn" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(96, 384)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("5_dmusj")
+
+[node name="AmountChanger" parent="IngredientSelection/GreengrassCorn" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="LargeLeek" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(255.775, 383.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("8_qixsi")
+
+[node name="AmountChanger" parent="IngredientSelection/LargeLeek" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="MoomooMilk" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(415.775, 383.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("9_lpaym")
+
+[node name="AmountChanger" parent="IngredientSelection/MoomooMilk" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="SnoozyTomato" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(575.775, 383.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("12_qrwms")
+
+[node name="AmountChanger" parent="IngredientSelection/SnoozyTomato" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="TastyMushroom" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(95.775, 544)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("15_qxgb4")
+
+[node name="AmountChanger" parent="IngredientSelection/TastyMushroom" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="SoothingCacao" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(255.55, 543.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("14_rixum")
+
+[node name="AmountChanger" parent="IngredientSelection/SoothingCacao" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="SoftPotato" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(415.55, 543.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("13_5gjfr")
+
+[node name="AmountChanger" parent="IngredientSelection/SoftPotato" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="WarmingGinger" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(575.55, 543.775)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("16_21vmw")
+
+[node name="AmountChanger" parent="IngredientSelection/WarmingGinger" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="Inventory" type="Node2D" parent="." groups=["inventory"]]
+script = ExtResource("18_kl6p6")
+
+[node name="IngredientAmount" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 906.0
+offset_top = 589.0
+offset_right = 1062.0
+offset_bottom = 615.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Ingredient Amount: "
+label_settings = SubResource("LabelSettings_ig3p1")
+
+[node name="DishResults" parent="." instance=ExtResource("19_5e6q5")]

@@ -1,0 +1,159 @@
+[gd_scene load_steps=24 format=3 uid="uid://ddiohxj36mfe8"]
+
+[ext_resource type="Texture2D" uid="uid://cbq35gxj3ujm" path="res://Images/Recipes/CurriesAndStews/Mixed Curry.webp" id="1_cewox"]
+[ext_resource type="Script" path="res://Components/Categories.gd" id="1_rcffm"]
+[ext_resource type="Texture2D" uid="uid://8rf615whk43p" path="res://Images/Recipes/DessertsAndDrinks/Mixed Juice.webp" id="2_hgeeg"]
+[ext_resource type="Texture2D" uid="uid://bcayq3tqcj4mt" path="res://Images/Recipes/Salads/Mixed Salad.webp" id="3_i6ugf"]
+[ext_resource type="Texture2D" uid="uid://ebp6848ygvs7" path="res://Images/Recipes/Salads/Bean Ham Salad.webp" id="5_37qch"]
+[ext_resource type="Texture2D" uid="uid://b3y5nukf64qgo" path="res://Images/Recipes/Salads/Fancy Apple Salad.webp" id="6_mk4cj"]
+[ext_resource type="Texture2D" uid="uid://bhpegtjrtxrtc" path="res://Images/Recipes/Salads/Greengrass Salad.webp" id="7_cmvbq"]
+[ext_resource type="Texture2D" uid="uid://dlmc68drgvmt7" path="res://Images/Recipes/Salads/Moomoo Caprese Salad.webp" id="8_ixfsh"]
+[ext_resource type="Texture2D" uid="uid://b5ew2rywskv5v" path="res://Images/Recipes/Salads/Ninja Salad.webp" id="9_dqkfy"]
+[ext_resource type="Texture2D" uid="uid://c8burnhq31rx" path="res://Images/Recipes/Salads/Slowpoke Tail Pepper Salad.webp" id="10_gdoyj"]
+[ext_resource type="Texture2D" uid="uid://cae3t3odxjdmn" path="res://Images/Recipes/Salads/Snoozy Tomato Salad.webp" id="11_ufxth"]
+[ext_resource type="Texture2D" uid="uid://dpaa10tnpnvyk" path="res://Images/Recipes/Salads/“Calm Mind” Fruit Salad.webp" id="12_x2d6d"]
+[ext_resource type="Texture2D" uid="uid://bum7lmrw3ddxx" path="res://Images/Recipes/Salads/“Contrary” Chocolate Meat Salad.webp" id="13_ounl6"]
+[ext_resource type="Texture2D" uid="uid://be2xyqpaom6mm" path="res://Images/Recipes/Salads/“Dazzling” Apple Cheese Salad.webp" id="14_dmv4q"]
+[ext_resource type="Texture2D" uid="uid://cu7adbxgg6ay8" path="res://Images/Recipes/Salads/“Fury Attack” Corn Salad.webp" id="15_i5nwq"]
+[ext_resource type="Texture2D" uid="uid://c7fcsohxk7uui" path="res://Images/Recipes/Salads/“Gluttony” Potato Salad.webp" id="16_pomje"]
+[ext_resource type="Texture2D" uid="uid://dmwrgmo2rn2qa" path="res://Images/Recipes/Salads/“Heat Wave” Tofu Salad.webp" id="17_qr57i"]
+[ext_resource type="Texture2D" uid="uid://dy3jyh42ak4mb" path="res://Images/Recipes/Salads/“Immunity” Leek Salad.webp" id="18_mj7pv"]
+[ext_resource type="Texture2D" uid="uid://yrsc1vfaov77" path="res://Images/Recipes/Salads/“Overheat” Ginger Salad.webp" id="19_7m6vd"]
+[ext_resource type="Texture2D" uid="uid://caobvqe5ib3eg" path="res://Images/Recipes/Salads/“Snow Cloak” Caesar Salad.webp" id="20_m0uqo"]
+[ext_resource type="Texture2D" uid="uid://bkyuwlnc0cr2c" path="res://Images/Recipes/Salads/“Spore” Mushroom Salad.webp" id="21_yhhq4"]
+[ext_resource type="Texture2D" uid="uid://cptw1sd1uro1l" path="res://Images/Recipes/Salads/“Superpower” Extreme Salad.webp" id="22_3616t"]
+[ext_resource type="Texture2D" uid="uid://cfkc3kbn3ei0m" path="res://Images/Recipes/Salads/“Water Veil” Tofu Salad.webp" id="23_okj73"]
+
+[node name="DishResults" type="Node2D"]
+
+[node name="Categories" type="Node2D" parent="."]
+script = ExtResource("1_rcffm")
+
+[node name="Curries&Stews" type="TextureRect" parent="Categories"]
+offset_left = 704.0
+offset_top = 32.0
+offset_right = 816.0
+offset_bottom = 144.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_cewox")
+expand_mode = 1
+
+[node name="Desserts&Drinks" type="TextureRect" parent="Categories"]
+offset_left = 960.0
+offset_top = 32.0
+offset_right = 1072.0
+offset_bottom = 144.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_hgeeg")
+expand_mode = 1
+
+[node name="Salads" type="TextureRect" parent="Categories"]
+offset_left = 832.0
+offset_top = 32.0
+offset_right = 944.0
+offset_bottom = 144.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_i6ugf")
+expand_mode = 1
+
+[node name="BeanHamSalad" type="Sprite2D" parent="."]
+position = Vector2(736, 228)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_37qch")
+
+[node name="FancyAppleSalad" type="Sprite2D" parent="."]
+position = Vector2(808, 228)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_mk4cj")
+
+[node name="GreengrassSalad" type="Sprite2D" parent="."]
+position = Vector2(880, 228)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_cmvbq")
+
+[node name="MoomooCapreseSalad" type="Sprite2D" parent="."]
+position = Vector2(736, 324)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_ixfsh")
+
+[node name="NinjaSalad" type="Sprite2D" parent="."]
+position = Vector2(1024, 228)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("9_dqkfy")
+
+[node name="SlowpokeTailPepperSalad" type="Sprite2D" parent="."]
+position = Vector2(952, 228)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_gdoyj")
+
+[node name="SnoozyTomatoSalad" type="Sprite2D" parent="."]
+position = Vector2(808, 324)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("11_ufxth")
+
+[node name="“calmMind”FruitSalad" type="Sprite2D" parent="."]
+position = Vector2(736, 420)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_x2d6d")
+
+[node name="“contrary”ChocolateMeatSalad" type="Sprite2D" parent="."]
+position = Vector2(880, 324)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("13_ounl6")
+
+[node name="“dazzling”AppleCheeseSalad" type="Sprite2D" parent="."]
+position = Vector2(952, 324)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("14_dmv4q")
+
+[node name="“furyAttack”CornSalad" type="Sprite2D" parent="."]
+position = Vector2(1024, 324)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("15_i5nwq")
+
+[node name="“gluttony”PotatoSalad" type="Sprite2D" parent="."]
+position = Vector2(880, 420)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("16_pomje")
+
+[node name="“heatWave”TofuSalad" type="Sprite2D" parent="."]
+position = Vector2(808, 420)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("17_qr57i")
+
+[node name="“immunity”LeekSalad" type="Sprite2D" parent="."]
+position = Vector2(880, 516)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("18_mj7pv")
+
+[node name="“overheat”GingerSalad" type="Sprite2D" parent="."]
+position = Vector2(952, 420)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("19_7m6vd")
+
+[node name="“snowCloak”CaesarSalad" type="Sprite2D" parent="."]
+position = Vector2(736, 516)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("20_m0uqo")
+
+[node name="“spore”MushroomSalad" type="Sprite2D" parent="."]
+position = Vector2(808, 516)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("21_yhhq4")
+
+[node name="“superpower”ExtremeSalad" type="Sprite2D" parent="."]
+position = Vector2(1024, 420)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("22_3616t")
+
+[node name="“waterVeil”TofuSalad" type="Sprite2D" parent="."]
+position = Vector2(952, 516)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("23_okj73")
+
+[connection signal="gui_input" from="Categories/Curries&Stews" to="Categories" method="_on_curries_stews_gui_input"]
+[connection signal="gui_input" from="Categories/Desserts&Drinks" to="Categories" method="_on_desserts_drinks_gui_input"]
+[connection signal="gui_input" from="Categories/Salads" to="Categories" method="_on_salads_gui_input"]
