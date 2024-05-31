@@ -8,27 +8,29 @@ func _ready() -> void:
 	pick_category(curries)
 	
 	
-	
 func pick_category(category):
+	
+	get_parent().set_active_category(category)
+	
 	match category:
 		curries:
 			curries.modulate.a = 1.0
 			show_children(curries)
-			salads.modulate.a = 0.5
+			salads.modulate.a = Globals.modulate_disabled
 			hide_children(salads)
-			desserts.modulate.a = 0.5
+			desserts.modulate.a = Globals.modulate_disabled
 			hide_children(desserts)
 		salads:
-			curries.modulate.a = 0.5
+			curries.modulate.a = Globals.modulate_disabled
 			hide_children(curries)
 			salads.modulate.a = 1.0
 			show_children(salads)
-			desserts.modulate.a = 0.5
+			desserts.modulate.a = Globals.modulate_disabled
 			hide_children(desserts)
 		desserts:
-			curries.modulate.a = 0.5
+			curries.modulate.a = Globals.modulate_disabled
 			hide_children(curries)
-			salads.modulate.a = 0.5
+			salads.modulate.a = Globals.modulate_disabled
 			hide_children(salads)
 			desserts.modulate.a = 1.0
 			show_children(desserts)

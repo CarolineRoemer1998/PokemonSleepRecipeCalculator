@@ -27,24 +27,64 @@ font_color = Color(0.494118, 0.211765, 0.0627451, 1)
 
 [node name="IngredientSelection" type="CanvasLayer" parent="."]
 
-[node name="BeanSausage" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(96, 64)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("1_igqi2")
-
-[node name="AmountChanger" parent="IngredientSelection/BeanSausage" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
 [node name="FancyApple" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(255.775, 63.775)
+position = Vector2(96, 64)
 scale = Vector2(0.477, 0.477)
 texture = ExtResource("2_2dmkj")
 
 [node name="AmountChanger" parent="IngredientSelection/FancyApple" instance=ExtResource("2_j2l5s")]
 scale = Vector2(2.09644, 2.09644)
 
+[node name="MoomooMilk" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(256, 64)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("9_lpaym")
+
+[node name="AmountChanger" parent="IngredientSelection/MoomooMilk" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="GreengrassSoybeans" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(416, 64)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("6_k5yh4")
+
+[node name="AmountChanger" parent="IngredientSelection/GreengrassSoybeans" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="Honey" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(576, 64)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("7_wg3g3")
+
+[node name="AmountChanger" parent="IngredientSelection/Honey" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="BeanSausage" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(96, 224)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("1_igqi2")
+
+[node name="AmountChanger" parent="IngredientSelection/BeanSausage" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="WarmingGinger" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(256, 224)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("16_21vmw")
+
+[node name="AmountChanger" parent="IngredientSelection/WarmingGinger" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="SnoozyTomato" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(416, 224)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("12_qrwms")
+
+[node name="AmountChanger" parent="IngredientSelection/SnoozyTomato" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
 [node name="FancyEgg" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(415.775, 63.775)
+position = Vector2(576, 224)
 scale = Vector2(0.477, 0.477)
 texture = ExtResource("3_ydjp1")
 
@@ -52,107 +92,67 @@ texture = ExtResource("3_ydjp1")
 scale = Vector2(2.09644, 2.09644)
 
 [node name="PureOil" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(575.775, 63.775)
+position = Vector2(96, 384)
 scale = Vector2(0.477, 0.477)
 texture = ExtResource("10_yiwl2")
 
 [node name="AmountChanger" parent="IngredientSelection/PureOil" instance=ExtResource("2_j2l5s")]
 scale = Vector2(2.09644, 2.09644)
 
-[node name="FieryHerb" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(96, 224)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("4_dqmjl")
-
-[node name="AmountChanger" parent="IngredientSelection/FieryHerb" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
-[node name="GreengrassSoybean" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(255.775, 223.775)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("6_k5yh4")
-
-[node name="AmountChanger" parent="IngredientSelection/GreengrassSoybean" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
-[node name="Honey" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(415.775, 223.775)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("7_wg3g3")
-
-[node name="AmountChanger" parent="IngredientSelection/Honey" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
-[node name="SlowpokeTail" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(575.775, 223.775)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("11_fm64m")
-
-[node name="AmountChanger" parent="IngredientSelection/SlowpokeTail" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
-[node name="GreengrassCorn" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(96, 384)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("5_dmusj")
-
-[node name="AmountChanger" parent="IngredientSelection/GreengrassCorn" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
-[node name="LargeLeek" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(255.775, 383.775)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("8_qixsi")
-
-[node name="AmountChanger" parent="IngredientSelection/LargeLeek" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
-[node name="MoomooMilk" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(415.775, 383.775)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("9_lpaym")
-
-[node name="AmountChanger" parent="IngredientSelection/MoomooMilk" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
-[node name="SnoozyTomato" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(575.775, 383.775)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("12_qrwms")
-
-[node name="AmountChanger" parent="IngredientSelection/SnoozyTomato" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
-[node name="TastyMushroom" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(95.775, 544)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("15_qxgb4")
-
-[node name="AmountChanger" parent="IngredientSelection/TastyMushroom" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
-[node name="SoothingCacao" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(255.55, 543.775)
-scale = Vector2(0.477, 0.477)
-texture = ExtResource("14_rixum")
-
-[node name="AmountChanger" parent="IngredientSelection/SoothingCacao" instance=ExtResource("2_j2l5s")]
-scale = Vector2(2.09644, 2.09644)
-
 [node name="SoftPotato" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(415.55, 543.775)
+position = Vector2(256, 384)
 scale = Vector2(0.477, 0.477)
 texture = ExtResource("13_5gjfr")
 
 [node name="AmountChanger" parent="IngredientSelection/SoftPotato" instance=ExtResource("2_j2l5s")]
 scale = Vector2(2.09644, 2.09644)
 
-[node name="WarmingGinger" type="Sprite2D" parent="IngredientSelection"]
-position = Vector2(575.55, 543.775)
+[node name="FieryHerb" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(416, 384)
 scale = Vector2(0.477, 0.477)
-texture = ExtResource("16_21vmw")
+texture = ExtResource("4_dqmjl")
 
-[node name="AmountChanger" parent="IngredientSelection/WarmingGinger" instance=ExtResource("2_j2l5s")]
+[node name="AmountChanger" parent="IngredientSelection/FieryHerb" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="GreengrassCorn" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(576, 384)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("5_dmusj")
+
+[node name="AmountChanger" parent="IngredientSelection/GreengrassCorn" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="SoothingCacao" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(96, 544)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("14_rixum")
+
+[node name="AmountChanger" parent="IngredientSelection/SoothingCacao" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="TastyMushroom" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(256, 544)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("15_qxgb4")
+
+[node name="AmountChanger" parent="IngredientSelection/TastyMushroom" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="LargeLeek" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(416, 544)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("8_qixsi")
+
+[node name="AmountChanger" parent="IngredientSelection/LargeLeek" instance=ExtResource("2_j2l5s")]
+scale = Vector2(2.09644, 2.09644)
+
+[node name="SlowpokeTail" type="Sprite2D" parent="IngredientSelection"]
+position = Vector2(576, 544)
+scale = Vector2(0.477, 0.477)
+texture = ExtResource("11_fm64m")
+
+[node name="AmountChanger" parent="IngredientSelection/SlowpokeTail" instance=ExtResource("2_j2l5s")]
 scale = Vector2(2.09644, 2.09644)
 
 [node name="Inventory" type="Node2D" parent="." groups=["inventory"]]

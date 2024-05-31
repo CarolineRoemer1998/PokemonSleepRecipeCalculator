@@ -3,6 +3,7 @@ extends Node2D
 class_name Inventory
 
 @onready var ingredient_amount: Label = $"../IngredientAmount"
+@onready var dish_results: Node2D = $"../DishResults"
 
 var total_amount : int = 0
 
@@ -12,7 +13,7 @@ var ingredients = {
 	"FancyEgg" : 0,
 	"PureOil" : 0,
 	"FieryHerb" : 0,
-	"GreengrassSoybean" : 0,
+	"GreengrassSoybeans" : 0,
 	"Honey" : 0,
 	"SlowpokeTail" : 0,
 	"GreengrassCorn" : 0,
@@ -37,10 +38,7 @@ func update_amount_of(ingredient, amount):
 	
 	calculate_total_amount()
 	update_amount_label()
-
-
-func update_amount_label():
-	ingredient_amount.text = "Ingredient Amount: " + str(total_amount)
+	dish_results.pass_ingredients(ingredients)
 
 
 func calculate_total_amount():
@@ -50,10 +48,15 @@ func calculate_total_amount():
 	total_amount = amount
 
 
+func update_amount_label():
+	ingredient_amount.text = "Total Ingredients: " + str(total_amount)
+
+
 func reset_ingredient_amount(ingredient_name : String):
 	for ingredient_key in ingredients:
 		if ingredient_key == ingredient_name:
 			ingredients[ingredient_key] = 0
 	calculate_total_amount()
 	update_amount_label()
+	dish_results.pass_ingredients(ingredients)
 

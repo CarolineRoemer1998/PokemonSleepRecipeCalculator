@@ -51,8 +51,8 @@ func _on_button_reset_pressed() -> void:
 
 
 func set_image_opacity():
-	if amount == 0 and ingredient_image.self_modulate.a != 0.3:
-		ingredient_image.self_modulate.a = 0.3
+	if amount == 0 and ingredient_image.self_modulate.a != Globals.modulate_disabled:
+		ingredient_image.self_modulate.a = Globals.modulate_disabled
 	elif amount > 0 and ingredient_image.self_modulate.a != 1.0:
 		ingredient_image.self_modulate.a = 1.0
 		
