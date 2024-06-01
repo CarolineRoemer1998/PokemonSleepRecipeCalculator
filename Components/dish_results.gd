@@ -12,3 +12,4 @@ func pass_ingredients(ingredients):
 	for child in active_category.get_children():
 		if child is Dish:
 			child.check_ingredients(ingredients)
+

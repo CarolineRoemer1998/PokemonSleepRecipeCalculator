@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwijaq0m71pd5"]
+
+[ext_resource type="Script" path="res://Components/Dish.gd" id="1_nhefm"]
+
+[node name="Dish" type="Node2D"]
+top_level = true
+script = ExtResource("1_nhefm")
+
+[node name="DishSprite" type="TextureRect" parent="."]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = -35.0
+offset_bottom = -35.0
+scale = Vector2(72, 72)
+expand_mode = 1
+
+[connection signal="mouse_entered" from="DishSprite" to="." method="_on_dish_sprite_mouse_entered"]
+[connection signal="mouse_exited" from="DishSprite" to="." method="_on_dish_sprite_mouse_exited"]

@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 class_name Dish
 
@@ -37,7 +37,30 @@ func set_is_cookable(value):
 		if modulate.a != 1.0:
 			var new_sparkle = sparkle.instantiate()
 			add_child(new_sparkle)
+
 		modulate.a = 1.0
 	else:
 		modulate.a = Globals.modulate_disabled
-	
+
+
+func magnify():
+	var t = 0.0
+	var magnified_scale = scale * 1.5
+	while t < 1:
+		t += get_physics_process_delta_time() * 0.1
+		scale = scale.lerp(magnified_scale, t)
+
+func demagnify():
+	var t = 0.0
+	var demagnified_scale = scale / 150 * 100
+	while t < 1:
+		t += get_physics_process_delta_time() * 0.1
+		scale = scale.lerp(demagnified_scale, t)
+
+
+func _on_dish_sprite_mouse_entered() -> void:
+	magnify()
+
+
+func _on_dish_sprite_mouse_exited() -> void:
+	demagnify()
