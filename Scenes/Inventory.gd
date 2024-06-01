@@ -35,6 +35,7 @@ func update_amount_of(ingredient, amount):
 	for ingredient_key in ingredients:
 		if ingredient_key == ingredient:
 			ingredients[ingredient_key] += amount
+			print(ingredient_key, " ", ingredients[ingredient_key])
 	
 	calculate_total_amount()
 	update_amount_label()

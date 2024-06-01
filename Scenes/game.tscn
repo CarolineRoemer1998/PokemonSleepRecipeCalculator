@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dfwtal43fxg01"]
+[gd_scene load_steps=22 format=3 uid="uid://dfwtal43fxg01"]
 
 [ext_resource type="Texture2D" uid="uid://bvw1jde25nyye" path="res://Images/Ingredients/BeanSausage.webp" id="1_igqi2"]
 [ext_resource type="Texture2D" uid="uid://cwonw108svgyp" path="res://Images/Ingredients/FancyApple.webp" id="2_2dmkj"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://hc370f03s6bj" path="res://Images/Ingredients/WarmingGinger.webp" id="16_21vmw"]
 [ext_resource type="Script" path="res://Scenes/Inventory.gd" id="18_kl6p6"]
 [ext_resource type="PackedScene" uid="uid://ddiohxj36mfe8" path="res://Components/dish_results.tscn" id="19_5e6q5"]
+[ext_resource type="Script" path="res://Scenes/GameHandler.gd" id="20_g23vq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ig3p1"]
 font_color = Color(0.494118, 0.211765, 0.0627451, 1)
@@ -176,3 +177,6 @@ text = "Ingredient Amount: "
 label_settings = SubResource("LabelSettings_ig3p1")
 
 [node name="DishResults" parent="." instance=ExtResource("19_5e6q5")]
+
+[node name="GameHandler" type="Node2D" parent="."]
+script = ExtResource("20_g23vq")

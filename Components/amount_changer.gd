@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_add_pressed() -> void:
-	if amount < 1000:
+	if amount < 999:
 		amount += 1
 		update_label()
 		update_inventory(1)
@@ -34,6 +34,8 @@ func _on_button_subtract_pressed() -> void:
 		amount -= 1
 		update_label()
 		update_inventory(-1)
+		disable_reset_button_if_zero()
+		
 
 
 func update_label():
@@ -56,3 +58,32 @@ func set_image_opacity():
 	elif amount > 0 and ingredient_image.self_modulate.a != 1.0:
 		ingredient_image.self_modulate.a = 1.0
 		
+
+
+func _on_button_add_5_pressed() -> void:
+	if amount < 995:
+		amount += 5
+		update_label()
+		update_inventory(5)
+	elif amount > 995:
+		amount += 999-amount
+		update_label()
+		update_inventory(999-amount)
+
+
+func _on_button_subtract_5_pressed() -> void:
+	if amount > 4:
+		amount -= 5
+		update_label()
+		update_inventory(-5)
+		disable_reset_button_if_zero()
+	elif amount < 0:
+		amount -= amount
+		update_label()
+		update_inventory(-amount)
+		disable_reset_button_if_zero()
+
+
+func disable_reset_button_if_zero():
+	if amount == 0:
+			button_reset.disabled = true

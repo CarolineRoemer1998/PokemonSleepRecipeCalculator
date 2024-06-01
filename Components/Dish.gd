@@ -4,11 +4,14 @@ class_name Dish
 
 @export var required_ingredients = {}
 
+
 var inventory : Inventory
 
 var unique_ingredient_count = 0
 var available_unique_ingredients = 0
 var is_cookable : bool = false
+
+var sparkle = preload("res://Styles/Particles/sparkle_particle.tscn")
 
 func _ready():
 	set_unique_ingredient_count()
@@ -31,6 +34,9 @@ func set_unique_ingredient_count():
 func set_is_cookable(value):
 	is_cookable = value
 	if is_cookable:
+		if modulate.a != 1.0:
+			var new_sparkle = sparkle.instantiate()
+			add_child(new_sparkle)
 		modulate.a = 1.0
 	else:
 		modulate.a = Globals.modulate_disabled

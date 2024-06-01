@@ -4,13 +4,15 @@ extends Node2D
 @onready var salads: TextureRect = $Salads
 @onready var desserts: TextureRect = $"Desserts&Drinks"
 
+var inventory : Inventory
+
 func _ready() -> void:
+	inventory = get_tree().get_first_node_in_group("inventory")
 	pick_category(curries)
 	
-	
 func pick_category(category):
-	
 	get_parent().set_active_category(category)
+	inventory.dish_results.pass_ingredients(inventory.ingredients)
 	
 	match category:
 		curries:
