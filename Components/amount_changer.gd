@@ -80,7 +80,6 @@ func disable_reset_button_if_zero():
 	if amount == 0:
 			button_reset.disabled = true
 
-
 func _on_ingredient_sprite_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_click"):
 		add_one()

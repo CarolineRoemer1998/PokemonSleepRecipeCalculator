@@ -3,11 +3,15 @@ extends Node2D
 class_name Dish
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_handler: Node = $AnimationHandler
+@onready var dish_sprite: TextureRect = $DishSprite
 
 @export var required_ingredients = {}
 
 var sparkle = preload("res://Styles/Particles/sparkle_particle.tscn")
 var inventory : Inventory
+var category : Category
+var dishes_in_category = []
 
 var unique_ingredient_count = 0
 var available_unique_ingredients = 0
@@ -24,6 +28,11 @@ func _ready():
 func set_init_variables():
 	inventory = get_tree().get_first_node_in_group("inventory")
 	unique_ingredient_count = required_ingredients.size()
+	dish_sprite.modulate = Color.WHITE
+	category = get_parent()
+	for dish in category.get_children():
+		if dish is Dish:
+			dishes_in_category.append(dish)
 
 
 func check_ingredients(ingredients):
@@ -47,4 +56,12 @@ func set_is_cookable(value):
 		modulate.a = 1.0
 	else:
 		modulate.a = Globals.modulate_disabled
+
+func toggle_selected(value : bool):
+	for child in dishes_in_category:
+		if child is Dish and child != self and child.selected:
+			child.animation_handler.passive_deselect()
+			child.selected = false
+		animation_handler.toggle_selected(value)
+	selected = value
 

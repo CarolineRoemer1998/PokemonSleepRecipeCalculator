@@ -5,14 +5,18 @@ extends Node2D
 @onready var desserts: Node2D = $"Desserts & Drinks"
 
 var inventory : Inventory
+var active_category : Category
 
 func _ready() -> void:
 	inventory = get_tree().get_first_node_in_group("inventory")
+	active_category = curries
 	pick_category(curries)
 	
 func pick_category(category):
 	get_parent().set_active_category(category)
 	inventory.dish_results.pass_ingredients(inventory.ingredients)
+	
+	deselect_dishes(category)
 	
 	match category:
 		curries:
@@ -36,6 +40,15 @@ func pick_category(category):
 			hide_children(salads)
 			desserts.modulate.a = 1.0
 			show_children(desserts)
+			
+	active_category = category
+
+
+func deselect_dishes(category):
+	if active_category != category:
+		for dish in active_category.get_children():
+			if dish is Dish:
+				dish.animation_handler.passive_deselect()
 
 
 func _on_curries_stews_gui_input(event: InputEvent) -> void:
