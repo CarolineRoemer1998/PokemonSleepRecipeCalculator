@@ -1,6 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwijaq0m71pd5"]
+[gd_scene load_steps=8 format=3 uid="uid://dwijaq0m71pd5"]
 
 [ext_resource type="Script" path="res://Components/Dish.gd" id="1_nhefm"]
+[ext_resource type="Script" path="res://Components/DishAnimationHandler.gd" id="2_0xcd8"]
+[ext_resource type="Texture2D" uid="uid://cbq35gxj3ujm" path="res://Images/Recipes/CurriesAndStews/Mixed Curry.webp" id="2_nx6c8"]
+
+[sub_resource type="Animation" id="Animation_kn8x1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DishSprite:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DishSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-36, -36)]
+}
+
+[sub_resource type="Animation" id="Animation_k0oau"]
+resource_name = "magnify"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DishSprite:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.4, 1.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DishSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-36, -36), Vector2(-50.4, -50.4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vcxby"]
+_data = {
+"RESET": SubResource("Animation_kn8x1"),
+"magnify": SubResource("Animation_k0oau")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_op4xg"]
+font_color = Color(0.211765, 0.0705882, 0, 1)
 
 [node name="Dish" type="Node2D"]
 top_level = true
@@ -12,7 +78,32 @@ offset_top = -36.0
 offset_right = -35.0
 offset_bottom = -35.0
 scale = Vector2(72, 72)
+texture = ExtResource("2_nx6c8")
 expand_mode = 1
 
-[connection signal="mouse_entered" from="DishSprite" to="." method="_on_dish_sprite_mouse_entered"]
-[connection signal="mouse_exited" from="DishSprite" to="." method="_on_dish_sprite_mouse_exited"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vcxby")
+}
+
+[node name="DishName" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -86.5
+offset_top = 35.0
+offset_right = 86.5
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_op4xg")
+horizontal_alignment = 1
+
+[node name="AnimationHandler" type="Node" parent="."]
+script = ExtResource("2_0xcd8")
+
+[connection signal="gui_input" from="DishSprite" to="AnimationHandler" method="_on_dish_sprite_gui_input"]
+[connection signal="mouse_entered" from="DishSprite" to="AnimationHandler" method="_on_dish_sprite_mouse_entered"]
+[connection signal="mouse_exited" from="DishSprite" to="AnimationHandler" method="_on_dish_sprite_mouse_exited"]

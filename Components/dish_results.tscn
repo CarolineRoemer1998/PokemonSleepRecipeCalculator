@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://ddiohxj36mfe8"]
+[gd_scene load_steps=65 format=3 uid="uid://ddiohxj36mfe8"]
 
 [ext_resource type="Texture2D" uid="uid://cbq35gxj3ujm" path="res://Images/Recipes/CurriesAndStews/Mixed Curry.webp" id="1_cewox"]
 [ext_resource type="Script" path="res://Components/dish_results.gd" id="1_pllco"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwijaq0m71pd5" path="res://Components/dish.tscn" id="3_7hhsj"]
 [ext_resource type="Texture2D" uid="uid://fujpl5mg0qcn" path="res://Images/Recipes/CurriesAndStews/Fancy Apple Curry.webp" id="3_23wug"]
 [ext_resource type="Texture2D" uid="uid://bcayq3tqcj4mt" path="res://Images/Recipes/Salads/Mixed Salad.webp" id="3_i6ugf"]
+[ext_resource type="PackedScene" uid="uid://yg3auyo7u0rv" path="res://Components/category.tscn" id="3_povo2"]
 [ext_resource type="Texture2D" uid="uid://cyus7v4ilce0c" path="res://Images/Recipes/CurriesAndStews/Simple Chowder.webp" id="4_6jvdv"]
 [ext_resource type="Texture2D" uid="uid://ebp6848ygvs7" path="res://Images/Recipes/Salads/Bean Ham Salad.webp" id="5_37qch"]
 [ext_resource type="Texture2D" uid="uid://c4al5cdu753tc" path="res://Images/Recipes/CurriesAndStews/Mild Honey Curry.webp" id="5_aays0"]
@@ -70,91 +71,90 @@ script = ExtResource("1_pllco")
 [node name="Categories" type="Node2D" parent="."]
 script = ExtResource("1_rcffm")
 
-[node name="Curries&Stews" type="TextureRect" parent="Categories"]
-offset_left = 704.0
-offset_top = 32.0
-offset_right = 816.0
-offset_bottom = 144.0
+[node name="Curries & Stews" parent="Categories" instance=ExtResource("3_povo2")]
+position = Vector2(760, 88)
+
+[node name="CategorySprite" parent="Categories/Curries & Stews" index="0"]
 texture = ExtResource("1_cewox")
 expand_mode = 1
 
-[node name="FancyAppleCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Fancy Apple Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 224)
 required_ingredients = {
 "FancyApple": 7
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/FancyAppleCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Fancy Apple Curry" index="0"]
 texture = ExtResource("3_23wug")
 
-[node name="SimpleChowder" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Simple Chowder" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 224)
 required_ingredients = {
 "MoomooMilk": 7
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/SimpleChowder" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Simple Chowder" index="0"]
 texture = ExtResource("4_6jvdv")
 
-[node name="MildHoneyCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Mild Honey Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 224)
 required_ingredients = {
 "Honey": 7
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/MildHoneyCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Mild Honey Curry" index="0"]
 texture = ExtResource("5_aays0")
 
-[node name="BeanburgerCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Beanburger Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 224)
 required_ingredients = {
 "BeanSausage": 7
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/BeanburgerCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Beanburger Curry" index="0"]
 texture = ExtResource("6_dautu")
 
-[node name="HeartyCheeseburgerCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Hearty Cheeseburger Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(1024, 224)
 required_ingredients = {
 "BeanSausage": 8,
 "MoomooMilk": 8
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/HeartyCheeseburgerCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Hearty Cheeseburger Curry" index="0"]
 texture = ExtResource("7_1qknf")
 
-[node name="“drought”KatsuCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="“Drought” KatsuCurry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 320)
 required_ingredients = {
 "BeanSausage": 10,
 "PureOil": 5
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/“drought”KatsuCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/“Drought” KatsuCurry" index="0"]
 texture = ExtResource("8_abvbo")
 
-[node name="“solarPower”TomatoCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="“Solar Power” Tomato Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 320)
 required_ingredients = {
 "FieryHerb": 5,
 "SnoozyTomato": 10
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/“solarPower”TomatoCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/“Solar Power” Tomato Curry" index="0"]
 texture = ExtResource("9_p746i")
 
-[node name="MeltyOmeletteCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Melty Omelette Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 320)
 required_ingredients = {
 "FancyEgg": 10,
 "SnoozyTomato": 6
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/MeltyOmeletteCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Melty Omelette Curry" index="0"]
 texture = ExtResource("10_xl4yi")
 
-[node name="SoftPotatoChowder" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Soft Potato Chowder" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 324)
 required_ingredients = {
 "MoomooMilk": 10,
@@ -162,10 +162,10 @@ required_ingredients = {
 "TastyMushroom": 4
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/SoftPotatoChowder" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Soft Potato Chowder" index="0"]
 texture = ExtResource("11_flv4v")
 
-[node name="“bulkUp”BeanCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="“Bulk Up” Bean Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(1024, 320)
 required_ingredients = {
 "BeanSausage": 6,
@@ -174,20 +174,20 @@ required_ingredients = {
 "GreengrassSoybeans": 12
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/“bulkUp”BeanCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/“Bulk Up” Bean Curry" index="0"]
 texture = ExtResource("12_ko383")
 
-[node name="“spore”MushroomCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="“Spore” Mushroom Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 416)
 required_ingredients = {
 "SoftPotato": 9,
 "TastyMushroom": 14
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/“spore”MushroomCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/“Spore” Mushroom Curry" index="0"]
 texture = ExtResource("13_udce3")
 
-[node name="“eggBomb”Curry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="“Egg Bomb” Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 416)
 required_ingredients = {
 "FancyApple": 11,
@@ -196,21 +196,21 @@ required_ingredients = {
 "SoftPotato": 4
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/“eggBomb”Curry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/“Egg Bomb” Curry" index="0"]
 texture = ExtResource("14_i6bsy")
 
-[node name="“limber”CornStew" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
-position = Vector2(880, 420)
+[node name="“Limber” Corn Stew" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 416)
 required_ingredients = {
 "GreengrassCorn": 14,
 "MoomooMilk": 8,
 "SoftPotato": 8
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/“limber”CornStew" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/“Limber” Corn Stew" index="0"]
 texture = ExtResource("15_ffw84")
 
-[node name="SpicyLeekCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Spicy Leek Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 416)
 required_ingredients = {
 "FieryHerb": 8,
@@ -218,10 +218,10 @@ required_ingredients = {
 "WarmingGinger": 10
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/SpicyLeekCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Spicy Leek Curry" index="0"]
 texture = ExtResource("16_a8fj0")
 
-[node name="NinjaCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Ninja Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(1024, 416)
 required_ingredients = {
 "BeanSausage": 9,
@@ -230,20 +230,20 @@ required_ingredients = {
 "TastyMushroom": 5
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/NinjaCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Ninja Curry" index="0"]
 texture = ExtResource("17_afo4q")
 
-[node name="GrilledTailCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="Grilled Tail Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 512)
 required_ingredients = {
 "FieryHerb": 25,
 "SlowpokeTail": 8
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/GrilledTailCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/Grilled Tail Curry" index="0"]
 texture = ExtResource("18_sjsin")
 
-[node name="“dreamEater”ButterCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="“Dream Eater” Butter Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 512)
 required_ingredients = {
 "MoomooMilk": 10,
@@ -252,10 +252,10 @@ required_ingredients = {
 "SoothingCacao": 12
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/“dreamEater”ButterCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/“Dream Eater” Butter Curry" index="0"]
 texture = ExtResource("19_kxked")
 
-[node name="“inferno”CornKeemaCurry" parent="Categories/Curries&Stews" instance=ExtResource("3_7hhsj")]
+[node name="“Inferno” Corn Keema Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 512)
 required_ingredients = {
 "BeanSausage": 24,
@@ -264,75 +264,74 @@ required_ingredients = {
 "WarmingGinger": 12
 }
 
-[node name="DishSprite" parent="Categories/Curries&Stews/“inferno”CornKeemaCurry" index="0"]
+[node name="DishSprite" parent="Categories/Curries & Stews/“Inferno” Corn Keema Curry" index="0"]
 texture = ExtResource("20_cm6qm")
 
-[node name="Salads" type="TextureRect" parent="Categories"]
-offset_left = 832.0
-offset_top = 32.0
-offset_right = 944.0
-offset_bottom = 144.0
+[node name="Salads" parent="Categories" instance=ExtResource("3_povo2")]
+position = Vector2(888, 88)
+
+[node name="CategorySprite" parent="Categories/Salads" index="0"]
 texture = ExtResource("3_i6ugf")
 expand_mode = 1
 
-[node name="FancyAppleSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
-position = Vector2(736, 228)
+[node name="Fancy Apple Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(736, 224)
 required_ingredients = {
 "FancyApple": 8
 }
 
-[node name="DishSprite" parent="Categories/Salads/FancyAppleSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/Fancy Apple Salad" index="0"]
 texture = ExtResource("6_mk4cj")
 
-[node name="BeanHamSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="Bean Ham Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 224)
 required_ingredients = {
 "BeanSausage": 8
 }
 
-[node name="DishSprite" parent="Categories/Salads/BeanHamSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/Bean Ham Salad" index="0"]
 texture = ExtResource("5_37qch")
 
-[node name="SnoozyTomatoSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
-position = Vector2(880, 228)
+[node name="Snoozy Tomato Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 224)
 required_ingredients = {
 "SnoozyTomato": 8
 }
 
-[node name="DishSprite" parent="Categories/Salads/SnoozyTomatoSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/Snoozy Tomato Salad" index="0"]
 texture = ExtResource("11_ufxth")
 
-[node name="“snowCloak”CaesarSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Snow Cloak” Caesar Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 224)
 required_ingredients = {
 "BeanSausage": 6,
 "MoomooMilk": 10
 }
 
-[node name="DishSprite" parent="Categories/Salads/“snowCloak”CaesarSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Snow Cloak” Caesar Salad" index="0"]
 texture = ExtResource("20_m0uqo")
 
-[node name="“waterVeil”TofuSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
-position = Vector2(1024, 228)
+[node name="“Water Veil” Tofu Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(1024, 224)
 required_ingredients = {
 "GreengrassSoybeans": 10,
 "SnoozyTomato": 6
 }
 
-[node name="DishSprite" parent="Categories/Salads/“waterVeil”TofuSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Water Veil” Tofu Salad" index="0"]
 texture = ExtResource("23_okj73")
 
-[node name="“heatWave”TofuSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Heat Wave” Tofu Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 320)
 required_ingredients = {
 "FieryHerb": 6,
 "GreengrassSoybeans": 10
 }
 
-[node name="DishSprite" parent="Categories/Salads/“heatWave”TofuSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Heat Wave” Tofu Salad" index="0"]
 texture = ExtResource("17_qr57i")
 
-[node name="“dazzling”AppleCheeseSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Dazzling” Apple Cheese Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 320)
 required_ingredients = {
 "FancyApple": 15,
@@ -340,30 +339,30 @@ required_ingredients = {
 "PureOil": 3
 }
 
-[node name="DishSprite" parent="Categories/Salads/“dazzling”AppleCheeseSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Dazzling” Apple Cheese Salad" index="0"]
 texture = ExtResource("14_dmv4q")
 
-[node name="“immunity”LeekSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Immunity” Leek Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 320)
 required_ingredients = {
 "LargeLeek": 10,
 "WarmingGinger": 5
 }
 
-[node name="DishSprite" parent="Categories/Salads/“immunity”LeekSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Immunity” Leek Salad" index="0"]
 texture = ExtResource("18_mj7pv")
 
-[node name="“furyAttack”CornSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Fury Attack” Corn Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 320)
 required_ingredients = {
 "GreengrassCorn": 9,
 "PureOil": 8
 }
 
-[node name="DishSprite" parent="Categories/Salads/“furyAttack”CornSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Fury Attack” Corn Salad" index="0"]
 texture = ExtResource("15_i5nwq")
 
-[node name="MoomooCapreseSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="Moomoo Caprese Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(1024, 320)
 required_ingredients = {
 "MoomooMilk": 12,
@@ -371,10 +370,10 @@ required_ingredients = {
 "SnoozyTomato": 6
 }
 
-[node name="DishSprite" parent="Categories/Salads/MoomooCapreseSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/Moomoo Caprese Salad" index="0"]
 texture = ExtResource("8_ixfsh")
 
-[node name="“superpower”ExtremeSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Superpower” Extreme Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 416)
 required_ingredients = {
 "BeanSausage": 9,
@@ -383,20 +382,20 @@ required_ingredients = {
 "WarmingGinger": 6
 }
 
-[node name="DishSprite" parent="Categories/Salads/“superpower”ExtremeSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Superpower” Extreme Salad" index="0"]
 texture = ExtResource("22_3616t")
 
-[node name="“contrary”ChocolateMeatSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Contrary” Chocolate Meat Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 416)
 required_ingredients = {
 "BeanSausage": 9,
 "SoothingCacao": 14
 }
 
-[node name="DishSprite" parent="Categories/Salads/“contrary”ChocolateMeatSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Contrary” Chocolate Meat Salad" index="0"]
 texture = ExtResource("13_ounl6")
 
-[node name="“gluttony”PotatoSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Gluttony” Potato Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 416)
 required_ingredients = {
 "BeanSausage": 7,
@@ -405,10 +404,10 @@ required_ingredients = {
 "SoftPotato": 14
 }
 
-[node name="DishSprite" parent="Categories/Salads/“gluttony”PotatoSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Gluttony” Potato Salad" index="0"]
 texture = ExtResource("16_pomje")
 
-[node name="“overheat”GingerSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Overheat” Ginger Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 416)
 required_ingredients = {
 "FieryHerb": 17,
@@ -416,21 +415,21 @@ required_ingredients = {
 "WarmingGinger": 10
 }
 
-[node name="DishSprite" parent="Categories/Salads/“overheat”GingerSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Overheat” Ginger Salad" index="0"]
 texture = ExtResource("19_7m6vd")
 
-[node name="“spore”MushroomSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
-position = Vector2(1024, 420)
+[node name="“Spore” Mushroom Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(1024, 416)
 required_ingredients = {
 "PureOil": 8,
 "SnoozyTomato": 8,
 "TastyMushroom": 17
 }
 
-[node name="DishSprite" parent="Categories/Salads/“spore”MushroomSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Spore” Mushroom Salad" index="0"]
 texture = ExtResource("21_yhhq4")
 
-[node name="“calmMind”FruitSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="“Calm Mind” Fruit Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 512)
 required_ingredients = {
 "FancyApple": 21,
@@ -438,10 +437,10 @@ required_ingredients = {
 "Honey": 16
 }
 
-[node name="DishSprite" parent="Categories/Salads/“calmMind”FruitSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/“Calm Mind” Fruit Salad" index="0"]
 texture = ExtResource("12_x2d6d")
 
-[node name="SlowpokeTailPepperSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="Slowpoke Tail Pepper Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 512)
 required_ingredients = {
 "FieryHerb": 10,
@@ -449,10 +448,10 @@ required_ingredients = {
 "SlowpokeTail": 10
 }
 
-[node name="DishSprite" parent="Categories/Salads/SlowpokeTailPepperSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/Slowpoke Tail Pepper Salad" index="0"]
 texture = ExtResource("10_gdoyj")
 
-[node name="NinjaSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="Ninja Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 512)
 required_ingredients = {
 "GreengrassSoybeans": 15,
@@ -461,10 +460,10 @@ required_ingredients = {
 "WarmingGinger": 11
 }
 
-[node name="DishSprite" parent="Categories/Salads/NinjaSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/Ninja Salad" index="0"]
 texture = ExtResource("9_dqkfy")
 
-[node name="GreengrassSalad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+[node name="Greengrass Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 512)
 required_ingredients = {
 "GreengrassCorn": 17,
@@ -473,95 +472,94 @@ required_ingredients = {
 "SoftPotato": 9
 }
 
-[node name="DishSprite" parent="Categories/Salads/GreengrassSalad" index="0"]
+[node name="DishSprite" parent="Categories/Salads/Greengrass Salad" index="0"]
 texture = ExtResource("7_cmvbq")
 
-[node name="Desserts&Drinks" type="TextureRect" parent="Categories"]
-offset_left = 960.0
-offset_top = 32.0
-offset_right = 1072.0
-offset_bottom = 144.0
+[node name="Desserts & Drinks" parent="Categories" instance=ExtResource("3_povo2")]
+position = Vector2(1016, 88)
+
+[node name="CategorySprite" parent="Categories/Desserts & Drinks" index="0"]
 texture = ExtResource("2_hgeeg")
 expand_mode = 1
 
-[node name="WarmMoomooMilk" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="Warm Moomoo Milk" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 224)
 required_ingredients = {
 "MoomooMilk": 7
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/WarmMoomooMilk" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Warm Moomoo Milk" index="0"]
 texture = ExtResource("42_u28g3")
 
-[node name="FancyAppleJuice" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="Fancy Apple Juice" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 224)
 required_ingredients = {
 "FancyApple": 8
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/FancyAppleJuice" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Fancy Apple Juice" index="0"]
 texture = ExtResource("43_vuw12")
 
-[node name="CraftSodaPop" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="Craft Soda Pop" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 224)
 required_ingredients = {
 "Honey": 9
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/CraftSodaPop" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Craft Soda Pop" index="0"]
 texture = ExtResource("44_70ybj")
 
-[node name="“luckyChant”ApplePie" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Lucky Chant” Apple Pie" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 224)
 required_ingredients = {
 "FancyApple": 12,
 "MoomooMilk": 4
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“luckyChant”ApplePie" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Lucky Chant” Apple Pie" index="0"]
 texture = ExtResource("45_fnj5p")
 
-[node name="“fluffy”SweetPotatoes" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Fluffy” Sweet Potatoes" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(1024, 224)
 required_ingredients = {
 "MoomooMilk": 5,
 "SoftPotato": 9
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“fluffy”SweetPotatoes" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Fluffy” Sweet Potatoes" index="0"]
 texture = ExtResource("46_tktuv")
 
-[node name="“ember”GingerTea" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Ember” Ginger Tea" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 320)
 required_ingredients = {
 "FancyApple": 7,
 "WarmingGinger": 9
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“ember”GingerTea" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Ember” Ginger Tea" index="0"]
 texture = ExtResource("47_oacyj")
 
-[node name="“stalwart”VegetableJuice" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Stalwart” Vegetable Juice" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 320)
 required_ingredients = {
 "FancyApple": 7,
 "SnoozyTomato": 9
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“stalwart”VegetableJuice" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Stalwart” Vegetable Juice" index="0"]
 texture = ExtResource("48_0s33d")
 
-[node name="“cloudNine”SoyCake" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Cloud Nine” Soy Cake" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 320)
 required_ingredients = {
 "FancyEgg": 8,
 "GreengrassSoybeans": 7
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“cloudNine”SoyCake" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Cloud Nine” Soy Cake" index="0"]
 texture = ExtResource("49_vjn1x")
 
-[node name="BigMalasada" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="Big Malasada" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 320)
 required_ingredients = {
 "Honey": 6,
@@ -569,20 +567,20 @@ required_ingredients = {
 "PureOil": 10
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/BigMalasada" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Big Malasada" index="0"]
 texture = ExtResource("50_cpcly")
 
-[node name="“hustle”ProteinSmoothie" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Hustle” Protein Smoothie" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(1024, 320)
 required_ingredients = {
 "GreengrassSoybeans": 15,
 "SoothingCacao": 8
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“hustle”ProteinSmoothie" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Hustle” Protein Smoothie" index="0"]
 texture = ExtResource("51_8o52b")
 
-[node name="“hugePower”SoyDonuts" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Huge Power” Soy Donuts" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 416)
 required_ingredients = {
 "GreengrassSoybeans": 6,
@@ -590,10 +588,10 @@ required_ingredients = {
 "SoothingCacao": 7
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“hugePower”SoyDonuts" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Huge Power” Soy Donuts" index="0"]
 texture = ExtResource("52_sd1xo")
 
-[node name="“sweetScent”ChocolateCake" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Sweet Scent” Chocolate Cake" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 416)
 required_ingredients = {
 "Honey": 9,
@@ -601,20 +599,20 @@ required_ingredients = {
 "SoothingCacao": 8
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“sweetScent”ChocolateCake" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Sweet Scent” Chocolate Cake" index="0"]
 texture = ExtResource("53_cu8ia")
 
-[node name="“petalDance”ChocolateTart" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Petal Dance” Chocolate Tart" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 416)
 required_ingredients = {
 "FancyApple": 11,
 "SoothingCacao": 11
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“petalDance”ChocolateTart" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Petal Dance” Chocolate Tart" index="0"]
 texture = ExtResource("54_adnf7")
 
-[node name="“lovelyKiss”Smoothie" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Lovely Kiss” Smoothie" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 416)
 required_ingredients = {
 "FancyApple": 11,
@@ -623,10 +621,10 @@ required_ingredients = {
 "SoothingCacao": 8
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“lovelyKiss”Smoothie" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Lovely Kiss” Smoothie" index="0"]
 texture = ExtResource("55_l1heu")
 
-[node name="“steadfast”GingerCookies" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Steadfast” Ginger Cookies" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(1024, 416)
 required_ingredients = {
 "FancyEgg": 4,
@@ -635,10 +633,10 @@ required_ingredients = {
 "WarmingGinger": 12
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“steadfast”GingerCookies" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Steadfast” Ginger Cookies" index="0"]
 texture = ExtResource("56_nr35k")
 
-[node name="Neroli’sRestorativeTea" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="Neroli’s Restorative Tea" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(736, 512)
 required_ingredients = {
 "FancyApple": 15,
@@ -646,10 +644,10 @@ required_ingredients = {
 "WarmingGinger": 11
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/Neroli’sRestorativeTea" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Neroli’s Restorative Tea" index="0"]
 texture = ExtResource("57_tltf0")
 
-[node name="“explosion”Popcorn" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Explosion” Popcorn" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(808, 512)
 required_ingredients = {
 "GreengrassCorn": 15,
@@ -657,10 +655,10 @@ required_ingredients = {
 "PureOil": 14
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“explosion”Popcorn" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Explosion” Popcorn" index="0"]
 texture = ExtResource("58_ikjqc")
 
-[node name="Jigglypuff’sFruityFlan" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="Jigglypuff’s Fruity Flan" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(880, 512)
 required_ingredients = {
 "FancyEgg": 15,
@@ -668,10 +666,10 @@ required_ingredients = {
 "MoomooMilk": 7
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/Jigglypuff’sFruityFlan" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Jigglypuff’s Fruity Flan" index="0"]
 texture = ExtResource("59_mlksg")
 
-[node name="“teatime”CornScones" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Teatime” Corn Scones" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(952, 512)
 required_ingredients = {
 "FancyApple": 20,
@@ -680,10 +678,10 @@ required_ingredients = {
 "WarmingGinger": 20
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“teatime”CornScones" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Teatime” Corn Scones" index="0"]
 texture = ExtResource("60_3waaw")
 
-[node name="“flowerGift”Macarons" parent="Categories/Desserts&Drinks" instance=ExtResource("3_7hhsj")]
+[node name="“Flower Gift” Macarons" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
 position = Vector2(1024, 512)
 required_ingredients = {
 "FancyEgg": 25,
@@ -692,67 +690,66 @@ required_ingredients = {
 "SoothingCacao": 25
 }
 
-[node name="DishSprite" parent="Categories/Desserts&Drinks/“flowerGift”Macarons" index="0"]
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Flower Gift” Macarons" index="0"]
 texture = ExtResource("61_4mqja")
 
-[connection signal="gui_input" from="Categories/Curries&Stews" to="Categories" method="_on_curries_stews_gui_input"]
-[connection signal="gui_input" from="Categories/Salads" to="Categories" method="_on_salads_gui_input"]
-[connection signal="gui_input" from="Categories/Desserts&Drinks" to="Categories" method="_on_desserts_drinks_gui_input"]
-
-[editable path="Categories/Curries&Stews/FancyAppleCurry"]
-[editable path="Categories/Curries&Stews/SimpleChowder"]
-[editable path="Categories/Curries&Stews/MildHoneyCurry"]
-[editable path="Categories/Curries&Stews/BeanburgerCurry"]
-[editable path="Categories/Curries&Stews/HeartyCheeseburgerCurry"]
-[editable path="Categories/Curries&Stews/“drought”KatsuCurry"]
-[editable path="Categories/Curries&Stews/“solarPower”TomatoCurry"]
-[editable path="Categories/Curries&Stews/MeltyOmeletteCurry"]
-[editable path="Categories/Curries&Stews/SoftPotatoChowder"]
-[editable path="Categories/Curries&Stews/“bulkUp”BeanCurry"]
-[editable path="Categories/Curries&Stews/“spore”MushroomCurry"]
-[editable path="Categories/Curries&Stews/“eggBomb”Curry"]
-[editable path="Categories/Curries&Stews/“limber”CornStew"]
-[editable path="Categories/Curries&Stews/SpicyLeekCurry"]
-[editable path="Categories/Curries&Stews/NinjaCurry"]
-[editable path="Categories/Curries&Stews/GrilledTailCurry"]
-[editable path="Categories/Curries&Stews/“dreamEater”ButterCurry"]
-[editable path="Categories/Curries&Stews/“inferno”CornKeemaCurry"]
-[editable path="Categories/Salads/FancyAppleSalad"]
-[editable path="Categories/Salads/BeanHamSalad"]
-[editable path="Categories/Salads/SnoozyTomatoSalad"]
-[editable path="Categories/Salads/“snowCloak”CaesarSalad"]
-[editable path="Categories/Salads/“waterVeil”TofuSalad"]
-[editable path="Categories/Salads/“heatWave”TofuSalad"]
-[editable path="Categories/Salads/“dazzling”AppleCheeseSalad"]
-[editable path="Categories/Salads/“immunity”LeekSalad"]
-[editable path="Categories/Salads/“furyAttack”CornSalad"]
-[editable path="Categories/Salads/MoomooCapreseSalad"]
-[editable path="Categories/Salads/“superpower”ExtremeSalad"]
-[editable path="Categories/Salads/“contrary”ChocolateMeatSalad"]
-[editable path="Categories/Salads/“gluttony”PotatoSalad"]
-[editable path="Categories/Salads/“overheat”GingerSalad"]
-[editable path="Categories/Salads/“spore”MushroomSalad"]
-[editable path="Categories/Salads/“calmMind”FruitSalad"]
-[editable path="Categories/Salads/SlowpokeTailPepperSalad"]
-[editable path="Categories/Salads/NinjaSalad"]
-[editable path="Categories/Salads/GreengrassSalad"]
-[editable path="Categories/Desserts&Drinks/WarmMoomooMilk"]
-[editable path="Categories/Desserts&Drinks/FancyAppleJuice"]
-[editable path="Categories/Desserts&Drinks/CraftSodaPop"]
-[editable path="Categories/Desserts&Drinks/“luckyChant”ApplePie"]
-[editable path="Categories/Desserts&Drinks/“fluffy”SweetPotatoes"]
-[editable path="Categories/Desserts&Drinks/“ember”GingerTea"]
-[editable path="Categories/Desserts&Drinks/“stalwart”VegetableJuice"]
-[editable path="Categories/Desserts&Drinks/“cloudNine”SoyCake"]
-[editable path="Categories/Desserts&Drinks/BigMalasada"]
-[editable path="Categories/Desserts&Drinks/“hustle”ProteinSmoothie"]
-[editable path="Categories/Desserts&Drinks/“hugePower”SoyDonuts"]
-[editable path="Categories/Desserts&Drinks/“sweetScent”ChocolateCake"]
-[editable path="Categories/Desserts&Drinks/“petalDance”ChocolateTart"]
-[editable path="Categories/Desserts&Drinks/“lovelyKiss”Smoothie"]
-[editable path="Categories/Desserts&Drinks/“steadfast”GingerCookies"]
-[editable path="Categories/Desserts&Drinks/Neroli’sRestorativeTea"]
-[editable path="Categories/Desserts&Drinks/“explosion”Popcorn"]
-[editable path="Categories/Desserts&Drinks/Jigglypuff’sFruityFlan"]
-[editable path="Categories/Desserts&Drinks/“teatime”CornScones"]
-[editable path="Categories/Desserts&Drinks/“flowerGift”Macarons"]
+[editable path="Categories/Curries & Stews"]
+[editable path="Categories/Curries & Stews/Fancy Apple Curry"]
+[editable path="Categories/Curries & Stews/Simple Chowder"]
+[editable path="Categories/Curries & Stews/Mild Honey Curry"]
+[editable path="Categories/Curries & Stews/Beanburger Curry"]
+[editable path="Categories/Curries & Stews/Hearty Cheeseburger Curry"]
+[editable path="Categories/Curries & Stews/“Drought” KatsuCurry"]
+[editable path="Categories/Curries & Stews/“Solar Power” Tomato Curry"]
+[editable path="Categories/Curries & Stews/Melty Omelette Curry"]
+[editable path="Categories/Curries & Stews/Soft Potato Chowder"]
+[editable path="Categories/Curries & Stews/“Bulk Up” Bean Curry"]
+[editable path="Categories/Curries & Stews/“Spore” Mushroom Curry"]
+[editable path="Categories/Curries & Stews/“Egg Bomb” Curry"]
+[editable path="Categories/Curries & Stews/“Limber” Corn Stew"]
+[editable path="Categories/Curries & Stews/Spicy Leek Curry"]
+[editable path="Categories/Curries & Stews/Ninja Curry"]
+[editable path="Categories/Curries & Stews/Grilled Tail Curry"]
+[editable path="Categories/Curries & Stews/“Dream Eater” Butter Curry"]
+[editable path="Categories/Curries & Stews/“Inferno” Corn Keema Curry"]
+[editable path="Categories/Salads"]
+[editable path="Categories/Salads/Fancy Apple Salad"]
+[editable path="Categories/Salads/Bean Ham Salad"]
+[editable path="Categories/Salads/Snoozy Tomato Salad"]
+[editable path="Categories/Salads/“Snow Cloak” Caesar Salad"]
+[editable path="Categories/Salads/“Water Veil” Tofu Salad"]
+[editable path="Categories/Salads/“Heat Wave” Tofu Salad"]
+[editable path="Categories/Salads/“Dazzling” Apple Cheese Salad"]
+[editable path="Categories/Salads/“Immunity” Leek Salad"]
+[editable path="Categories/Salads/“Fury Attack” Corn Salad"]
+[editable path="Categories/Salads/Moomoo Caprese Salad"]
+[editable path="Categories/Salads/“Superpower” Extreme Salad"]
+[editable path="Categories/Salads/“Contrary” Chocolate Meat Salad"]
+[editable path="Categories/Salads/“Gluttony” Potato Salad"]
+[editable path="Categories/Salads/“Overheat” Ginger Salad"]
+[editable path="Categories/Salads/“Spore” Mushroom Salad"]
+[editable path="Categories/Salads/“Calm Mind” Fruit Salad"]
+[editable path="Categories/Salads/Slowpoke Tail Pepper Salad"]
+[editable path="Categories/Salads/Ninja Salad"]
+[editable path="Categories/Salads/Greengrass Salad"]
+[editable path="Categories/Desserts & Drinks"]
+[editable path="Categories/Desserts & Drinks/Warm Moomoo Milk"]
+[editable path="Categories/Desserts & Drinks/Fancy Apple Juice"]
+[editable path="Categories/Desserts & Drinks/Craft Soda Pop"]
+[editable path="Categories/Desserts & Drinks/“Lucky Chant” Apple Pie"]
+[editable path="Categories/Desserts & Drinks/“Fluffy” Sweet Potatoes"]
+[editable path="Categories/Desserts & Drinks/“Ember” Ginger Tea"]
+[editable path="Categories/Desserts & Drinks/“Stalwart” Vegetable Juice"]
+[editable path="Categories/Desserts & Drinks/“Cloud Nine” Soy Cake"]
+[editable path="Categories/Desserts & Drinks/Big Malasada"]
+[editable path="Categories/Desserts & Drinks/“Hustle” Protein Smoothie"]
+[editable path="Categories/Desserts & Drinks/“Huge Power” Soy Donuts"]
+[editable path="Categories/Desserts & Drinks/“Sweet Scent” Chocolate Cake"]
+[editable path="Categories/Desserts & Drinks/“Petal Dance” Chocolate Tart"]
+[editable path="Categories/Desserts & Drinks/“Lovely Kiss” Smoothie"]
+[editable path="Categories/Desserts & Drinks/“Steadfast” Ginger Cookies"]
+[editable path="Categories/Desserts & Drinks/Neroli’s Restorative Tea"]
+[editable path="Categories/Desserts & Drinks/“Explosion” Popcorn"]
+[editable path="Categories/Desserts & Drinks/Jigglypuff’s Fruity Flan"]
+[editable path="Categories/Desserts & Drinks/“Teatime” Corn Scones"]
+[editable path="Categories/Desserts & Drinks/“Flower Gift” Macarons"]

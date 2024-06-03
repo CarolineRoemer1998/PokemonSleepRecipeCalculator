@@ -32,14 +32,17 @@ func _ready() -> void:
 
 
 func update_amount_of(ingredient, amount): 
-	for ingredient_key in ingredients:
-		if ingredient_key == ingredient:
-			ingredients[ingredient_key] += amount
-			print(ingredient_key, " ", ingredients[ingredient_key])
+	add_to_ingredient(ingredient, amount)
 	
 	calculate_total_amount()
 	update_amount_label()
 	dish_results.pass_ingredients(ingredients)
+
+
+func add_to_ingredient(ingredient, amount):
+	for ingredient_key in ingredients:
+		if ingredient_key == ingredient:
+			ingredients[ingredient_key] += amount
 
 
 func calculate_total_amount():

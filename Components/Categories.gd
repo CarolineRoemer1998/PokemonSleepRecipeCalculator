@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var curries: TextureRect = $"Curries&Stews"
-@onready var salads: TextureRect = $Salads
-@onready var desserts: TextureRect = $"Desserts&Drinks"
+@onready var curries: Node2D = $"Curries & Stews"
+@onready var salads: Node2D = $"Salads"
+@onready var desserts: Node2D = $"Desserts & Drinks"
 
 var inventory : Inventory
 
@@ -55,9 +55,11 @@ func _on_salads_gui_input(event: InputEvent) -> void:
 
 func hide_children(category):
 	for child in category.get_children():
-		child.visible = false
+		if child is Dish:
+			child.visible = false
 		
 
 func show_children(category):
 	for child in category.get_children():
-		child.visible = true
+		if child is Dish:
+			child.visible = true

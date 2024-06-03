@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://wfbhut8n2ico"]
+
+[ext_resource type="Script" path="res://Components/ingredient.gd" id="1_4n3os"]
+[ext_resource type="PackedScene" uid="uid://duromskhojgnm" path="res://Components/amount_changer.tscn" id="1_4pr8b"]
+
+[sub_resource type="Animation" id="Animation_pi5qw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IngredientSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.477, 0.477)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IngredientSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-36, -36)]
+}
+
+[sub_resource type="Animation" id="Animation_38gvh"]
+resource_name = "magnify"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IngredientSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.477, 0.477), Vector2(0.572, 0.572)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IngredientSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-36, -36), Vector2(-43.2, -43.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0cjc"]
+_data = {
+"RESET": SubResource("Animation_pi5qw"),
+"magnify": SubResource("Animation_38gvh")
+}
+
+[node name="Ingredient" type="Node2D"]
+script = ExtResource("1_4n3os")
+
+[node name="IngredientSprite" type="TextureRect" parent="."]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = -36.0
+offset_bottom = -36.0
+scale = Vector2(0.477, 0.477)
+
+[node name="AmountChanger" parent="." instance=ExtResource("1_4pr8b")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c0cjc")
+}
+
+[connection signal="gui_input" from="IngredientSprite" to="AmountChanger" method="_on_ingredient_sprite_gui_input"]
+[connection signal="mouse_entered" from="IngredientSprite" to="." method="_on_ingredient_sprite_mouse_entered"]
+[connection signal="mouse_exited" from="IngredientSprite" to="." method="_on_ingredient_sprite_mouse_exited"]
