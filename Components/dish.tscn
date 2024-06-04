@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwijaq0m71pd5"]
+[gd_scene load_steps=10 format=3 uid="uid://dwijaq0m71pd5"]
 
 [ext_resource type="Script" path="res://Components/Dish.gd" id="1_nhefm"]
 [ext_resource type="Script" path="res://Components/DishAnimationHandler.gd" id="2_0xcd8"]
 [ext_resource type="Texture2D" uid="uid://cbq35gxj3ujm" path="res://Images/Recipes/CurriesAndStews/Mixed Curry.webp" id="2_nx6c8"]
+[ext_resource type="Texture2D" uid="uid://be6lmbctkivst" path="res://Styles/Particles/dotted_frame.png" id="4_e6ca7"]
 
 [sub_resource type="Animation" id="Animation_kn8x1"]
 length = 0.001
@@ -61,7 +62,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ix7cf"]
 resource_name = "selected"
-length = 0.2
+length = 0.1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -69,7 +71,7 @@ tracks/0/path = NodePath("DishSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-50.4, -50.4), Vector2(-43.2, -43.2), Vector2(-50.4, -50.4)]
@@ -81,7 +83,7 @@ tracks/1/path = NodePath("DishSprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1.4, 1.4), Vector2(1.2, 1.2), Vector2(1.4, 1.4)]
@@ -95,6 +97,7 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_op4xg"]
+font_size = 14
 font_color = Color(0.211765, 0.0705882, 0, 1)
 
 [node name="Dish" type="Node2D"]
@@ -120,17 +123,25 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -86.5
-offset_top = 35.0
-offset_right = 86.5
-offset_bottom = 61.0
+offset_left = -88.0
+offset_top = 44.0
+offset_right = 88.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 0
+text = "test"
 label_settings = SubResource("LabelSettings_op4xg")
 horizontal_alignment = 1
 
 [node name="AnimationHandler" type="Node" parent="."]
 script = ExtResource("2_0xcd8")
+
+[node name="DottedFrame" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.690196, 0.619608, 0.458824, 0.537255)
+position = Vector2(0.9, -2)
+scale = Vector2(0.13, 0.127778)
+texture = ExtResource("4_e6ca7")
 
 [connection signal="gui_input" from="DishSprite" to="AnimationHandler" method="_on_dish_sprite_gui_input"]
 [connection signal="mouse_entered" from="DishSprite" to="AnimationHandler" method="_on_dish_sprite_mouse_entered"]

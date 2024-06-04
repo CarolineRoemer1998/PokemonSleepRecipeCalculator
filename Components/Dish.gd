@@ -5,6 +5,7 @@ class_name Dish
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_handler: Node = $AnimationHandler
 @onready var dish_sprite: TextureRect = $DishSprite
+@onready var dotted_frame: Sprite2D = $DottedFrame
 
 @export var required_ingredients = {}
 
@@ -44,6 +45,8 @@ func check_ingredients(ingredients):
 					
 	set_is_cookable(available_unique_ingredients >= unique_ingredient_count)
 	available_unique_ingredients = 0
+	if selected:
+		inventory.set_necessary_ingredients(required_ingredients)
 
 
 func set_is_cookable(value):
@@ -52,16 +55,23 @@ func set_is_cookable(value):
 		if modulate.a != 1.0:
 			var new_sparkle = sparkle.instantiate()
 			add_child(new_sparkle)
-
+		dotted_frame.modulate = Color(0, 0.9, 0.6, 0.3)
 		modulate.a = 1.0
 	else:
 		modulate.a = Globals.modulate_disabled
+		dotted_frame.modulate = Color(1,0.3,0.5)
 
 func toggle_selected(value : bool):
 	for child in dishes_in_category:
+		if child == self and child.selected:
+			inventory.reset_ingredient_necessity()
 		if child is Dish and child != self and child.selected:
 			child.animation_handler.passive_deselect()
 			child.selected = false
 		animation_handler.toggle_selected(value)
 	selected = value
+	dotted_frame.visible = value
+	
+	if value == true:
+		inventory.set_necessary_ingredients(required_ingredients)
 

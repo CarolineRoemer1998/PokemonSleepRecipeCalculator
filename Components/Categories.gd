@@ -46,6 +46,7 @@ func pick_category(category):
 
 func deselect_dishes(category):
 	if active_category != category:
+		inventory.reset_ingredient_necessity()
 		for dish in active_category.get_children():
 			if dish is Dish:
 				dish.animation_handler.passive_deselect()

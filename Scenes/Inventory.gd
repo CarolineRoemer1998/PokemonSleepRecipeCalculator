@@ -4,6 +4,7 @@ class_name Inventory
 
 @onready var ingredient_amount: Label = $"../IngredientAmount"
 @onready var dish_results: Node2D = $"../DishResults"
+@onready var ingredient_selection: CanvasLayer = $"../IngredientSelection"
 
 var total_amount : int = 0
 
@@ -64,3 +65,21 @@ func reset_ingredient_amount(ingredient_name : String):
 	update_amount_label()
 	dish_results.pass_ingredients(ingredients)
 
+
+func set_necessary_ingredients(necessary):
+	reset_ingredient_necessity()
+	for n in necessary:
+		for available in ingredient_selection.get_children():
+			if available.name == n and available is Ingredient:
+				available.set_necessary(get_amount(available), necessary[n])
+	print("")
+
+func reset_ingredient_necessity():
+	for ingredient in ingredient_selection.get_children():
+		if ingredient is Ingredient:
+			ingredient.reset_necessity()
+
+func get_amount(ingredient):
+	for i in ingredients:
+		if i == ingredient.name:
+			return ingredients[i]

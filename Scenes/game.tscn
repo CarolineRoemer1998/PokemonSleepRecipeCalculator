@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://dfwtal43fxg01"]
+[gd_scene load_steps=21 format=3 uid="uid://dfwtal43fxg01"]
 
-[ext_resource type="Texture2D" uid="uid://bvw1jde25nyye" path="res://Images/Ingredients/BeanSausage.webp" id="1_igqi2"]
 [ext_resource type="PackedScene" uid="uid://wfbhut8n2ico" path="res://Components/ingredient.tscn" id="1_wlmam"]
 [ext_resource type="Texture2D" uid="uid://cwonw108svgyp" path="res://Images/Ingredients/FancyApple.webp" id="2_2dmkj"]
 [ext_resource type="Texture2D" uid="uid://c2fyvo2wvrewq" path="res://Images/Ingredients/FancyEgg.webp" id="3_ydjp1"]
@@ -29,131 +28,96 @@ font_color = Color(0.494118, 0.211765, 0.0627451, 1)
 [node name="IngredientSelection" type="CanvasLayer" parent="."]
 
 [node name="FancyApple" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(96, 64)
+position = Vector2(96, 76)
 
 [node name="IngredientSprite" parent="IngredientSelection/FancyApple" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("2_2dmkj")
 
 [node name="MoomooMilk" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(256, 64)
+position = Vector2(256, 76)
 
 [node name="IngredientSprite" parent="IngredientSelection/MoomooMilk" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("9_lpaym")
 
 [node name="GreengrassSoybeans" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(416, 64)
+position = Vector2(416, 76)
 
 [node name="IngredientSprite" parent="IngredientSelection/GreengrassSoybeans" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("6_k5yh4")
 
 [node name="Honey" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(576, 64)
+position = Vector2(576, 76)
 
 [node name="IngredientSprite" parent="IngredientSelection/Honey" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("7_wg3g3")
 
 [node name="BeanSausage" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(96, 224)
-
-[node name="IngredientSprite" parent="IngredientSelection/BeanSausage" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
-texture = ExtResource("1_igqi2")
+position = Vector2(96, 236)
 
 [node name="WarmingGinger" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(256, 224)
+position = Vector2(256, 236)
 
 [node name="IngredientSprite" parent="IngredientSelection/WarmingGinger" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("16_21vmw")
 
 [node name="SnoozyTomato" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(416, 224)
+position = Vector2(416, 236)
 
 [node name="IngredientSprite" parent="IngredientSelection/SnoozyTomato" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("12_qrwms")
 
 [node name="FancyEgg" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(576, 224)
+position = Vector2(576, 236)
 
 [node name="IngredientSprite" parent="IngredientSelection/FancyEgg" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("3_ydjp1")
 
 [node name="PureOil" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(96, 384)
+position = Vector2(96, 396)
 
 [node name="IngredientSprite" parent="IngredientSelection/PureOil" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("10_yiwl2")
 
 [node name="SoftPotato" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(256, 384)
+position = Vector2(256, 396)
 
 [node name="IngredientSprite" parent="IngredientSelection/SoftPotato" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("13_5gjfr")
 
 [node name="FieryHerb" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(416, 384)
+position = Vector2(416, 396)
 
 [node name="IngredientSprite" parent="IngredientSelection/FieryHerb" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("4_dqmjl")
 
 [node name="GreengrassCorn" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(576, 384)
+position = Vector2(576, 396)
 
 [node name="IngredientSprite" parent="IngredientSelection/GreengrassCorn" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("5_dmusj")
 
 [node name="SoothingCacao" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(96, 544)
+position = Vector2(96, 556)
 
 [node name="IngredientSprite" parent="IngredientSelection/SoothingCacao" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("14_rixum")
 
 [node name="TastyMushroom" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(256, 544)
+position = Vector2(256, 556)
 
 [node name="IngredientSprite" parent="IngredientSelection/TastyMushroom" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("15_qxgb4")
 
 [node name="LargeLeek" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(416, 544)
+position = Vector2(416, 556)
 
 [node name="IngredientSprite" parent="IngredientSelection/LargeLeek" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("8_qixsi")
 
 [node name="SlowpokeTail" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(576, 544)
+position = Vector2(576, 556)
 
 [node name="IngredientSprite" parent="IngredientSelection/SlowpokeTail" index="0"]
-offset_right = 114.0
-offset_bottom = 114.0
 texture = ExtResource("11_fm64m")
 
 [node name="Inventory" type="Node2D" parent="." groups=["inventory"]]

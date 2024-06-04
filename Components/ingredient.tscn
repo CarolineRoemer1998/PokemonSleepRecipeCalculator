@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://wfbhut8n2ico"]
+[gd_scene load_steps=10 format=3 uid="uid://wfbhut8n2ico"]
 
 [ext_resource type="Script" path="res://Components/ingredient.gd" id="1_4n3os"]
 [ext_resource type="PackedScene" uid="uid://duromskhojgnm" path="res://Components/amount_changer.tscn" id="1_4pr8b"]
+[ext_resource type="Texture2D" uid="uid://bvw1jde25nyye" path="res://Images/Ingredients/BeanSausage.webp" id="2_oe4s4"]
+[ext_resource type="Script" path="res://Components/IngredientAnimationHandler.gd" id="3_xertk"]
+[ext_resource type="Texture2D" uid="uid://bftcqrti8yluu" path="res://Styles/Particles/frame.png" id="5_7bxgm"]
 
 [sub_resource type="Animation" id="Animation_pi5qw"]
 length = 0.001
@@ -64,15 +67,19 @@ _data = {
 "magnify": SubResource("Animation_38gvh")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_vlein"]
+font_color = Color(0.494118, 0.211765, 0.0627451, 1)
+
 [node name="Ingredient" type="Node2D"]
 script = ExtResource("1_4n3os")
 
 [node name="IngredientSprite" type="TextureRect" parent="."]
 offset_left = -36.0
 offset_top = -36.0
-offset_right = -36.0
-offset_bottom = -36.0
+offset_right = 114.0
+offset_bottom = 114.0
 scale = Vector2(0.477, 0.477)
+texture = ExtResource("2_oe4s4")
 
 [node name="AmountChanger" parent="." instance=ExtResource("1_4pr8b")]
 
@@ -81,6 +88,22 @@ libraries = {
 "": SubResource("AnimationLibrary_c0cjc")
 }
 
+[node name="AnimationHandler" type="Node" parent="."]
+script = ExtResource("3_xertk")
+
+[node name="RequiredAmountLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = -56.0
+offset_right = 63.0
+offset_bottom = -30.0
+label_settings = SubResource("LabelSettings_vlein")
+horizontal_alignment = 2
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
+scale = Vector2(0.211, 0.2)
+texture = ExtResource("5_7bxgm")
+
 [connection signal="gui_input" from="IngredientSprite" to="AmountChanger" method="_on_ingredient_sprite_gui_input"]
-[connection signal="mouse_entered" from="IngredientSprite" to="." method="_on_ingredient_sprite_mouse_entered"]
-[connection signal="mouse_exited" from="IngredientSprite" to="." method="_on_ingredient_sprite_mouse_exited"]
+[connection signal="mouse_entered" from="IngredientSprite" to="AnimationHandler" method="_on_ingredient_sprite_mouse_entered"]
+[connection signal="mouse_exited" from="IngredientSprite" to="AnimationHandler" method="_on_ingredient_sprite_mouse_exited"]
