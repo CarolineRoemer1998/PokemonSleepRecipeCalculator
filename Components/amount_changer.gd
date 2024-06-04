@@ -11,7 +11,6 @@ class_name AmountChanger
 @onready var button_reset: Button = $ButtonReset
 @onready var ingredient_sprite: TextureRect = $"../IngredientSprite"
 
-
 var ingredient_name : String
 var amount : int = 0
 
@@ -78,6 +77,3 @@ func _on_button_reset_pressed() -> void:
 	inventory.reset_ingredient_amount(ingredient_name)
 	update(0)
 
-func _on_ingredient_sprite_gui_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("left_click"):
-		add(1)

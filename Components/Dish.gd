@@ -6,6 +6,7 @@ class_name Dish
 @onready var animation_handler: Node = $AnimationHandler
 @onready var dish_sprite: TextureRect = $DishSprite
 @onready var dotted_frame: Sprite2D = $DottedFrame
+@onready var frame: Sprite2D = $Frame
 
 @export var required_ingredients = {}
 
@@ -71,7 +72,15 @@ func toggle_selected(value : bool):
 		animation_handler.toggle_selected(value)
 	selected = value
 	dotted_frame.visible = value
+#	category.get_parent().deselect_all_dishes_with_ingredient()
 	
 	if value == true:
 		inventory.set_necessary_ingredients(required_ingredients)
 
+func set_frame_visibility(value : bool):
+	frame.visible = value
+	if value == true:
+		category.get_parent().deselect_all_dishes()
+	else:
+		inventory.turn_off_all_ingredient_frames()
+	

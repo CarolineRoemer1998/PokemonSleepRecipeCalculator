@@ -8,12 +8,14 @@ extends Node
 
 var category : Category
 var magnified : bool = false
+var inventory : Inventory
 
 func _ready() -> void:
 	dish_name.text = get_parent().name
 	dish_name.visible = false
 	dish_sprite.modulate = Color.WHITE
 	category = get_parent().get_parent()
+	inventory = get_tree().get_first_node_in_group("inventory")
 
 
 func toggle_selected(is_selecting : bool):
@@ -44,6 +46,9 @@ func _general_selection(selecting : bool, is_passive : bool):
 			dish_sprite.position = Globals.selected_dish_position
 			magnified = true
 			dish_name.visible = true
+			category.get_parent().deselect_all_dishes_with_ingredient()
+		else:
+			inventory.reset_ingredient_necessity()
 
 func _on_dish_sprite_mouse_entered() -> void:
 	if !dish.selected:

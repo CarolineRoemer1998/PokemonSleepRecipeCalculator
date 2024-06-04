@@ -72,7 +72,6 @@ func set_necessary_ingredients(necessary):
 		for available in ingredient_selection.get_children():
 			if available.name == n and available is Ingredient:
 				available.set_necessary(get_amount(available), necessary[n])
-	print("")
 
 func reset_ingredient_necessity():
 	for ingredient in ingredient_selection.get_children():
@@ -83,3 +82,12 @@ func get_amount(ingredient):
 	for i in ingredients:
 		if i == ingredient.name:
 			return ingredients[i]
+
+func select_dishes_with_ingredient(ingredient : Ingredient):
+	turn_off_all_ingredient_frames()
+	dish_results.select_dishes_with_ingredient(ingredient)
+	
+func turn_off_all_ingredient_frames():
+	for ingredient in ingredient_selection.get_children():
+		if ingredient is Ingredient:
+			ingredient.toggle_dotted_frame(false)

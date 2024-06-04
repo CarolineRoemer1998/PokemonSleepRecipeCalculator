@@ -1,0 +1,911 @@
+[gd_scene load_steps=65 format=3 uid="uid://ddiohxj36mfe8"]
+
+[ext_resource type="Texture2D" uid="uid://cbq35gxj3ujm" path="res://Images/Recipes/CurriesAndStews/Mixed Curry.webp" id="1_cewox"]
+[ext_resource type="Script" path="res://Components/dish_results.gd" id="1_pllco"]
+[ext_resource type="Script" path="res://Components/Categories.gd" id="1_rcffm"]
+[ext_resource type="Texture2D" uid="uid://8rf615whk43p" path="res://Images/Recipes/DessertsAndDrinks/Mixed Juice.webp" id="2_hgeeg"]
+[ext_resource type="PackedScene" uid="uid://dwijaq0m71pd5" path="res://Components/dish.tscn" id="3_7hhsj"]
+[ext_resource type="Texture2D" uid="uid://fujpl5mg0qcn" path="res://Images/Recipes/CurriesAndStews/Fancy Apple Curry.webp" id="3_23wug"]
+[ext_resource type="Texture2D" uid="uid://bcayq3tqcj4mt" path="res://Images/Recipes/Salads/Mixed Salad.webp" id="3_i6ugf"]
+[ext_resource type="PackedScene" uid="uid://yg3auyo7u0rv" path="res://Components/category.tscn" id="3_povo2"]
+[ext_resource type="Texture2D" uid="uid://cyus7v4ilce0c" path="res://Images/Recipes/CurriesAndStews/Simple Chowder.webp" id="4_6jvdv"]
+[ext_resource type="Texture2D" uid="uid://ebp6848ygvs7" path="res://Images/Recipes/Salads/Bean Ham Salad.webp" id="5_37qch"]
+[ext_resource type="Texture2D" uid="uid://c4al5cdu753tc" path="res://Images/Recipes/CurriesAndStews/Mild Honey Curry.webp" id="5_aays0"]
+[ext_resource type="Texture2D" uid="uid://7dq0epx3rxgu" path="res://Images/Recipes/CurriesAndStews/Beanburger Curry.webp" id="6_dautu"]
+[ext_resource type="Texture2D" uid="uid://b3y5nukf64qgo" path="res://Images/Recipes/Salads/Fancy Apple Salad.webp" id="6_mk4cj"]
+[ext_resource type="Texture2D" uid="uid://bspmi58fjv6tf" path="res://Images/Recipes/CurriesAndStews/Hearty Cheeseburger Curry.webp" id="7_1qknf"]
+[ext_resource type="Texture2D" uid="uid://bhpegtjrtxrtc" path="res://Images/Recipes/Salads/Greengrass Salad.webp" id="7_cmvbq"]
+[ext_resource type="Texture2D" uid="uid://cbu8hs4jfsf53" path="res://Images/Recipes/CurriesAndStews/“Drought” Katsu Curry.webp" id="8_abvbo"]
+[ext_resource type="Texture2D" uid="uid://dlmc68drgvmt7" path="res://Images/Recipes/Salads/Moomoo Caprese Salad.webp" id="8_ixfsh"]
+[ext_resource type="Texture2D" uid="uid://b5ew2rywskv5v" path="res://Images/Recipes/Salads/Ninja Salad.webp" id="9_dqkfy"]
+[ext_resource type="Texture2D" uid="uid://v11tv6fqjr0a" path="res://Images/Recipes/CurriesAndStews/“Solar Power” Tomato Curry.webp" id="9_p746i"]
+[ext_resource type="Texture2D" uid="uid://c8burnhq31rx" path="res://Images/Recipes/Salads/Slowpoke Tail Pepper Salad.webp" id="10_gdoyj"]
+[ext_resource type="Texture2D" uid="uid://bw5y4lgfe7r1" path="res://Images/Recipes/CurriesAndStews/Melty Omelette Curry.webp" id="10_xl4yi"]
+[ext_resource type="Texture2D" uid="uid://hmvctfurbmv8" path="res://Images/Recipes/CurriesAndStews/Soft Potato Chowder.webp" id="11_flv4v"]
+[ext_resource type="Texture2D" uid="uid://cae3t3odxjdmn" path="res://Images/Recipes/Salads/Snoozy Tomato Salad.webp" id="11_ufxth"]
+[ext_resource type="Texture2D" uid="uid://bvo21j77ibq62" path="res://Images/Recipes/CurriesAndStews/“Bulk Up” Bean Curry.webp" id="12_ko383"]
+[ext_resource type="Texture2D" uid="uid://dpaa10tnpnvyk" path="res://Images/Recipes/Salads/“Calm Mind” Fruit Salad.webp" id="12_x2d6d"]
+[ext_resource type="Texture2D" uid="uid://bum7lmrw3ddxx" path="res://Images/Recipes/Salads/“Contrary” Chocolate Meat Salad.webp" id="13_ounl6"]
+[ext_resource type="Texture2D" uid="uid://df6ybpjhf2kmw" path="res://Images/Recipes/CurriesAndStews/“Spore” Mushroom Curry.webp" id="13_udce3"]
+[ext_resource type="Texture2D" uid="uid://be2xyqpaom6mm" path="res://Images/Recipes/Salads/“Dazzling” Apple Cheese Salad.webp" id="14_dmv4q"]
+[ext_resource type="Texture2D" uid="uid://cmoqm0jcagn8" path="res://Images/Recipes/CurriesAndStews/“Egg Bomb” Curry.webp" id="14_i6bsy"]
+[ext_resource type="Texture2D" uid="uid://shskildc0iv1" path="res://Images/Recipes/CurriesAndStews/“Limber” Corn Stew.webp" id="15_ffw84"]
+[ext_resource type="Texture2D" uid="uid://cu7adbxgg6ay8" path="res://Images/Recipes/Salads/“Fury Attack” Corn Salad.webp" id="15_i5nwq"]
+[ext_resource type="Texture2D" uid="uid://binq1ffj4swq3" path="res://Images/Recipes/CurriesAndStews/Spicy Leek Curry.webp" id="16_a8fj0"]
+[ext_resource type="Texture2D" uid="uid://c7fcsohxk7uui" path="res://Images/Recipes/Salads/“Gluttony” Potato Salad.webp" id="16_pomje"]
+[ext_resource type="Texture2D" uid="uid://x1cxueo3p17v" path="res://Images/Recipes/CurriesAndStews/Ninja Curry.webp" id="17_afo4q"]
+[ext_resource type="Texture2D" uid="uid://dmwrgmo2rn2qa" path="res://Images/Recipes/Salads/“Heat Wave” Tofu Salad.webp" id="17_qr57i"]
+[ext_resource type="Texture2D" uid="uid://dy3jyh42ak4mb" path="res://Images/Recipes/Salads/“Immunity” Leek Salad.webp" id="18_mj7pv"]
+[ext_resource type="Texture2D" uid="uid://dfvyuqrkeit0d" path="res://Images/Recipes/CurriesAndStews/Grilled Tail Curry.webp" id="18_sjsin"]
+[ext_resource type="Texture2D" uid="uid://yrsc1vfaov77" path="res://Images/Recipes/Salads/“Overheat” Ginger Salad.webp" id="19_7m6vd"]
+[ext_resource type="Texture2D" uid="uid://c0fxvlttnknrr" path="res://Images/Recipes/CurriesAndStews/“Dream Eater” Butter Curry.webp" id="19_kxked"]
+[ext_resource type="Texture2D" uid="uid://tqivpdo55x4o" path="res://Images/Recipes/CurriesAndStews/“Inferno” Corn Keema Curry.webp" id="20_cm6qm"]
+[ext_resource type="Texture2D" uid="uid://caobvqe5ib3eg" path="res://Images/Recipes/Salads/“Snow Cloak” Caesar Salad.webp" id="20_m0uqo"]
+[ext_resource type="Texture2D" uid="uid://bkyuwlnc0cr2c" path="res://Images/Recipes/Salads/“Spore” Mushroom Salad.webp" id="21_yhhq4"]
+[ext_resource type="Texture2D" uid="uid://cptw1sd1uro1l" path="res://Images/Recipes/Salads/“Superpower” Extreme Salad.webp" id="22_3616t"]
+[ext_resource type="Texture2D" uid="uid://cfkc3kbn3ei0m" path="res://Images/Recipes/Salads/“Water Veil” Tofu Salad.webp" id="23_okj73"]
+[ext_resource type="Texture2D" uid="uid://bps0aevbrlh3e" path="res://Images/Recipes/DessertsAndDrinks/Warm Moomoo Milk.webp" id="42_u28g3"]
+[ext_resource type="Texture2D" uid="uid://bv33n35xolxkg" path="res://Images/Recipes/DessertsAndDrinks/Fancy Apple Juice.webp" id="43_vuw12"]
+[ext_resource type="Texture2D" uid="uid://ihaycitlttje" path="res://Images/Recipes/DessertsAndDrinks/Craft Soda Pop.webp" id="44_70ybj"]
+[ext_resource type="Texture2D" uid="uid://cwqslv68sl15q" path="res://Images/Recipes/DessertsAndDrinks/“Lucky Chant” Apple Pie.webp" id="45_fnj5p"]
+[ext_resource type="Texture2D" uid="uid://bygoxwugsi7lo" path="res://Images/Recipes/DessertsAndDrinks/“Fluffy” Sweet Potatoes.webp" id="46_tktuv"]
+[ext_resource type="Texture2D" uid="uid://dq2krlrofputu" path="res://Images/Recipes/DessertsAndDrinks/“Ember” Ginger Tea.webp" id="47_oacyj"]
+[ext_resource type="Texture2D" uid="uid://cgi1wndab5np" path="res://Images/Recipes/DessertsAndDrinks/“Stalwart” Vegetable Juice.webp" id="48_0s33d"]
+[ext_resource type="Texture2D" uid="uid://p57hibur747u" path="res://Images/Recipes/DessertsAndDrinks/“Cloud Nine” Soy Cake.webp" id="49_vjn1x"]
+[ext_resource type="Texture2D" uid="uid://dbouesc84vmj5" path="res://Images/Recipes/DessertsAndDrinks/Big Malasada.webp" id="50_cpcly"]
+[ext_resource type="Texture2D" uid="uid://cp1l553vhfr82" path="res://Images/Recipes/DessertsAndDrinks/“Hustle” Protein Smoothie.webp" id="51_8o52b"]
+[ext_resource type="Texture2D" uid="uid://c27fpaedmnkny" path="res://Images/Recipes/DessertsAndDrinks/“Huge Power” Soy Donuts.webp" id="52_sd1xo"]
+[ext_resource type="Texture2D" uid="uid://10d2bptk3duo" path="res://Images/Recipes/DessertsAndDrinks/“Sweet Scent” Chocolate Cake.webp" id="53_cu8ia"]
+[ext_resource type="Texture2D" uid="uid://122u00b0jdlv" path="res://Images/Recipes/DessertsAndDrinks/“Petal Dance” Chocolate Tart.webp" id="54_adnf7"]
+[ext_resource type="Texture2D" uid="uid://bbged4vqiqnr1" path="res://Images/Recipes/DessertsAndDrinks/“Lovely Kiss” Smoothie.webp" id="55_l1heu"]
+[ext_resource type="Texture2D" uid="uid://cklif8o7k3pve" path="res://Images/Recipes/DessertsAndDrinks/“Steadfast” Ginger Cookies.webp" id="56_nr35k"]
+[ext_resource type="Texture2D" uid="uid://c1xjq8xtched4" path="res://Images/Recipes/DessertsAndDrinks/Neroli’s Restorative Tea.webp" id="57_tltf0"]
+[ext_resource type="Texture2D" uid="uid://cl52lvly8u2fp" path="res://Images/Recipes/DessertsAndDrinks/“Explosion” Popcorn.webp" id="58_ikjqc"]
+[ext_resource type="Texture2D" uid="uid://cg7uyhgu1hyhu" path="res://Images/Recipes/DessertsAndDrinks/Jigglypuff’s Fruity Flan.webp" id="59_mlksg"]
+[ext_resource type="Texture2D" uid="uid://dqxm0gyivsxw4" path="res://Images/Recipes/DessertsAndDrinks/“Teatime” Corn Scones.webp" id="60_3waaw"]
+[ext_resource type="Texture2D" uid="uid://bkri27p8tstps" path="res://Images/Recipes/DessertsAndDrinks/“Flower Gift” Macarons.webp" id="61_4mqja"]
+
+[node name="DishResults" type="Node2D"]
+script = ExtResource("1_pllco")
+
+[node name="Categories" type="Node2D" parent="."]
+script = ExtResource("1_rcffm")
+
+[node name="Curries & Stews" parent="Categories" instance=ExtResource("3_povo2")]
+position = Vector2(760, 88)
+
+[node name="CategorySprite" parent="Categories/Curries & Stews" index="0"]
+texture = ExtResource("1_cewox")
+expand_mode = 1
+
+[node name="Fancy Apple Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 224)
+required_ingredients = {
+"FancyApple": 7
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Fancy Apple Curry" index="0"]
+texture = ExtResource("3_23wug")
+metadata/_edit_use_anchors_ = true
+
+[node name="Simple Chowder" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 224)
+required_ingredients = {
+"MoomooMilk": 7
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Simple Chowder" index="0"]
+texture = ExtResource("4_6jvdv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Mild Honey Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 224)
+required_ingredients = {
+"Honey": 7
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Mild Honey Curry" index="0"]
+texture = ExtResource("5_aays0")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/Mild Honey Curry" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Beanburger Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 224)
+required_ingredients = {
+"BeanSausage": 7
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Beanburger Curry" index="0"]
+texture = ExtResource("6_dautu")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/Beanburger Curry" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Hearty Cheeseburger Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 224)
+required_ingredients = {
+"BeanSausage": 8,
+"MoomooMilk": 8
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Hearty Cheeseburger Curry" index="0"]
+texture = ExtResource("7_1qknf")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/Hearty Cheeseburger Curry" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Drought” KatsuCurry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 320)
+required_ingredients = {
+"BeanSausage": 10,
+"PureOil": 5
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/“Drought” KatsuCurry" index="0"]
+texture = ExtResource("8_abvbo")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Solar Power” Tomato Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 320)
+required_ingredients = {
+"FieryHerb": 5,
+"SnoozyTomato": 10
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/“Solar Power” Tomato Curry" index="0"]
+texture = ExtResource("9_p746i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Melty Omelette Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 320)
+required_ingredients = {
+"FancyEgg": 10,
+"SnoozyTomato": 6
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Melty Omelette Curry" index="0"]
+texture = ExtResource("10_xl4yi")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/Melty Omelette Curry" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Soft Potato Chowder" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 320)
+required_ingredients = {
+"MoomooMilk": 10,
+"SoftPotato": 8,
+"TastyMushroom": 4
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Soft Potato Chowder" index="0"]
+texture = ExtResource("11_flv4v")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/Soft Potato Chowder" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Bulk Up” Bean Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 320)
+required_ingredients = {
+"BeanSausage": 6,
+"FancyEgg": 4,
+"FieryHerb": 4,
+"GreengrassSoybeans": 12
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/“Bulk Up” Bean Curry" index="0"]
+texture = ExtResource("12_ko383")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/“Bulk Up” Bean Curry" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Spore” Mushroom Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 416)
+required_ingredients = {
+"SoftPotato": 9,
+"TastyMushroom": 14
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/“Spore” Mushroom Curry" index="0"]
+texture = ExtResource("13_udce3")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Egg Bomb” Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 416)
+required_ingredients = {
+"FancyApple": 11,
+"FancyEgg": 8,
+"Honey": 12,
+"SoftPotato": 4
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/“Egg Bomb” Curry" index="0"]
+texture = ExtResource("14_i6bsy")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Limber” Corn Stew" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 416)
+required_ingredients = {
+"GreengrassCorn": 14,
+"MoomooMilk": 8,
+"SoftPotato": 8
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/“Limber” Corn Stew" index="0"]
+texture = ExtResource("15_ffw84")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/“Limber” Corn Stew" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Spicy Leek Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 416)
+required_ingredients = {
+"FieryHerb": 8,
+"LargeLeek": 14,
+"WarmingGinger": 10
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Spicy Leek Curry" index="0"]
+texture = ExtResource("16_a8fj0")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/Spicy Leek Curry" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Ninja Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 416)
+required_ingredients = {
+"BeanSausage": 9,
+"GreengrassSoybeans": 15,
+"LargeLeek": 9,
+"TastyMushroom": 5
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Ninja Curry" index="0"]
+texture = ExtResource("17_afo4q")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/Ninja Curry" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Grilled Tail Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 512)
+required_ingredients = {
+"FieryHerb": 25,
+"SlowpokeTail": 8
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/Grilled Tail Curry" index="0"]
+texture = ExtResource("18_sjsin")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Dream Eater” Butter Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 512)
+required_ingredients = {
+"MoomooMilk": 10,
+"SnoozyTomato": 15,
+"SoftPotato": 18,
+"SoothingCacao": 12
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/“Dream Eater” Butter Curry" index="0"]
+texture = ExtResource("19_kxked")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Inferno” Corn Keema Curry" parent="Categories/Curries & Stews" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 512)
+required_ingredients = {
+"BeanSausage": 24,
+"FieryHerb": 27,
+"GreengrassCorn": 14,
+"WarmingGinger": 12
+}
+
+[node name="DishSprite" parent="Categories/Curries & Stews/“Inferno” Corn Keema Curry" index="0"]
+texture = ExtResource("20_cm6qm")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Curries & Stews/“Inferno” Corn Keema Curry" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Salads" parent="Categories" instance=ExtResource("3_povo2")]
+position = Vector2(888, 88)
+
+[node name="CategorySprite" parent="Categories/Salads" index="0"]
+texture = ExtResource("3_i6ugf")
+expand_mode = 1
+
+[node name="Fancy Apple Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 224)
+required_ingredients = {
+"FancyApple": 8
+}
+
+[node name="DishSprite" parent="Categories/Salads/Fancy Apple Salad" index="0"]
+texture = ExtResource("6_mk4cj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Bean Ham Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 224)
+required_ingredients = {
+"BeanSausage": 8
+}
+
+[node name="DishSprite" parent="Categories/Salads/Bean Ham Salad" index="0"]
+texture = ExtResource("5_37qch")
+metadata/_edit_use_anchors_ = true
+
+[node name="Snoozy Tomato Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 224)
+required_ingredients = {
+"SnoozyTomato": 8
+}
+
+[node name="DishSprite" parent="Categories/Salads/Snoozy Tomato Salad" index="0"]
+texture = ExtResource("11_ufxth")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/Snoozy Tomato Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Snow Cloak” Caesar Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 224)
+required_ingredients = {
+"BeanSausage": 6,
+"MoomooMilk": 10
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Snow Cloak” Caesar Salad" index="0"]
+texture = ExtResource("20_m0uqo")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/“Snow Cloak” Caesar Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Water Veil” Tofu Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 224)
+required_ingredients = {
+"GreengrassSoybeans": 10,
+"SnoozyTomato": 6
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Water Veil” Tofu Salad" index="0"]
+texture = ExtResource("23_okj73")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/“Water Veil” Tofu Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Heat Wave” Tofu Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 320)
+required_ingredients = {
+"FieryHerb": 6,
+"GreengrassSoybeans": 10
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Heat Wave” Tofu Salad" index="0"]
+texture = ExtResource("17_qr57i")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Dazzling” Apple Cheese Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 320)
+required_ingredients = {
+"FancyApple": 15,
+"MoomooMilk": 5,
+"PureOil": 3
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Dazzling” Apple Cheese Salad" index="0"]
+texture = ExtResource("14_dmv4q")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Immunity” Leek Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 320)
+required_ingredients = {
+"LargeLeek": 10,
+"WarmingGinger": 5
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Immunity” Leek Salad" index="0"]
+texture = ExtResource("18_mj7pv")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/“Immunity” Leek Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Fury Attack” Corn Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 320)
+required_ingredients = {
+"GreengrassCorn": 9,
+"PureOil": 8
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Fury Attack” Corn Salad" index="0"]
+texture = ExtResource("15_i5nwq")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/“Fury Attack” Corn Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Moomoo Caprese Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 320)
+required_ingredients = {
+"MoomooMilk": 12,
+"PureOil": 5,
+"SnoozyTomato": 6
+}
+
+[node name="DishSprite" parent="Categories/Salads/Moomoo Caprese Salad" index="0"]
+texture = ExtResource("8_ixfsh")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/Moomoo Caprese Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Superpower” Extreme Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 416)
+required_ingredients = {
+"BeanSausage": 9,
+"FancyEgg": 5,
+"SoftPotato": 3,
+"WarmingGinger": 6
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Superpower” Extreme Salad" index="0"]
+texture = ExtResource("22_3616t")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Contrary” Chocolate Meat Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 416)
+required_ingredients = {
+"BeanSausage": 9,
+"SoothingCacao": 14
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Contrary” Chocolate Meat Salad" index="0"]
+texture = ExtResource("13_ounl6")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Gluttony” Potato Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 416)
+required_ingredients = {
+"BeanSausage": 7,
+"FancyApple": 6,
+"FancyEgg": 9,
+"SoftPotato": 14
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Gluttony” Potato Salad" index="0"]
+texture = ExtResource("16_pomje")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/“Gluttony” Potato Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Overheat” Ginger Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 416)
+required_ingredients = {
+"FieryHerb": 17,
+"SnoozyTomato": 8,
+"WarmingGinger": 10
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Overheat” Ginger Salad" index="0"]
+texture = ExtResource("19_7m6vd")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/“Overheat” Ginger Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Spore” Mushroom Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 416)
+required_ingredients = {
+"PureOil": 8,
+"SnoozyTomato": 8,
+"TastyMushroom": 17
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Spore” Mushroom Salad" index="0"]
+texture = ExtResource("21_yhhq4")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/“Spore” Mushroom Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Calm Mind” Fruit Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 512)
+required_ingredients = {
+"FancyApple": 21,
+"GreengrassCorn": 12,
+"Honey": 16
+}
+
+[node name="DishSprite" parent="Categories/Salads/“Calm Mind” Fruit Salad" index="0"]
+texture = ExtResource("12_x2d6d")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slowpoke Tail Pepper Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 512)
+required_ingredients = {
+"FieryHerb": 10,
+"PureOil": 15,
+"SlowpokeTail": 10
+}
+
+[node name="DishSprite" parent="Categories/Salads/Slowpoke Tail Pepper Salad" index="0"]
+texture = ExtResource("10_gdoyj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ninja Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 512)
+required_ingredients = {
+"GreengrassSoybeans": 15,
+"LargeLeek": 15,
+"TastyMushroom": 12,
+"WarmingGinger": 11
+}
+
+[node name="DishSprite" parent="Categories/Salads/Ninja Salad" index="0"]
+texture = ExtResource("9_dqkfy")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/Ninja Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Greengrass Salad" parent="Categories/Salads" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 512)
+required_ingredients = {
+"GreengrassCorn": 17,
+"PureOil": 22,
+"SnoozyTomato": 14,
+"SoftPotato": 9
+}
+
+[node name="DishSprite" parent="Categories/Salads/Greengrass Salad" index="0"]
+texture = ExtResource("7_cmvbq")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Salads/Greengrass Salad" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Desserts & Drinks" parent="Categories" instance=ExtResource("3_povo2")]
+position = Vector2(1016, 88)
+
+[node name="CategorySprite" parent="Categories/Desserts & Drinks" index="0"]
+texture = ExtResource("2_hgeeg")
+expand_mode = 1
+
+[node name="Warm Moomoo Milk" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 224)
+required_ingredients = {
+"MoomooMilk": 7
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Warm Moomoo Milk" index="0"]
+texture = ExtResource("42_u28g3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Fancy Apple Juice" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 224)
+required_ingredients = {
+"FancyApple": 8
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Fancy Apple Juice" index="0"]
+texture = ExtResource("43_vuw12")
+metadata/_edit_use_anchors_ = true
+
+[node name="Craft Soda Pop" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 224)
+required_ingredients = {
+"Honey": 9
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Craft Soda Pop" index="0"]
+texture = ExtResource("44_70ybj")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/Craft Soda Pop" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Lucky Chant” Apple Pie" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 224)
+required_ingredients = {
+"FancyApple": 12,
+"MoomooMilk": 4
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Lucky Chant” Apple Pie" index="0"]
+texture = ExtResource("45_fnj5p")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/“Lucky Chant” Apple Pie" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Fluffy” Sweet Potatoes" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 224)
+required_ingredients = {
+"MoomooMilk": 5,
+"SoftPotato": 9
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Fluffy” Sweet Potatoes" index="0"]
+texture = ExtResource("46_tktuv")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/“Fluffy” Sweet Potatoes" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Ember” Ginger Tea" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 320)
+required_ingredients = {
+"FancyApple": 7,
+"WarmingGinger": 9
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Ember” Ginger Tea" index="0"]
+texture = ExtResource("47_oacyj")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Stalwart” Vegetable Juice" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 320)
+required_ingredients = {
+"FancyApple": 7,
+"SnoozyTomato": 9
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Stalwart” Vegetable Juice" index="0"]
+texture = ExtResource("48_0s33d")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Cloud Nine” Soy Cake" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 320)
+required_ingredients = {
+"FancyEgg": 8,
+"GreengrassSoybeans": 7
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Cloud Nine” Soy Cake" index="0"]
+texture = ExtResource("49_vjn1x")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/“Cloud Nine” Soy Cake" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Big Malasada" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 320)
+required_ingredients = {
+"Honey": 6,
+"MoomooMilk": 7,
+"PureOil": 10
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Big Malasada" index="0"]
+texture = ExtResource("50_cpcly")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/Big Malasada" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Hustle” Protein Smoothie" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 320)
+required_ingredients = {
+"GreengrassSoybeans": 15,
+"SoothingCacao": 8
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Hustle” Protein Smoothie" index="0"]
+texture = ExtResource("51_8o52b")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/“Hustle” Protein Smoothie" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Huge Power” Soy Donuts" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 416)
+required_ingredients = {
+"GreengrassSoybeans": 6,
+"PureOil": 9,
+"SoothingCacao": 7
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Huge Power” Soy Donuts" index="0"]
+texture = ExtResource("52_sd1xo")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Sweet Scent” Chocolate Cake" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 416)
+required_ingredients = {
+"Honey": 9,
+"MoomooMilk": 7,
+"SoothingCacao": 8
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Sweet Scent” Chocolate Cake" index="0"]
+texture = ExtResource("53_cu8ia")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Petal Dance” Chocolate Tart" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 416)
+required_ingredients = {
+"FancyApple": 11,
+"SoothingCacao": 11
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Petal Dance” Chocolate Tart" index="0"]
+texture = ExtResource("54_adnf7")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/“Petal Dance” Chocolate Tart" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Lovely Kiss” Smoothie" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 416)
+required_ingredients = {
+"FancyApple": 11,
+"Honey": 7,
+"MoomooMilk": 9,
+"SoothingCacao": 8
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Lovely Kiss” Smoothie" index="0"]
+texture = ExtResource("55_l1heu")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/“Lovely Kiss” Smoothie" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Steadfast” Ginger Cookies" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 416)
+required_ingredients = {
+"FancyEgg": 4,
+"Honey": 14,
+"SoothingCacao": 5,
+"WarmingGinger": 12
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Steadfast” Ginger Cookies" index="0"]
+texture = ExtResource("56_nr35k")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/“Steadfast” Ginger Cookies" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Neroli’s Restorative Tea" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(712, 512)
+required_ingredients = {
+"FancyApple": 15,
+"TastyMushroom": 9,
+"WarmingGinger": 11
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Neroli’s Restorative Tea" index="0"]
+texture = ExtResource("57_tltf0")
+metadata/_edit_use_anchors_ = true
+
+[node name="“Explosion” Popcorn" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(796, 512)
+required_ingredients = {
+"GreengrassCorn": 15,
+"MoomooMilk": 7,
+"PureOil": 14
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Explosion” Popcorn" index="0"]
+texture = ExtResource("58_ikjqc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Jigglypuff’s Fruity Flan" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(880, 512)
+required_ingredients = {
+"FancyEgg": 15,
+"Honey": 20,
+"MoomooMilk": 7
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/Jigglypuff’s Fruity Flan" index="0"]
+texture = ExtResource("59_mlksg")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/Jigglypuff’s Fruity Flan" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Teatime” Corn Scones" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(964, 512)
+required_ingredients = {
+"FancyApple": 20,
+"GreengrassCorn": 18,
+"MoomooMilk": 9,
+"WarmingGinger": 20
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Teatime” Corn Scones" index="0"]
+texture = ExtResource("60_3waaw")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/“Teatime” Corn Scones" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="“Flower Gift” Macarons" parent="Categories/Desserts & Drinks" instance=ExtResource("3_7hhsj")]
+position = Vector2(1048, 512)
+required_ingredients = {
+"FancyEgg": 25,
+"Honey": 17,
+"MoomooMilk": 10,
+"SoothingCacao": 25
+}
+
+[node name="DishSprite" parent="Categories/Desserts & Drinks/“Flower Gift” Macarons" index="0"]
+texture = ExtResource("61_4mqja")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishName" parent="Categories/Desserts & Drinks/“Flower Gift” Macarons" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[editable path="Categories/Curries & Stews"]
+[editable path="Categories/Curries & Stews/Fancy Apple Curry"]
+[editable path="Categories/Curries & Stews/Simple Chowder"]
+[editable path="Categories/Curries & Stews/Mild Honey Curry"]
+[editable path="Categories/Curries & Stews/Beanburger Curry"]
+[editable path="Categories/Curries & Stews/Hearty Cheeseburger Curry"]
+[editable path="Categories/Curries & Stews/“Drought” KatsuCurry"]
+[editable path="Categories/Curries & Stews/“Solar Power” Tomato Curry"]
+[editable path="Categories/Curries & Stews/Melty Omelette Curry"]
+[editable path="Categories/Curries & Stews/Soft Potato Chowder"]
+[editable path="Categories/Curries & Stews/“Bulk Up” Bean Curry"]
+[editable path="Categories/Curries & Stews/“Spore” Mushroom Curry"]
+[editable path="Categories/Curries & Stews/“Egg Bomb” Curry"]
+[editable path="Categories/Curries & Stews/“Limber” Corn Stew"]
+[editable path="Categories/Curries & Stews/Spicy Leek Curry"]
+[editable path="Categories/Curries & Stews/Ninja Curry"]
+[editable path="Categories/Curries & Stews/Grilled Tail Curry"]
+[editable path="Categories/Curries & Stews/“Dream Eater” Butter Curry"]
+[editable path="Categories/Curries & Stews/“Inferno” Corn Keema Curry"]
+[editable path="Categories/Salads"]
+[editable path="Categories/Salads/Fancy Apple Salad"]
+[editable path="Categories/Salads/Bean Ham Salad"]
+[editable path="Categories/Salads/Snoozy Tomato Salad"]
+[editable path="Categories/Salads/“Snow Cloak” Caesar Salad"]
+[editable path="Categories/Salads/“Water Veil” Tofu Salad"]
+[editable path="Categories/Salads/“Heat Wave” Tofu Salad"]
+[editable path="Categories/Salads/“Dazzling” Apple Cheese Salad"]
+[editable path="Categories/Salads/“Immunity” Leek Salad"]
+[editable path="Categories/Salads/“Fury Attack” Corn Salad"]
+[editable path="Categories/Salads/Moomoo Caprese Salad"]
+[editable path="Categories/Salads/“Superpower” Extreme Salad"]
+[editable path="Categories/Salads/“Contrary” Chocolate Meat Salad"]
+[editable path="Categories/Salads/“Gluttony” Potato Salad"]
+[editable path="Categories/Salads/“Overheat” Ginger Salad"]
+[editable path="Categories/Salads/“Spore” Mushroom Salad"]
+[editable path="Categories/Salads/“Calm Mind” Fruit Salad"]
+[editable path="Categories/Salads/Slowpoke Tail Pepper Salad"]
+[editable path="Categories/Salads/Ninja Salad"]
+[editable path="Categories/Salads/Greengrass Salad"]
+[editable path="Categories/Desserts & Drinks"]
+[editable path="Categories/Desserts & Drinks/Warm Moomoo Milk"]
+[editable path="Categories/Desserts & Drinks/Fancy Apple Juice"]
+[editable path="Categories/Desserts & Drinks/Craft Soda Pop"]
+[editable path="Categories/Desserts & Drinks/“Lucky Chant” Apple Pie"]
+[editable path="Categories/Desserts & Drinks/“Fluffy” Sweet Potatoes"]
+[editable path="Categories/Desserts & Drinks/“Ember” Ginger Tea"]
+[editable path="Categories/Desserts & Drinks/“Stalwart” Vegetable Juice"]
+[editable path="Categories/Desserts & Drinks/“Cloud Nine” Soy Cake"]
+[editable path="Categories/Desserts & Drinks/Big Malasada"]
+[editable path="Categories/Desserts & Drinks/“Hustle” Protein Smoothie"]
+[editable path="Categories/Desserts & Drinks/“Huge Power” Soy Donuts"]
+[editable path="Categories/Desserts & Drinks/“Sweet Scent” Chocolate Cake"]
+[editable path="Categories/Desserts & Drinks/“Petal Dance” Chocolate Tart"]
+[editable path="Categories/Desserts & Drinks/“Lovely Kiss” Smoothie"]
+[editable path="Categories/Desserts & Drinks/“Steadfast” Ginger Cookies"]
+[editable path="Categories/Desserts & Drinks/Neroli’s Restorative Tea"]
+[editable path="Categories/Desserts & Drinks/“Explosion” Popcorn"]
+[editable path="Categories/Desserts & Drinks/Jigglypuff’s Fruity Flan"]
+[editable path="Categories/Desserts & Drinks/“Teatime” Corn Scones"]
+[editable path="Categories/Desserts & Drinks/“Flower Gift” Macarons"]

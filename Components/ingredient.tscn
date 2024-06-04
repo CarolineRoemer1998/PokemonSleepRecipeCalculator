@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://wfbhut8n2ico"]
+[gd_scene load_steps=11 format=3 uid="uid://wfbhut8n2ico"]
 
 [ext_resource type="Script" path="res://Components/ingredient.gd" id="1_4n3os"]
 [ext_resource type="PackedScene" uid="uid://duromskhojgnm" path="res://Components/amount_changer.tscn" id="1_4pr8b"]
 [ext_resource type="Texture2D" uid="uid://bvw1jde25nyye" path="res://Images/Ingredients/BeanSausage.webp" id="2_oe4s4"]
 [ext_resource type="Script" path="res://Components/IngredientAnimationHandler.gd" id="3_xertk"]
 [ext_resource type="Texture2D" uid="uid://bftcqrti8yluu" path="res://Styles/Particles/frame.png" id="5_7bxgm"]
+[ext_resource type="Texture2D" uid="uid://be6lmbctkivst" path="res://Styles/Particles/dotted_frame.png" id="6_2o1w5"]
 
 [sub_resource type="Animation" id="Animation_pi5qw"]
 length = 0.001
@@ -104,6 +105,12 @@ position = Vector2(0, 5)
 scale = Vector2(0.211, 0.2)
 texture = ExtResource("5_7bxgm")
 
-[connection signal="gui_input" from="IngredientSprite" to="AmountChanger" method="_on_ingredient_sprite_gui_input"]
+[node name="DottedFrame" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 5)
+scale = Vector2(0.211, 0.2)
+texture = ExtResource("6_2o1w5")
+
+[connection signal="gui_input" from="IngredientSprite" to="." method="_on_ingredient_sprite_gui_input"]
 [connection signal="mouse_entered" from="IngredientSprite" to="AnimationHandler" method="_on_ingredient_sprite_mouse_entered"]
 [connection signal="mouse_exited" from="IngredientSprite" to="AnimationHandler" method="_on_ingredient_sprite_mouse_exited"]
