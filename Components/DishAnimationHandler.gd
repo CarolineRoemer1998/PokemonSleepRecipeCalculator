@@ -20,6 +20,7 @@ func _ready() -> void:
 
 func toggle_selected(is_selecting : bool):
 	var is_passive = false
+	inventory.selected_ingredient = null
 	_general_selection(is_selecting, is_passive)
 
 func passive_deselect():
@@ -48,6 +49,7 @@ func _general_selection(selecting : bool, is_passive : bool):
 			dish_name.visible = true
 			category.get_parent().deselect_all_dishes_with_ingredient()
 		else:
+			dish_name.visible = false
 			inventory.reset_ingredient_necessity()
 
 func _on_dish_sprite_mouse_entered() -> void:

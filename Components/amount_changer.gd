@@ -42,6 +42,7 @@ func subtract(amount_to_subtract):
 func update(difference : int):
 	label.text = str(amount)
 	inventory.update_amount_of(ingredient_name, difference)
+	inventory.update_dishes_with_ingredient()
 	set_image_opacity()
 
 func set_image_opacity():

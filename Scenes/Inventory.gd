@@ -8,6 +8,8 @@ class_name Inventory
 
 var total_amount : int = 0
 
+var selected_ingredient : Ingredient
+
 var ingredients = {
 	"BeanSausage": 0,
 	"FancyApple":  0,
@@ -57,6 +59,7 @@ func update_amount_label():
 	ingredient_amount.text = "Total Ingredients: " + str(total_amount)
 
 
+
 func reset_ingredient_amount(ingredient_name : String):
 	for ingredient_key in ingredients:
 		if ingredient_key == ingredient_name:
@@ -64,6 +67,7 @@ func reset_ingredient_amount(ingredient_name : String):
 	calculate_total_amount()
 	update_amount_label()
 	dish_results.pass_ingredients(ingredients)
+	
 
 
 func set_necessary_ingredients(necessary):
@@ -84,10 +88,20 @@ func get_amount(ingredient):
 			return ingredients[i]
 
 func select_dishes_with_ingredient(ingredient : Ingredient):
-	turn_off_all_ingredient_frames()
+#	turn_off_all_ingredient_frames()
+	if selected_ingredient != ingredient:
+		selected_ingredient = ingredient
+	else:
+		selected_ingredient = null
 	dish_results.select_dishes_with_ingredient(ingredient)
+	
+func update_dishes_with_ingredient():
+	if selected_ingredient != null:
+		dish_results.select_dishes_with_ingredient(selected_ingredient)
 	
 func turn_off_all_ingredient_frames():
 	for ingredient in ingredient_selection.get_children():
 		if ingredient is Ingredient:
 			ingredient.toggle_dotted_frame(false)
+	if selected_ingredient != null:
+		selected_ingredient.toggle_dotted_frame(true)

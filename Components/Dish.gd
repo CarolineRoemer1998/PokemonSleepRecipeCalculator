@@ -62,6 +62,7 @@ func set_is_cookable(value):
 		modulate.a = Globals.modulate_disabled
 		dotted_frame.modulate = Color(1,0.3,0.5)
 
+
 func toggle_selected(value : bool):
 	for child in dishes_in_category:
 		if child == self and child.selected:
@@ -70,17 +71,22 @@ func toggle_selected(value : bool):
 			child.animation_handler.passive_deselect()
 			child.selected = false
 		animation_handler.toggle_selected(value)
+		
 	selected = value
 	dotted_frame.visible = value
-#	category.get_parent().deselect_all_dishes_with_ingredient()
 	
 	if value == true:
 		inventory.set_necessary_ingredients(required_ingredients)
 
+
 func set_frame_visibility(value : bool):
+	if is_cookable:
+		frame.modulate = Globals.color_available
+	else:
+		frame.modulate = Globals.color_unavailable
 	frame.visible = value
 	if value == true:
 		category.get_parent().deselect_all_dishes()
-	else:
+	elif inventory.selected_ingredient == null:
 		inventory.turn_off_all_ingredient_frames()
 	

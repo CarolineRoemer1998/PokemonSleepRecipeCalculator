@@ -139,7 +139,7 @@ script = ExtResource("2_0xcd8")
 
 [node name="DottedFrame" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0.690196, 0.619608, 0.458824, 0.537255)
+modulate = Color(0.619608, 0.501961, 0.4, 1)
 position = Vector2(0.9, -2)
 scale = Vector2(0.13, 0.127778)
 texture = ExtResource("4_e6ca7")

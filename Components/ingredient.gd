@@ -12,6 +12,8 @@ var is_necessary : bool = false
 
 func _ready() -> void:
 	frame.visible = false
+	dotted_frame.visible = false
+	dotted_frame.modulate = Globals.color_neutral
 	inventory = get_tree().get_first_node_in_group("inventory")
 
 func set_necessary(amount_available, amount_necessary):
