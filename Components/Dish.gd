@@ -2,6 +2,10 @@ extends Node2D
 
 class_name Dish
 
+# ------------------------------------------------------------------
+# Functions
+# ------------------------------------------------------------------
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_handler: Node = $AnimationHandler
 @onready var dish_sprite: TextureRect = $DishSprite
@@ -21,6 +25,9 @@ var available_unique_ingredients = 0
 var is_cookable : bool = false
 var selected : bool = false
 
+# ------------------------------------------------------------------
+# Functions
+# ------------------------------------------------------------------
 
 func _ready():
 	set_init_variables()
@@ -36,7 +43,8 @@ func set_init_variables():
 		if dish is Dish:
 			dishes_in_category.append(dish)
 
-
+## Checks if dish is cookable
+## If dish is selected, 
 func check_ingredients(ingredients):
 	if ingredients is Dictionary:
 		for ingredient in ingredients:
@@ -61,6 +69,8 @@ func set_is_cookable(value):
 	else:
 		modulate.a = Globals.modulate_disabled
 		dotted_frame.modulate = Color(1,0.3,0.5)
+		if frame.visible:
+			frame.modulate = Globals.color_unavailable
 
 
 func toggle_selected(value : bool):
@@ -88,5 +98,5 @@ func set_frame_visibility(value : bool):
 	if value == true:
 		category.get_parent().deselect_all_dishes()
 	elif inventory.selected_ingredient == null:
-		inventory.turn_off_all_ingredient_frames()
+		inventory.turn_off_all_ingredient_selected_frames()
 	

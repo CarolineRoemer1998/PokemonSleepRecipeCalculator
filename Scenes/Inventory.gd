@@ -2,13 +2,17 @@ extends Node2D
 
 class_name Inventory
 
+# ------------------------------------------------------------------
+# Variables
+# ------------------------------------------------------------------
+
 @onready var ingredient_amount: Label = $"../IngredientAmount"
 @onready var dish_results: Node2D = $"../DishResults"
 @onready var ingredient_selection: CanvasLayer = $"../IngredientSelection"
 
 var total_amount : int = 0
 
-var selected_ingredient : Ingredient
+var selected_ingredient : Ingredient = null
 
 var ingredients = {
 	"BeanSausage": 0,
@@ -29,79 +33,92 @@ var ingredients = {
 	"WarmingGinger" : 0
 }
 
+# ------------------------------------------------------------------
+# Functions
+# ------------------------------------------------------------------
 
 func _ready() -> void:
-	update_amount_label()
+	update_total_amount()
 
 
-func update_amount_of(ingredient, amount): 
-	add_to_ingredient(ingredient, amount)
-	
-	calculate_total_amount()
-	update_amount_label()
+func update():
+	update_total_amount()
 	dish_results.pass_ingredients(ingredients)
 
 
-func add_to_ingredient(ingredient, amount):
+## Adds given amount of ingredient in ingredients dictionary
+## Updates total amount and passes ingredients dictionary to dish results
+func add_ingredient(ingredient, amount):
 	for ingredient_key in ingredients:
 		if ingredient_key == ingredient:
 			ingredients[ingredient_key] += amount
+	update()
 
-
-func calculate_total_amount():
+## Calculates total amount and updates the label
+func update_total_amount():
 	var amount = 0
 	for ingredient_key in ingredients:
 		amount += ingredients[ingredient_key]
 	total_amount = amount
-
-
-func update_amount_label():
+	
 	ingredient_amount.text = "Total Ingredients: " + str(total_amount)
 
 
-
-func reset_ingredient_amount(ingredient_name : String):
+## Sets the amount of given ingredient to zero
+func reset_ingredient_amount(ingredient : Ingredient):
 	for ingredient_key in ingredients:
-		if ingredient_key == ingredient_name:
+		if ingredient_key == ingredient.name:
 			ingredients[ingredient_key] = 0
-	calculate_total_amount()
-	update_amount_label()
-	dish_results.pass_ingredients(ingredients)
-	
+	update()
 
 
-func set_necessary_ingredients(necessary):
+## Resets possibly necessity-framed ingredients 
+## Gets ingredients required in dish and checks if enough are available
+func set_necessary_ingredients(necessary_ingredients):
 	reset_ingredient_necessity()
-	for n in necessary:
-		for available in ingredient_selection.get_children():
-			if available.name == n and available is Ingredient:
-				available.set_necessary(get_amount(available), necessary[n])
+	for n in necessary_ingredients:
+		for available_ingredients in ingredient_selection.get_children():
+			if available_ingredients.name == n and available_ingredients is Ingredient:
+				var _amount_available = get_amount(available_ingredients)
+				var _amount_necessary = necessary_ingredients[n]
+				(available_ingredients.set_necessary(_amount_available, 
+													 _amount_necessary))
 
+
+## Removes necessity-frames from all ingredients
 func reset_ingredient_necessity():
 	for ingredient in ingredient_selection.get_children():
 		if ingredient is Ingredient:
 			ingredient.reset_necessity()
 
-func get_amount(ingredient):
+
+## Gets ingredient and returns its available amount
+func get_amount(ingredient) -> int:
 	for i in ingredients:
 		if i == ingredient.name:
 			return ingredients[i]
+	return 0
 
+
+## Sets selected_ingredient to given ingredient
+## Sets selected_ingredient to null if it was given ingredient before 
 func select_dishes_with_ingredient(ingredient : Ingredient):
-#	turn_off_all_ingredient_frames()
 	if selected_ingredient != ingredient:
 		selected_ingredient = ingredient
 	else:
 		selected_ingredient = null
-	dish_results.select_dishes_with_ingredient(ingredient)
-	
+	update_dishes_with_ingredient()
+
+
+## Calls function in dish_results to select dishes containing the selected ingredient
 func update_dishes_with_ingredient():
 	if selected_ingredient != null:
 		dish_results.select_dishes_with_ingredient(selected_ingredient)
-	
-func turn_off_all_ingredient_frames():
+
+
+## Turns off all ingredient selected-frames
+func turn_off_all_ingredient_selected_frames():
 	for ingredient in ingredient_selection.get_children():
 		if ingredient is Ingredient:
 			ingredient.toggle_dotted_frame(false)
-	if selected_ingredient != null:
-		selected_ingredient.toggle_dotted_frame(true)
+

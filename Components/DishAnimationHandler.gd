@@ -1,5 +1,9 @@
 extends Node
 
+# ------------------------------------------------------------------
+# Variables
+# ------------------------------------------------------------------
+
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 @onready var dish_name: Label = $"../DishName"
 @onready var dish_sprite: TextureRect = $"../DishSprite"
@@ -9,6 +13,10 @@ extends Node
 var category : Category
 var magnified : bool = false
 var inventory : Inventory
+
+# ------------------------------------------------------------------
+# Functions
+# ------------------------------------------------------------------
 
 func _ready() -> void:
 	dish_name.text = get_parent().name
@@ -20,7 +28,8 @@ func _ready() -> void:
 
 func toggle_selected(is_selecting : bool):
 	var is_passive = false
-	inventory.selected_ingredient = null
+	if is_selecting:
+		inventory.selected_ingredient = null
 	_general_selection(is_selecting, is_passive)
 
 func passive_deselect():
@@ -51,6 +60,10 @@ func _general_selection(selecting : bool, is_passive : bool):
 		else:
 			dish_name.visible = false
 			inventory.reset_ingredient_necessity()
+
+# ------------------------------------------------------------------
+# Signals
+# ------------------------------------------------------------------
 
 func _on_dish_sprite_mouse_entered() -> void:
 	if !dish.selected:

@@ -12,6 +12,7 @@ class_name AmountChanger
 @onready var ingredient_sprite: TextureRect = $"../IngredientSprite"
 
 var ingredient_name : String
+var ingredient : Ingredient
 var amount : int = 0
 
 # ------------------------------------------------------------------
@@ -20,6 +21,7 @@ var amount : int = 0
 
 func _ready() -> void:
 	ingredient_name = get_parent().name
+	ingredient = get_parent()
 	set_image_opacity()
 
 func add(amount_to_add):
@@ -41,7 +43,7 @@ func subtract(amount_to_subtract):
 
 func update(difference : int):
 	label.text = str(amount)
-	inventory.update_amount_of(ingredient_name, difference)
+	inventory.add_ingredient(ingredient_name, difference)
 	inventory.update_dishes_with_ingredient()
 	set_image_opacity()
 
@@ -75,6 +77,6 @@ func _on_button_subtract_5_pressed() -> void:
 
 func _on_button_reset_pressed() -> void:
 	amount = 0
-	inventory.reset_ingredient_amount(ingredient_name)
+	inventory.reset_ingredient_amount(ingredient)
 	update(0)
 

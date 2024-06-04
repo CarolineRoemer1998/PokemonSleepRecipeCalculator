@@ -2,10 +2,18 @@ extends Node2D
 
 class_name Category
 
+# ------------------------------------------------------------------
+# Variables
+# ------------------------------------------------------------------
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var category_name: Label = $CategoryName
 
 var has_selected_dish : bool
+
+# ------------------------------------------------------------------
+# Functions
+# ------------------------------------------------------------------
 
 func _ready() -> void:
 	category_name.text = name
@@ -27,6 +35,10 @@ func deselect_dishes_with_ingredient():
 		if dish is Dish:
 			for i in dish.required_ingredients:
 				dish.set_frame_visibility(false)
+
+# ------------------------------------------------------------------
+# Signals
+# ------------------------------------------------------------------
 
 func _on_category_sprite_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_click"):
