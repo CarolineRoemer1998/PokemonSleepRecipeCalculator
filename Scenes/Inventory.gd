@@ -72,10 +72,10 @@ func reset_ingredient_amount(ingredient : Ingredient):
 	update()
 
 
-## Resets possibly necessity-framed ingredients 
+## Resets possibly required-framed ingredients 
 ## Gets ingredients required in dish and checks if enough are available
 func set_necessary_ingredients(necessary_ingredients):
-	reset_ingredient_necessity()
+	remove_ingredient_required_frame()
 	for n in necessary_ingredients:
 		for available_ingredients in ingredient_selection.get_children():
 			if available_ingredients.name == n and available_ingredients is Ingredient:
@@ -85,11 +85,11 @@ func set_necessary_ingredients(necessary_ingredients):
 													 _amount_necessary))
 
 
-## Removes necessity-frames from all ingredients
-func reset_ingredient_necessity():
+## Removes required-frames from all ingredients
+func remove_ingredient_required_frame():
 	for ingredient in ingredient_selection.get_children():
 		if ingredient is Ingredient:
-			ingredient.reset_necessity()
+			ingredient.remove_required_frame()
 
 
 ## Gets ingredient and returns its available amount
@@ -112,13 +112,12 @@ func select_dishes_with_ingredient(ingredient : Ingredient):
 
 ## Calls function in dish_results to select dishes containing the selected ingredient
 func update_dishes_with_ingredient():
-	if selected_ingredient != null:
-		dish_results.select_dishes_with_ingredient(selected_ingredient)
+	dish_results.select_dishes_with_ingredient(selected_ingredient)
 
 
 ## Turns off all ingredient selected-frames
 func turn_off_all_ingredient_selected_frames():
 	for ingredient in ingredient_selection.get_children():
 		if ingredient is Ingredient:
-			ingredient.toggle_dotted_frame(false)
+			ingredient.set_selected_frame(false)
 

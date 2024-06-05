@@ -100,12 +100,12 @@ offset_bottom = -30.0
 label_settings = SubResource("LabelSettings_vlein")
 horizontal_alignment = 2
 
-[node name="Frame" type="Sprite2D" parent="."]
+[node name="RequiredFrame" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
 scale = Vector2(0.211, 0.2)
 texture = ExtResource("5_7bxgm")
 
-[node name="DottedFrame" type="Sprite2D" parent="."]
+[node name="SelectedFrame" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, 5)
 scale = Vector2(0.211, 0.2)

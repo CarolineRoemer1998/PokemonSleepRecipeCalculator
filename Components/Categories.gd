@@ -55,10 +55,17 @@ func pick_category(category):
 
 func deselect_dishes(category):
 	if active_category != category:
-		inventory.reset_ingredient_necessity()
+		inventory.remove_ingredient_required_frame()
 		for dish in active_category.get_children():
 			if dish is Dish:
 				dish.animation_handler.passive_deselect()
+
+func pass_ingredients(ingredients):
+	for category in get_children():
+		if category is Category:
+			for dish in category.get_children():
+				if dish is Dish:
+					dish.check_ingredients(ingredients)
 
 func deselect_all_dishes():
 	for category in get_children():

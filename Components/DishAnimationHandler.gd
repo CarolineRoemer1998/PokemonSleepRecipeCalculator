@@ -59,7 +59,7 @@ func _general_selection(selecting : bool, is_passive : bool):
 			category.get_parent().deselect_all_dishes_with_ingredient()
 		else:
 			dish_name.visible = false
-			inventory.reset_ingredient_necessity()
+			inventory.remove_ingredient_required_frame()
 
 # ------------------------------------------------------------------
 # Signals

@@ -8,11 +8,10 @@ class_name Ingredient
 
 @onready var ingredient_sprite: TextureRect = $IngredientSprite
 @onready var required_amount_label: Label = $RequiredAmountLabel
-@onready var frame: Sprite2D = $Frame
-@onready var dotted_frame: Sprite2D = $DottedFrame
+@onready var required_frame: Sprite2D = $RequiredFrame
+@onready var selected_frame: Sprite2D = $SelectedFrame
 
 var inventory : Inventory
-var is_necessary : bool = false
 
 # ------------------------------------------------------------------
 # Functions
@@ -20,32 +19,48 @@ var is_necessary : bool = false
 
 func _ready() -> void:
 	inventory = get_tree().get_first_node_in_group("inventory")
-	frame.visible = false
-	dotted_frame.visible = false
-	dotted_frame.modulate = Globals.color_neutral
+	required_frame.visible = false
+	selected_frame.visible = false
+	selected_frame.modulate = Globals.color_neutral
 
+
+## Sets required-frame and label with amount and required amount for dish
+## Frame is green if enough of the ingredients are available, red if not
 func set_necessary(amount_available, amount_necessary):
 	if amount_available >= amount_necessary:
-		frame.modulate = Color(0,0.9,0.6)
+		required_frame.modulate = Color(0,0.9,0.6)
 	else:
-		frame.modulate = Color(1,0.3,0.5)
-	frame.visible = true
+		required_frame.modulate = Color(1,0.3,0.5)
+	required_frame.visible = true
 	required_amount_label.text = str(amount_available, "/", amount_necessary)
 
-func reset_necessity():
-	frame.visible = false
+
+## Removes required-frame and label
+func remove_required_frame():
+	required_frame.visible = false
 	required_amount_label.text = ""
 
-func toggle_dotted_frame(value : bool):
-	dotted_frame.visible = value
+
+## Sets selected-frame's visibility to given boolean value
+func set_selected_frame(value : bool):
+	selected_frame.visible = value
+
 
 # ------------------------------------------------------------------
 # Signals
 # ------------------------------------------------------------------
 
+## When ingredient sprite is clicked, it is selected
+## Dishes containing that ingredient are selected
 func _on_ingredient_sprite_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_click"):
 		inventory.turn_off_all_ingredient_selected_frames()
-		inventory.select_dishes_with_ingredient(self)
-		toggle_dotted_frame(true)
+		if inventory.selected_ingredient != self:
+			inventory.select_dishes_with_ingredient(self)
+			set_selected_frame(true)
+		else:
+			set_selected_frame(false)
+			inventory.selected_ingredient = null
+			inventory.update_dishes_with_ingredient()
+
 

@@ -23,12 +23,12 @@ func select_dishes_with_ingredient(ingredient : Ingredient):
 	for dish in get_children():
 		if dish is Dish:
 			for i in dish.required_ingredients:
-				print(i)
-				if i == ingredient.name:
+				if ingredient == null or i != ingredient.name:
+					dish.set_frame_visibility(false)
+				elif i == ingredient.name:
 					dish.set_frame_visibility(true)
 					break
-				else:
-					dish.set_frame_visibility(false)
+					
 
 func deselect_dishes_with_ingredient():
 	for dish in get_children():

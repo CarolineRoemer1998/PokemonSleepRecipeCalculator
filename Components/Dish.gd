@@ -76,7 +76,7 @@ func set_is_cookable(value):
 func toggle_selected(value : bool):
 	for child in dishes_in_category:
 		if child == self and child.selected:
-			inventory.reset_ingredient_necessity()
+			inventory.remove_ingredient_required_frame()
 		if child is Dish and child != self and child.selected:
 			child.animation_handler.passive_deselect()
 			child.selected = false
