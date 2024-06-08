@@ -7,12 +7,13 @@ class_name Inventory
 # ------------------------------------------------------------------
 
 @onready var ingredient_amount: Label = $"../IngredientAmount"
-@onready var dish_results: Node2D = $"../DishResults"
 @onready var ingredient_selection: CanvasLayer = $"../IngredientSelection"
+@onready var category_handler: CategoryHandler = $"../CategoryHandler"
 
 var total_amount : int = 0
 
 var selected_ingredient : Ingredient = null
+var selected_dish : Dish = null
 
 var ingredients = {
 	"BeanSausage": 0,
@@ -43,7 +44,7 @@ func _ready() -> void:
 
 func update():
 	update_total_amount()
-	dish_results.pass_ingredients(ingredients)
+	category_handler.pass_ingredients(ingredients)
 
 
 ## Adds given amount of ingredient in ingredients dictionary
@@ -75,7 +76,6 @@ func reset_ingredient_amount(ingredient : Ingredient):
 ## Resets possibly required-framed ingredients 
 ## Gets ingredients required in dish and checks if enough are available
 func set_necessary_ingredients(necessary_ingredients):
-	remove_ingredient_required_frame()
 	for n in necessary_ingredients:
 		for available_ingredients in ingredient_selection.get_children():
 			if available_ingredients.name == n and available_ingredients is Ingredient:
@@ -112,7 +112,7 @@ func select_dishes_with_ingredient(ingredient : Ingredient):
 
 ## Calls function in dish_results to select dishes containing the selected ingredient
 func update_dishes_with_ingredient():
-	dish_results.select_dishes_with_ingredient(selected_ingredient)
+	category_handler.select_dishes_with_ingredient(selected_ingredient)
 
 
 ## Turns off all ingredient selected-frames
@@ -120,4 +120,5 @@ func turn_off_all_ingredient_selected_frames():
 	for ingredient in ingredient_selection.get_children():
 		if ingredient is Ingredient:
 			ingredient.set_selected_frame(false)
+	selected_ingredient = null
 

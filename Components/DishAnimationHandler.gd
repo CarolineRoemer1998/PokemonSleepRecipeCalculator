@@ -7,8 +7,9 @@ extends Node
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 @onready var dish_name: Label = $"../DishName"
 @onready var dish_sprite: TextureRect = $"../DishSprite"
-@onready var dish: Node2D = $".."
-@onready var dotted_frame: Sprite2D = $"../DottedFrame"
+@onready var dish: Dish = $".."
+@onready var frame_selected: Sprite2D = $"../FrameSelected"
+
 
 var category : Category
 var magnified : bool = false
@@ -25,41 +26,18 @@ func _ready() -> void:
 	category = get_parent().get_parent()
 	inventory = get_tree().get_first_node_in_group("inventory")
 
-
-func toggle_selected(is_selecting : bool):
-	var is_passive = false
-	if is_selecting:
-		inventory.selected_ingredient = null
-	_general_selection(is_selecting, is_passive)
-
-func passive_deselect():
-	var is_selecting = false
-	var is_passive = true
-	_general_selection(is_selecting, is_passive)
-	dish_name.visible = false
+func select():
+	inventory.selected_ingredient = null
+	dish.selected = true
+	category.has_selected_dish = true
 
 
-func _general_selection(selecting : bool, is_passive : bool):
-	dish.selected = selecting
-	category.has_selected_dish = selecting
-	dotted_frame.visible = selecting
-	
-	if is_passive:
-		animation_player.play_backwards("magnify")
-		dish_sprite.scale = Globals.deselected_dish_scale
-		dish_sprite.position = Globals.deselected_dish_position
+func demagnify():
+	if magnified:
+		animation_player.play_backwards("magnify")		
+		dish_name.visible = false
 		magnified = false
-	else:
-		if selecting:
-			animation_player.play("selected")
-			dish_sprite.scale = Globals.selected_dish_scale
-			dish_sprite.position = Globals.selected_dish_position
-			magnified = true
-			dish_name.visible = true
-			category.get_parent().deselect_all_dishes_with_ingredient()
-		else:
-			dish_name.visible = false
-			inventory.remove_ingredient_required_frame()
+	
 
 # ------------------------------------------------------------------
 # Signals
@@ -69,16 +47,26 @@ func _on_dish_sprite_mouse_entered() -> void:
 	if !dish.selected:
 		animation_player.play("magnify")
 		magnified = true
-		if !category.has_selected_dish:
+		if inventory.selected_dish == null:
 			dish_name.visible = true
+		
 
 func _on_dish_sprite_mouse_exited() -> void:
 	if !dish.selected:
-		if magnified:
-			animation_player.play_backwards("magnify")
-		dish_name.visible = false
-		magnified = false
+		demagnify()
 
 func _on_dish_sprite_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_click"):
-		dish.toggle_selected(!dish.selected)
+		if inventory.selected_dish == dish:
+			inventory.selected_dish = null
+		else:
+			inventory.selected_dish = dish
+			
+		category.deselect_all_dishes()
+		
+		if inventory.selected_dish != null:
+			inventory.turn_off_all_ingredient_selected_frames()
+			inventory.update_dishes_with_ingredient()
+			animation_player.play("selected")
+			dish_name.visible = true
+			dish.turn_on_dish_selected_frame(dish.check_if_cookable(inventory.ingredients))

@@ -54,13 +54,17 @@ func set_selected_frame(value : bool):
 ## Dishes containing that ingredient are selected
 func _on_ingredient_sprite_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_click"):
+		var last_selected = inventory.selected_ingredient
+		inventory.selected_dish = null
 		inventory.turn_off_all_ingredient_selected_frames()
-		if inventory.selected_ingredient != self:
-			inventory.select_dishes_with_ingredient(self)
-			set_selected_frame(true)
+		
+		if last_selected == self:
+			inventory.select_dishes_with_ingredient(null)
 		else:
-			set_selected_frame(false)
-			inventory.selected_ingredient = null
-			inventory.update_dishes_with_ingredient()
+			inventory.select_dishes_with_ingredient(self)
+			
+		set_selected_frame(last_selected != self)
+		inventory.update()
+		
 
 

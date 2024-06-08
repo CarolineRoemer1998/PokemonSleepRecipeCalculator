@@ -9,8 +9,10 @@ class_name Dish
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_handler: Node = $AnimationHandler
 @onready var dish_sprite: TextureRect = $DishSprite
-@onready var dotted_frame: Sprite2D = $DottedFrame
-@onready var frame: Sprite2D = $Frame
+@onready var frame_selected: Sprite2D = $FrameSelected
+@onready var frame_contains_ingredient: Sprite2D = $FrameContainsIngredient
+@onready var dish_name: Label = $DishName
+
 
 @export var required_ingredients = {}
 
@@ -31,7 +33,7 @@ var selected : bool = false
 
 func _ready():
 	set_init_variables()
-	check_ingredients(inventory.ingredients)
+	set_is_cookable(inventory.ingredients)
 
 
 func set_init_variables():
@@ -44,59 +46,80 @@ func set_init_variables():
 			dishes_in_category.append(dish)
 
 ## Checks if dish is cookable
-## If dish is selected, 
-func check_ingredients(ingredients):
+## If dish is selected, gives required ingredients to inventory 
+## to set required-frames for ingredients
+func check_if_cookable(ingredients) -> bool:
+	available_unique_ingredients = 0
+	
 	if ingredients is Dictionary:
 		for ingredient in ingredients:
 			for req_ingredient in required_ingredients:
 				if ingredient == req_ingredient and ingredients[ingredient] >= required_ingredients[req_ingredient]:
 					available_unique_ingredients += 1
-					
-	set_is_cookable(available_unique_ingredients >= unique_ingredient_count)
-	available_unique_ingredients = 0
+	
 	if selected:
 		inventory.set_necessary_ingredients(required_ingredients)
+		
+	return available_unique_ingredients >= unique_ingredient_count
 
 
-func set_is_cookable(value):
-	is_cookable = value
+func set_is_cookable(ingredients):
+	is_cookable = check_if_cookable(ingredients)
 	if is_cookable:
 		if modulate.a != 1.0:
 			var new_sparkle = sparkle.instantiate()
 			add_child(new_sparkle)
-		dotted_frame.modulate = Color(0, 0.9, 0.6, 0.3)
+		frame_selected.modulate = Globals.color_available
+		frame_contains_ingredient.modulate = Globals.color_available
 		modulate.a = 1.0
 	else:
 		modulate.a = Globals.modulate_disabled
-		dotted_frame.modulate = Color(1,0.3,0.5)
-		if frame.visible:
-			frame.modulate = Globals.color_unavailable
+		frame_selected.modulate = Globals.color_unavailable
+		frame_contains_ingredient.modulate = Globals.color_unavailable
 
 
 func toggle_selected(value : bool):
-	for child in dishes_in_category:
-		if child == self and child.selected:
-			inventory.remove_ingredient_required_frame()
-		if child is Dish and child != self and child.selected:
-			child.animation_handler.passive_deselect()
-			child.selected = false
-		animation_handler.toggle_selected(value)
-		
 	selected = value
-	dotted_frame.visible = value
+	inventory.selected_ingredient = null
+	inventory.turn_off_all_ingredient_selected_frames()
+	inventory.update_dishes_with_ingredient()
+	frame_selected.visible = value
 	
 	if value == true:
 		inventory.set_necessary_ingredients(required_ingredients)
 
 
-func set_frame_visibility(value : bool):
+func set_frame_contains_ingredient_visibility(value : bool):
 	if is_cookable:
-		frame.modulate = Globals.color_available
+		frame_contains_ingredient.modulate = Globals.color_available
 	else:
-		frame.modulate = Globals.color_unavailable
-	frame.visible = value
-	if value == true:
-		category.get_parent().deselect_all_dishes()
-	elif inventory.selected_ingredient == null:
-		inventory.turn_off_all_ingredient_selected_frames()
+		frame_contains_ingredient.modulate = Globals.color_unavailable
+	frame_contains_ingredient.visible = value
 	
+
+func turn_off_dish_selected_frame():
+	if selected:
+		animation_player.play_backwards("magnify")
+	selected = false
+	frame_selected.visible = false
+	dish_name.visible = false
+	inventory.remove_ingredient_required_frame()
+
+func turn_on_dish_selected_frame(cookable : bool):
+	if cookable:
+		frame_selected.modulate = Globals.color_available
+	else:
+		frame_selected.modulate = Globals.color_unavailable
+	selected = true
+	frame_selected.visible = true
+	inventory.set_necessary_ingredients(required_ingredients)
+
+func turn_off_dish_contains_ingredient_frame():
+	frame_contains_ingredient.visible = false
+
+func turn_on_dish_contains_ingredient_frame(selected_ingredient : Ingredient):
+	set_is_cookable(inventory.ingredients)
+	for ingredient in required_ingredients:
+		if ingredient == selected_ingredient.name:
+			frame_contains_ingredient.visible = true
+

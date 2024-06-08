@@ -9,6 +9,7 @@ class_name Category
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var category_name: Label = $CategoryName
 
+var inventory : Inventory
 var has_selected_dish : bool
 
 # ------------------------------------------------------------------
@@ -18,23 +19,34 @@ var has_selected_dish : bool
 func _ready() -> void:
 	category_name.text = name
 	has_selected_dish = false
+	inventory = get_tree().get_first_node_in_group("inventory")
 
 func select_dishes_with_ingredient(ingredient : Ingredient):
+	deselect_all_dishes()
 	for dish in get_children():
+#		print(dish.name)
 		if dish is Dish:
 			for i in dish.required_ingredients:
 				if ingredient == null or i != ingredient.name:
-					dish.set_frame_visibility(false)
+					if dish.animation_handler.magnified:
+						dish.animation_handler.demagnify()
+					dish.turn_off_dish_contains_ingredient_frame()
+#					dish.set_frame_contains_ingredient_visibility(false)
 				elif i == ingredient.name:
-					dish.set_frame_visibility(true)
+					dish.turn_on_dish_contains_ingredient_frame(ingredient)
+#					dish.set_frame_contains_ingredient_visibility(true)
 					break
 					
+
+func deselect_all_dishes():
+	for dish in get_children():
+		if dish is Dish:
+			dish.turn_off_dish_selected_frame()
 
 func deselect_dishes_with_ingredient():
 	for dish in get_children():
 		if dish is Dish:
-			for i in dish.required_ingredients:
-				dish.set_frame_visibility(false)
+			dish.turn_off_dish_contains_ingredient_frame()
 
 # ------------------------------------------------------------------
 # Signals
