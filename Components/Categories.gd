@@ -30,13 +30,12 @@ func pick_category(clicked_category):
 		active_category = clicked_category
 		inventory.selected_dish = null
 		inventory.selected_ingredient = null
-		inventory.remove_ingredient_required_frame()
+		inventory.deselect_ingredients_required()
 		deselect_dishes(clicked_category)
-#		pass_ingredients(inventory.ingredients)
 	
 	match clicked_category:
 		curries:
-			curries.modulate.a = 1.0
+			curries.modulate.a = Globals.modulate_enabled
 			_show_children(curries)
 			salads.modulate.a = Globals.modulate_disabled
 			_hide_children(salads)
@@ -45,7 +44,7 @@ func pick_category(clicked_category):
 		salads:
 			curries.modulate.a = Globals.modulate_disabled
 			_hide_children(curries)
-			salads.modulate.a = 1.0
+			salads.modulate.a = Globals.modulate_enabled
 			_show_children(salads)
 			desserts.modulate.a = Globals.modulate_disabled
 			_hide_children(desserts)
@@ -54,22 +53,21 @@ func pick_category(clicked_category):
 			_hide_children(curries)
 			salads.modulate.a = Globals.modulate_disabled
 			_hide_children(salads)
-			desserts.modulate.a = 1.0
+			desserts.modulate.a = Globals.modulate_enabled
 			_show_children(desserts)
 
 
 func deselect_dishes(category):
 	for dish in active_category.get_children():
 		if dish is Dish:
-			dish.turn_off_dish_selected_frame()
+			dish.deselect()
 
 
 func pass_ingredients(ingredients):
 	for category in get_children():
 		if category is Category:
-			for dish in category.get_children():
-				if dish is Dish:
-					dish.set_is_cookable(ingredients)
+			category.pass_ingredients(ingredients)
+			
 
 
 func deselect_all_dishes():
@@ -78,17 +76,17 @@ func deselect_all_dishes():
 			category.deselect_all_dishes()
 
 
-func select_dishes_with_ingredient(ingredient : Ingredient):
+func select_all_contains_ingredient(ingredient : Ingredient):
 	if ingredient == null:
-		deselect_all_dishes_with_ingredient()
+		deselect_all_contains_ingredient()
 	for category in get_children():
 		if category is Category:
-			category.select_dishes_with_ingredient(ingredient)
+			category.select_all_contains_ingredient(ingredient)
 
-func deselect_all_dishes_with_ingredient():
+func deselect_all_contains_ingredient():
 	for category in get_children():
 		if category is Category:
-			category.deselect_dishes_with_ingredient()
+			category.deselect_all_contains_ingredient()
 
 
 # ------------------------------------------------------------------

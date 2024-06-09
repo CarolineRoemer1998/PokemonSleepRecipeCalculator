@@ -14,6 +14,7 @@ extends Node
 var category : Category
 var magnified : bool = false
 var inventory : Inventory
+var mouse_hovering : bool = false
 
 # ------------------------------------------------------------------
 # Functions
@@ -25,11 +26,6 @@ func _ready() -> void:
 	dish_sprite.modulate = Color.WHITE
 	category = get_parent().get_parent()
 	inventory = get_tree().get_first_node_in_group("inventory")
-
-func select():
-	inventory.selected_ingredient = null
-	dish.selected = true
-	category.has_selected_dish = true
 
 
 func demagnify():
@@ -49,14 +45,17 @@ func _on_dish_sprite_mouse_entered() -> void:
 		magnified = true
 		if inventory.selected_dish == null:
 			dish_name.visible = true
+	mouse_hovering = true
 		
 
 func _on_dish_sprite_mouse_exited() -> void:
 	if !dish.selected:
 		demagnify()
+	mouse_hovering = false
 
 func _on_dish_sprite_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_click"):
+		
 		if inventory.selected_dish == dish:
 			inventory.selected_dish = null
 		else:
@@ -66,7 +65,9 @@ func _on_dish_sprite_gui_input(event: InputEvent) -> void:
 		
 		if inventory.selected_dish != null:
 			inventory.turn_off_all_ingredient_selected_frames()
-			inventory.update_dishes_with_ingredient()
-			animation_player.play("selected")
+			inventory.select_dishes_containing_ingredient()
 			dish_name.visible = true
-			dish.turn_on_dish_selected_frame(dish.check_if_cookable(inventory.ingredients))
+			dish.select(dish.check_if_cookable(inventory.ingredients))
+		else:
+			magnified = true
+		animation_player.play("selected")

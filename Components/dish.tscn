@@ -63,7 +63,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ix7cf"]
 resource_name = "selected"
-length = 0.2
+length = 0.1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -72,10 +72,10 @@ tracks/0/path = NodePath("DishSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-50.4, -50.4), Vector2(-43.2, -43.2), Vector2(-50.4, -50.4)]
+"values": [Vector2(-50.4, -50.4), Vector2(-46.8, -46.8), Vector2(-50.4, -50.4)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -84,10 +84,10 @@ tracks/1/path = NodePath("DishSprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1.4, 1.4), Vector2(1.2, 1.2), Vector2(1.4, 1.4)]
+"values": [Vector2(1.4, 1.4), Vector2(1.3, 1.3), Vector2(1.4, 1.4)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vcxby"]
@@ -99,7 +99,7 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_op4xg"]
 font_size = 14
-font_color = Color(0.211765, 0.0705882, 0, 1)
+font_color = Color(0.494118, 0.211765, 0.0627451, 1)
 
 [node name="Dish" type="Node2D"]
 top_level = true

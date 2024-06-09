@@ -209,7 +209,7 @@ script = ExtResource("20_g23vq")
 script = ExtResource("20_nf4u7")
 
 [node name="Curries & Stews" parent="CategoryHandler" instance=ExtResource("21_ftykk")]
-position = Vector2(760, 88)
+position = Vector2(760, 76)
 
 [node name="CategorySprite" parent="CategoryHandler/Curries & Stews" index="0"]
 texture = ExtResource("22_eoalg")
@@ -453,7 +453,7 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Salads" parent="CategoryHandler" instance=ExtResource("21_ftykk")]
-position = Vector2(888, 88)
+position = Vector2(888, 76)
 
 [node name="CategorySprite" parent="CategoryHandler/Salads" index="0"]
 texture = ExtResource("42_0wpni")
@@ -713,7 +713,7 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Desserts & Drinks" parent="CategoryHandler" instance=ExtResource("21_ftykk")]
-position = Vector2(1016, 88)
+position = Vector2(1016, 76)
 
 [node name="CategorySprite" parent="CategoryHandler/Desserts & Drinks" index="0"]
 texture = ExtResource("62_trhrn")

@@ -26,13 +26,13 @@ func _ready() -> void:
 
 ## Sets required-frame and label with amount and required amount for dish
 ## Frame is green if enough of the ingredients are available, red if not
-func set_necessary(amount_available, amount_necessary):
-	if amount_available >= amount_necessary:
-		required_frame.modulate = Color(0,0.9,0.6)
+func set_required(amount_in_stock, amount_required):
+	if amount_in_stock >= amount_required:
+		required_frame.modulate = Globals.color_green
 	else:
-		required_frame.modulate = Color(1,0.3,0.5)
+		required_frame.modulate = Globals.color_red
 	required_frame.visible = true
-	required_amount_label.text = str(amount_available, "/", amount_necessary)
+	required_amount_label.text = str(amount_in_stock, "/", amount_required)
 
 
 ## Removes required-frame and label
@@ -59,9 +59,9 @@ func _on_ingredient_sprite_gui_input(event: InputEvent) -> void:
 		inventory.turn_off_all_ingredient_selected_frames()
 		
 		if last_selected == self:
-			inventory.select_dishes_with_ingredient(null)
+			inventory.select_ingredient(null)
 		else:
-			inventory.select_dishes_with_ingredient(self)
+			inventory.select_ingredient(self)
 			
 		set_selected_frame(last_selected != self)
 		inventory.update()

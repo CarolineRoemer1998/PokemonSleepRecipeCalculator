@@ -20,33 +20,35 @@ func _ready() -> void:
 	category_name.text = name
 	has_selected_dish = false
 	inventory = get_tree().get_first_node_in_group("inventory")
+	
+func pass_ingredients(ingredients):
+	for dish in get_children():
+		if dish is Dish:
+			dish.set_is_cookable(ingredients)
 
-func select_dishes_with_ingredient(ingredient : Ingredient):
+func select_all_contains_ingredient(ingredient : Ingredient):
 	deselect_all_dishes()
 	for dish in get_children():
-#		print(dish.name)
 		if dish is Dish:
 			for i in dish.required_ingredients:
 				if ingredient == null or i != ingredient.name:
 					if dish.animation_handler.magnified:
 						dish.animation_handler.demagnify()
-					dish.turn_off_dish_contains_ingredient_frame()
-#					dish.set_frame_contains_ingredient_visibility(false)
+					dish.set_not_contains_ingredient()
 				elif i == ingredient.name:
-					dish.turn_on_dish_contains_ingredient_frame(ingredient)
-#					dish.set_frame_contains_ingredient_visibility(true)
+					dish.set_contains_ingredient(ingredient)
 					break
 					
 
 func deselect_all_dishes():
 	for dish in get_children():
-		if dish is Dish:
-			dish.turn_off_dish_selected_frame()
+		if dish is Dish and dish.selected:
+			dish.deselect()
 
-func deselect_dishes_with_ingredient():
+func deselect_all_contains_ingredient():
 	for dish in get_children():
-		if dish is Dish:
-			dish.turn_off_dish_contains_ingredient_frame()
+		if dish is Dish and dish.frame_contains_ingredient.visible:
+			dish.set_not_contains_ingredient()
 
 # ------------------------------------------------------------------
 # Signals

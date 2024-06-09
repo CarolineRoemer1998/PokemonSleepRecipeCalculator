@@ -45,15 +45,15 @@ func update(difference : int):
 	label.text = str(amount)
 	inventory.add_ingredient(ingredient_name, difference)
 	if inventory.selected_dish == null:
-		inventory.update_dishes_with_ingredient()
+		inventory.select_dishes_containing_ingredient()
 	set_image_opacity()
 
 func set_image_opacity():
 	if amount == 0 and ingredient_sprite.self_modulate.a != Globals.modulate_disabled:
 		ingredient_sprite.self_modulate.a = Globals.modulate_disabled
 		button_reset.disabled = true
-	elif amount > 0 and ingredient_sprite.self_modulate.a != 1.0:
-		ingredient_sprite.self_modulate.a = 1.0
+	elif amount > 0 and ingredient_sprite.self_modulate.a != Globals.modulate_enabled:
+		ingredient_sprite.self_modulate.a = Globals.modulate_enabled
 		button_reset.disabled = false
 
 func disable_reset_button_if_zero():
