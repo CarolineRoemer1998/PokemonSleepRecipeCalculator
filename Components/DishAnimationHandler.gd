@@ -55,11 +55,12 @@ func _on_dish_sprite_mouse_exited() -> void:
 
 func _on_dish_sprite_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_click"):
-		
 		if inventory.selected_dish == dish:
 			inventory.selected_dish = null
 		else:
 			inventory.selected_dish = dish
+		
+		inventory.cooking_pot.set_visibility()
 			
 		category.deselect_all_dishes()
 		

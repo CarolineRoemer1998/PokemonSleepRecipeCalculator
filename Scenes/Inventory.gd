@@ -9,6 +9,7 @@ class_name Inventory
 @onready var ingredient_amount: Label = $"../IngredientAmount"
 @onready var ingredient_selection: CanvasLayer = $"../IngredientSelection"
 @onready var category_handler: CategoryHandler = $"../CategoryHandler"
+@onready var cooking_pot: Node2D = $"../CookingPot"
 
 var total_amount : int = 0
 
@@ -45,7 +46,6 @@ func _ready() -> void:
 func update():
 	_update_total_amount()
 	category_handler.pass_ingredients(ingredients)
-
 
 ## Adds given amount of ingredient in ingredients dictionary
 ## Updates total amount and passes ingredients dictionary to dish results
@@ -109,6 +109,14 @@ func turn_off_all_ingredient_selected_frames():
 			ingredient.set_selected_frame(false)
 	selected_ingredient = null
 
+## Could also be named "cook()"
+func remove_ingredients_from_selected_recipe():
+	if selected_dish != null:
+		for i in ingredient_selection.get_children():
+			if i is Ingredient:
+				for j in selected_dish.required_ingredients:
+					if i.name == j:
+						i.amount_changer.subtract(selected_dish.required_ingredients[j])
 
 # ------------------------------------------------------------------
 # Private Functions
@@ -129,5 +137,5 @@ func _update_total_amount():
 		amount += ingredients[ingredient_key]
 	total_amount = amount
 	
-	ingredient_amount.text = "Total Ingredients: " + str(total_amount)
+	ingredient_amount.text = str(total_amount)
 

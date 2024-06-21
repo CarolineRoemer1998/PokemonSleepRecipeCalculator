@@ -110,6 +110,7 @@ offset_left = -36.0
 offset_top = -36.0
 offset_right = 36.0
 offset_bottom = 36.0
+mouse_default_cursor_shape = 2
 texture = ExtResource("2_nx6c8")
 expand_mode = 1
 

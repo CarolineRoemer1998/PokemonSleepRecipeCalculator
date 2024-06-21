@@ -31,6 +31,7 @@ func add(amount_to_add):
 		amount_to_add = 999-amount
 		amount += amount_to_add
 	update(amount_to_add)
+	button_reset.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 func subtract(amount_to_subtract):
 	if amount >= amount_to_subtract:
@@ -39,7 +40,6 @@ func subtract(amount_to_subtract):
 		amount_to_subtract = amount
 		amount = 0
 	update(-amount_to_subtract)
-	disable_reset_button_if_zero()
 
 func update(difference : int):
 	label.text = str(amount)
@@ -47,6 +47,8 @@ func update(difference : int):
 	if inventory.selected_dish == null:
 		inventory.select_dishes_containing_ingredient()
 	set_image_opacity()
+	disable_reset_button_if_zero()
+	inventory.cooking_pot.set_visibility()
 
 func set_image_opacity():
 	if amount == 0 and ingredient_sprite.self_modulate.a != Globals.modulate_disabled:
@@ -59,6 +61,7 @@ func set_image_opacity():
 func disable_reset_button_if_zero():
 	if amount == 0:
 			button_reset.disabled = true
+			button_reset.mouse_default_cursor_shape = Control.CURSOR_ARROW
 
 # ------------------------------------------------------------------
 # Signals

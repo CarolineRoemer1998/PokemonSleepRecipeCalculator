@@ -50,6 +50,7 @@ offset_left = -56.0
 offset_top = -56.0
 offset_right = 56.0
 offset_bottom = 56.0
+mouse_default_cursor_shape = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

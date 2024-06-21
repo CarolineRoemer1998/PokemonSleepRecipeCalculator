@@ -10,6 +10,7 @@ class_name Ingredient
 @onready var required_amount_label: Label = $RequiredAmountLabel
 @onready var required_frame: Sprite2D = $RequiredFrame
 @onready var selected_frame: Sprite2D = $SelectedFrame
+@onready var amount_changer: AmountChanger = $AmountChanger
 
 var inventory : Inventory
 
@@ -65,6 +66,7 @@ func _on_ingredient_sprite_gui_input(event: InputEvent) -> void:
 			
 		set_selected_frame(last_selected != self)
 		inventory.update()
+		inventory.cooking_pot.set_visibility()
 		
 
 

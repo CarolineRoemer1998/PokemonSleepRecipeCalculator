@@ -38,7 +38,6 @@ func select_all_contains_ingredient(ingredient : Ingredient):
 				elif i == ingredient.name:
 					dish.set_contains_ingredient(ingredient)
 					break
-					
 
 func deselect_all_dishes():
 	for dish in get_children():
