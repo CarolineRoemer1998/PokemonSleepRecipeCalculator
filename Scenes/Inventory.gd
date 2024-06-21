@@ -117,6 +117,7 @@ func remove_ingredients_from_selected_recipe():
 				for j in selected_dish.required_ingredients:
 					if i.name == j:
 						i.amount_changer.subtract(selected_dish.required_ingredients[j])
+						i.play_remove_amount_animation("-" + str(selected_dish.required_ingredients[j]))
 
 # ------------------------------------------------------------------
 # Private Functions

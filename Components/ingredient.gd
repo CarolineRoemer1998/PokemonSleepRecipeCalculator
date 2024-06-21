@@ -11,6 +11,9 @@ class_name Ingredient
 @onready var required_frame: Sprite2D = $RequiredFrame
 @onready var selected_frame: Sprite2D = $SelectedFrame
 @onready var amount_changer: AmountChanger = $AmountChanger
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+@export var removedAmountLabel : PackedScene
 
 var inventory : Inventory
 
@@ -46,6 +49,14 @@ func remove_required_frame():
 func set_selected_frame(value : bool):
 	selected_frame.visible = value
 
+
+func play_remove_amount_animation(amount : String):
+	var amount_remover = removedAmountLabel.instantiate()
+	amount_remover.amount = amount
+	add_child(amount_remover)
+	amount_remover.remove_amount()
+	animation_player.play("remove_animation")
+	
 
 # ------------------------------------------------------------------
 # Signals

@@ -40,6 +40,7 @@ func subtract(amount_to_subtract):
 		amount_to_subtract = amount
 		amount = 0
 	update(-amount_to_subtract)
+	
 
 func update(difference : int):
 	label.text = str(amount)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://wfbhut8n2ico"]
+[gd_scene load_steps=13 format=3 uid="uid://wfbhut8n2ico"]
 
 [ext_resource type="Script" path="res://Components/ingredient.gd" id="1_4n3os"]
 [ext_resource type="PackedScene" uid="uid://duromskhojgnm" path="res://Components/amount_changer.tscn" id="1_4pr8b"]
+[ext_resource type="PackedScene" uid="uid://1wpp6rrjj2n1" path="res://Components/removed_amount_label.tscn" id="2_bpu6k"]
 [ext_resource type="Texture2D" uid="uid://bvw1jde25nyye" path="res://Images/Ingredients/BeanSausage.webp" id="2_oe4s4"]
 [ext_resource type="Script" path="res://Components/IngredientAnimationHandler.gd" id="3_xertk"]
 [ext_resource type="Texture2D" uid="uid://bftcqrti8yluu" path="res://Styles/Particles/frame.png" id="5_7bxgm"]
@@ -19,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.477, 0.477)]
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -47,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.477, 0.477), Vector2(0.572, 0.572)]
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -62,10 +63,39 @@ tracks/1/keys = {
 "values": [Vector2(-36, -36), Vector2(-43.2, -43.2)]
 }
 
+[sub_resource type="Animation" id="Animation_davdw"]
+resource_name = "remove_animation"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IngredientSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IngredientSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-36, -36), Vector2(-39.6, -39.6), Vector2(-36, -36)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c0cjc"]
 _data = {
 "RESET": SubResource("Animation_pi5qw"),
-"magnify": SubResource("Animation_38gvh")
+"magnify": SubResource("Animation_38gvh"),
+"remove_animation": SubResource("Animation_davdw")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_vlein"]
@@ -73,15 +103,16 @@ font_color = Color(0.494118, 0.211765, 0.0627451, 1)
 
 [node name="Ingredient" type="Node2D"]
 script = ExtResource("1_4n3os")
+removedAmountLabel = ExtResource("2_bpu6k")
 
 [node name="IngredientSprite" type="TextureRect" parent="."]
 offset_left = -36.0
 offset_top = -36.0
-offset_right = 114.0
-offset_bottom = 114.0
-scale = Vector2(0.477, 0.477)
+offset_right = 35.5
+offset_bottom = 35.5
 mouse_default_cursor_shape = 2
 texture = ExtResource("2_oe4s4")
+expand_mode = 1
 
 [node name="AmountChanger" parent="." instance=ExtResource("1_4pr8b")]
 
