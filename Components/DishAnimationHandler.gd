@@ -10,6 +10,7 @@ extends Node
 @onready var dish: Dish = $".."
 @onready var frame_selected: Sprite2D = $"../FrameSelected"
 @onready var dish_name_frame: Button = $"../DishNameFrame"
+@onready var base_strength_label: Button = $"../DishNameFrame/BaseStrength"
 
 
 var category : Category
@@ -23,14 +24,13 @@ var mouse_hovering : bool = false
 
 func _ready() -> void:
 	dish_name.text = get_parent().name
+	base_strength_label.text = str(dish.base_strength)
 	dish_name_frame.visible = false
+	_set_name_frame_size()
 	
 	dish_sprite.modulate = Color.WHITE
 	category = get_parent().get_parent()
 	inventory = get_tree().get_first_node_in_group("inventory")
-	dish_name_frame.size.x = dish_name.size.x + 10
-	dish_name_frame.global_position.y = dish.global_position.y+40
-	dish_name_frame.global_position.x = dish.global_position.x - (dish_name_frame.size.x/2)
 
 
 func demagnify():
@@ -46,8 +46,13 @@ func demagnify():
 
 func _set_name_frame_size():
 	dish_name_frame.size.x = dish_name.size.x + 10
+	
+	var dish_middle = dish.global_position.x - (dish_name_frame.size.x/2)
 	dish_name_frame.global_position.y = dish.global_position.y+40
-	dish_name_frame.global_position.x = dish.global_position.x - (dish_name_frame.size.x/2)
+	dish_name_frame.global_position.x = dish_middle
+	
+	base_strength_label.global_position.y = dish.global_position.y+60
+	base_strength_label.global_position.x = dish_middle + (dish_name_frame.size.x - base_strength_label.size.x) - 10
 
 func _on_dish_sprite_mouse_entered() -> void:
 	if !dish.selected:
@@ -80,7 +85,9 @@ func _on_dish_sprite_gui_input(event: InputEvent) -> void:
 			inventory.select_dishes_containing_ingredient()
 			_set_name_frame_size()
 			dish_name_frame.visible = true
+			base_strength_label.visible = true
 			dish.select(dish.check_if_cookable(inventory.ingredients))
 		else:
 			magnified = true
+			base_strength_label.visible = false
 		animation_player.play("selected")

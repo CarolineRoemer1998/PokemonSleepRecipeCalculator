@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwijaq0m71pd5"]
+[gd_scene load_steps=13 format=3 uid="uid://dwijaq0m71pd5"]
 
 [ext_resource type="Script" path="res://Components/Dish.gd" id="1_nhefm"]
 [ext_resource type="Script" path="res://Components/DishAnimationHandler.gd" id="2_0xcd8"]
@@ -116,6 +116,19 @@ shadow_size = 2
 font_size = 14
 font_color = Color(0.494118, 0.211765, 0.0627451, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj8sd"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+shadow_color = Color(0.494118, 0.211765, 0.0627451, 0.588235)
+shadow_size = 2
+
 [node name="Dish" type="Node2D"]
 top_level = true
 script = ExtResource("1_nhefm")
@@ -178,7 +191,7 @@ texture = ExtResource("5_6wkac")
 
 [node name="DishNameFrame" type="Button" parent="."]
 top_level = true
-z_index = 1
+z_index = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -207,6 +220,28 @@ size_flags_horizontal = 4
 label_settings = SubResource("LabelSettings_op4xg")
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="BaseStrength" type="Button" parent="DishNameFrame"]
+visible = false
+show_behind_parent = true
+top_level = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -672.0
+offset_top = 60.0
+offset_right = -622.0
+offset_bottom = 80.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.494118, 0.211765, 0.0627451, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_hj8sd")
+text = "13254"
 
 [connection signal="gui_input" from="DishSprite2" to="AnimationHandler" method="_on_dish_sprite_gui_input"]
 [connection signal="mouse_entered" from="DishSprite2" to="AnimationHandler" method="_on_dish_sprite_mouse_entered"]

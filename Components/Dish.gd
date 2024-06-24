@@ -13,6 +13,7 @@ class_name Dish
 @onready var frame_contains_ingredient: Sprite2D = $FrameContainsIngredient
 @onready var dish_name: Label = $DishNameFrame/DishName
 @onready var dish_name_frame: Button = $DishNameFrame
+@onready var base_strength_label: Button = $DishNameFrame/BaseStrength
 
 
 @export var required_ingredients = {}
@@ -93,6 +94,7 @@ func deselect():
 	selected = false
 	frame_selected.visible = false
 	dish_name_frame.visible = false
+	base_strength_label.visible = false
 	inventory.deselect_ingredients_required()
 
 func set_contains_ingredient(selected_ingredient : Ingredient):
