@@ -16,6 +16,7 @@ class_name Dish
 
 
 @export var required_ingredients = {}
+@export var base_strength : int
 
 var sparkle = preload("res://Styles/Particles/sparkle_particle.tscn")
 var inventory : Inventory

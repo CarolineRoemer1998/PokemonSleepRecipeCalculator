@@ -84,6 +84,7 @@ position = Vector2(760, 224)
 required_ingredients = {
 "FancyApple": 7
 }
+base_strength = 668
 
 [node name="DishSprite" parent="Curries & Stews/Fancy Apple Curry" index="1"]
 texture = ExtResource("5_nyvsp")
@@ -94,6 +95,7 @@ position = Vector2(872, 224)
 required_ingredients = {
 "MoomooMilk": 7
 }
+base_strength = 727
 
 [node name="DishSprite" parent="Curries & Stews/Simple Chowder" index="1"]
 texture = ExtResource("6_m6cgf")
@@ -104,6 +106,7 @@ position = Vector2(984, 224)
 required_ingredients = {
 "Honey": 7
 }
+base_strength = 749
 
 [node name="DishSprite" parent="Curries & Stews/Mild Honey Curry" index="1"]
 texture = ExtResource("7_ckypa")
@@ -114,6 +117,7 @@ position = Vector2(1096, 224)
 required_ingredients = {
 "BeanSausage": 7
 }
+base_strength = 764
 
 [node name="DishSprite" parent="Curries & Stews/Beanburger Curry" index="1"]
 texture = ExtResource("8_ev32p")
@@ -125,6 +129,7 @@ required_ingredients = {
 "BeanSausage": 8,
 "MoomooMilk": 8
 }
+base_strength = 1785
 
 [node name="DishSprite" parent="Curries & Stews/Hearty Cheeseburger Curry" index="1"]
 texture = ExtResource("9_rcl4b")
@@ -136,6 +141,7 @@ required_ingredients = {
 "BeanSausage": 10,
 "PureOil": 5
 }
+base_strength = 1815
 
 [node name="DishSprite" parent="Curries & Stews/“Drought” KatsuCurry" index="1"]
 texture = ExtResource("10_ainqn")
@@ -147,6 +153,7 @@ required_ingredients = {
 "FieryHerb": 5,
 "SnoozyTomato": 10
 }
+base_strength = 1943
 
 [node name="DishSprite" parent="Curries & Stews/“Solar Power” Tomato Curry" index="1"]
 texture = ExtResource("11_0mxql")
@@ -158,6 +165,7 @@ required_ingredients = {
 "FancyEgg": 10,
 "SnoozyTomato": 6
 }
+base_strength = 2009
 
 [node name="DishSprite" parent="Curries & Stews/Melty Omelette Curry" index="1"]
 texture = ExtResource("12_w4vfp")
@@ -170,6 +178,7 @@ required_ingredients = {
 "SoftPotato": 8,
 "TastyMushroom": 4
 }
+base_strength = 3089
 
 [node name="DishSprite" parent="Curries & Stews/Soft Potato Chowder" index="1"]
 texture = ExtResource("13_xenge")
@@ -183,6 +192,7 @@ required_ingredients = {
 "FieryHerb": 4,
 "GreengrassSoybeans": 12
 }
+base_strength = 3274
 
 [node name="DishSprite" parent="Curries & Stews/“Bulk Up” Bean Curry" index="1"]
 texture = ExtResource("14_yt33w")
@@ -194,6 +204,7 @@ required_ingredients = {
 "SoftPotato": 9,
 "TastyMushroom": 14
 }
+base_strength = 4041
 
 [node name="DishSprite" parent="Curries & Stews/“Spore” Mushroom Curry" index="1"]
 texture = ExtResource("15_88eje")
@@ -207,6 +218,7 @@ required_ingredients = {
 "Honey": 12,
 "SoftPotato": 4
 }
+base_strength = 4523
 
 [node name="DishSprite" parent="Curries & Stews/“Egg Bomb” Curry" index="1"]
 texture = ExtResource("16_rdrn4")
@@ -219,6 +231,7 @@ required_ingredients = {
 "MoomooMilk": 8,
 "SoftPotato": 8
 }
+base_strength = 4670
 
 [node name="DishSprite" parent="Curries & Stews/“Limber” Corn Stew" index="1"]
 texture = ExtResource("17_lgxvf")
@@ -231,6 +244,7 @@ required_ingredients = {
 "LargeLeek": 14,
 "WarmingGinger": 10
 }
+base_strength = 5900
 
 [node name="DishSprite" parent="Curries & Stews/Spicy Leek Curry" index="1"]
 texture = ExtResource("18_p7s2n")
@@ -244,6 +258,7 @@ required_ingredients = {
 "LargeLeek": 9,
 "TastyMushroom": 5
 }
+base_strength = 6159
 
 [node name="DishSprite" parent="Curries & Stews/Ninja Curry" index="1"]
 texture = ExtResource("19_k1hvf")
@@ -255,6 +270,7 @@ required_ingredients = {
 "FieryHerb": 25,
 "SlowpokeTail": 8
 }
+base_strength = 7483
 
 [node name="DishSprite" parent="Curries & Stews/Grilled Tail Curry" index="1"]
 texture = ExtResource("20_3ypnp")
@@ -268,6 +284,7 @@ required_ingredients = {
 "SoftPotato": 18,
 "SoothingCacao": 12
 }
+base_strength = 9010
 
 [node name="DishSprite" parent="Curries & Stews/“Dream Eater” Butter Curry" index="1"]
 texture = ExtResource("21_p01ux")
@@ -281,6 +298,7 @@ required_ingredients = {
 "GreengrassCorn": 14,
 "WarmingGinger": 12
 }
+base_strength = 13690
 
 [node name="DishSprite" parent="Curries & Stews/“Inferno” Corn Keema Curry" index="1"]
 texture = ExtResource("22_gd13g")
@@ -302,6 +320,7 @@ position = Vector2(760, 224)
 required_ingredients = {
 "FancyApple": 8
 }
+base_strength = 763
 
 [node name="DishSprite" parent="Salads/Fancy Apple Salad" index="1"]
 texture = ExtResource("24_v5ciw")
@@ -312,6 +331,7 @@ position = Vector2(872, 224)
 required_ingredients = {
 "BeanSausage": 8
 }
+base_strength = 873
 
 [node name="DishSprite" parent="Salads/Bean Ham Salad" index="1"]
 texture = ExtResource("25_if7kf")
@@ -322,6 +342,7 @@ position = Vector2(984, 224)
 required_ingredients = {
 "SnoozyTomato": 8
 }
+base_strength = 933
 
 [node name="DishSprite" parent="Salads/Snoozy Tomato Salad" index="1"]
 texture = ExtResource("26_sqo4a")
@@ -333,6 +354,7 @@ required_ingredients = {
 "BeanSausage": 6,
 "MoomooMilk": 10
 }
+base_strength = 1774
 
 [node name="DishSprite" parent="Salads/“Snow Cloak” Caesar Salad" index="1"]
 texture = ExtResource("27_83xju")
@@ -344,6 +366,7 @@ required_ingredients = {
 "GreengrassSoybeans": 10,
 "SnoozyTomato": 6
 }
+base_strength = 1843
 
 [node name="DishSprite" parent="Salads/“Water Veil” Tofu Salad" index="1"]
 texture = ExtResource("28_87ird")
@@ -355,6 +378,7 @@ required_ingredients = {
 "FieryHerb": 6,
 "GreengrassSoybeans": 10
 }
+base_strength = 1976
 
 [node name="DishSprite" parent="Salads/“Heat Wave” Tofu Salad" index="1"]
 texture = ExtResource("29_4cbp5")
@@ -367,6 +391,7 @@ required_ingredients = {
 "MoomooMilk": 5,
 "PureOil": 3
 }
+base_strength = 2578
 
 [node name="DishSprite" parent="Salads/“Dazzling” Apple Cheese Salad" index="1"]
 texture = ExtResource("30_cry6e")
@@ -378,6 +403,7 @@ required_ingredients = {
 "LargeLeek": 10,
 "WarmingGinger": 5
 }
+base_strength = 2658
 
 [node name="DishSprite" parent="Salads/“Immunity” Leek Salad" index="1"]
 texture = ExtResource("31_rmrpf")
@@ -389,6 +415,7 @@ required_ingredients = {
 "GreengrassCorn": 9,
 "PureOil": 8
 }
+base_strength = 2785
 
 [node name="DishSprite" parent="Salads/“Fury Attack” Corn Salad" index="1"]
 texture = ExtResource("32_bsa3p")
@@ -401,6 +428,7 @@ required_ingredients = {
 "PureOil": 5,
 "SnoozyTomato": 6
 }
+base_strength = 2856
 
 [node name="DishSprite" parent="Salads/Moomoo Caprese Salad" index="1"]
 texture = ExtResource("33_bsck2")
@@ -414,6 +442,7 @@ required_ingredients = {
 "SoftPotato": 3,
 "WarmingGinger": 6
 }
+base_strength = 2958
 
 [node name="DishSprite" parent="Salads/“Superpower” Extreme Salad" index="1"]
 texture = ExtResource("34_ptm5a")
@@ -425,6 +454,7 @@ required_ingredients = {
 "BeanSausage": 9,
 "SoothingCacao": 14
 }
+base_strength = 3558
 
 [node name="DishSprite" parent="Salads/“Contrary” Chocolate Meat Salad" index="1"]
 texture = ExtResource("35_ax56o")
@@ -438,6 +468,7 @@ required_ingredients = {
 "FancyEgg": 9,
 "SoftPotato": 14
 }
+base_strength = 5040
 
 [node name="DishSprite" parent="Salads/“Gluttony” Potato Salad" index="1"]
 texture = ExtResource("36_r2aih")
@@ -450,6 +481,7 @@ required_ingredients = {
 "SnoozyTomato": 8,
 "WarmingGinger": 10
 }
+base_strength = 5225
 
 [node name="DishSprite" parent="Salads/“Overheat” Ginger Salad" index="1"]
 texture = ExtResource("37_vd0ua")
@@ -462,6 +494,7 @@ required_ingredients = {
 "SnoozyTomato": 8,
 "TastyMushroom": 17
 }
+base_strength = 5859
 
 [node name="DishSprite" parent="Salads/“Spore” Mushroom Salad" index="1"]
 texture = ExtResource("38_ujn0u")
@@ -474,6 +507,7 @@ required_ingredients = {
 "GreengrassCorn": 12,
 "Honey": 16
 }
+base_strength = 7675
 
 [node name="DishSprite" parent="Salads/“Calm Mind” Fruit Salad" index="1"]
 texture = ExtResource("39_hlt8c")
@@ -486,6 +520,7 @@ required_ingredients = {
 "PureOil": 15,
 "SlowpokeTail": 10
 }
+base_strength = 8169
 
 [node name="DishSprite" parent="Salads/Slowpoke Tail Pepper Salad" index="1"]
 texture = ExtResource("40_18f5h")
@@ -499,6 +534,7 @@ required_ingredients = {
 "TastyMushroom": 12,
 "WarmingGinger": 11
 }
+base_strength = 10095
 
 [node name="DishSprite" parent="Salads/Ninja Salad" index="1"]
 texture = ExtResource("41_lw435")
@@ -512,6 +548,7 @@ required_ingredients = {
 "SnoozyTomato": 14,
 "SoftPotato": 9
 }
+base_strength = 11393
 
 [node name="DishSprite" parent="Salads/Greengrass Salad" index="1"]
 texture = ExtResource("42_h3ryd")
@@ -533,6 +570,7 @@ position = Vector2(760, 224)
 required_ingredients = {
 "MoomooMilk": 7
 }
+base_strength = 727
 
 [node name="DishSprite" parent="Desserts & Drinks/Warm Moomoo Milk" index="1"]
 texture = ExtResource("44_i5em2")
@@ -543,6 +581,7 @@ position = Vector2(872, 224)
 required_ingredients = {
 "FancyApple": 8
 }
+base_strength = 763
 
 [node name="DishSprite" parent="Desserts & Drinks/Fancy Apple Juice" index="1"]
 texture = ExtResource("45_ppq8x")
@@ -553,6 +592,7 @@ position = Vector2(984, 224)
 required_ingredients = {
 "Honey": 9
 }
+base_strength = 964
 
 [node name="DishSprite" parent="Desserts & Drinks/Craft Soda Pop" index="1"]
 texture = ExtResource("46_m0h5e")
@@ -564,6 +604,7 @@ required_ingredients = {
 "FancyApple": 12,
 "MoomooMilk": 4
 }
+base_strength = 1634
 
 [node name="DishSprite" parent="Desserts & Drinks/“Lucky Chant” Apple Pie" index="1"]
 texture = ExtResource("47_c7um5")
@@ -575,6 +616,7 @@ required_ingredients = {
 "MoomooMilk": 5,
 "SoftPotato": 9
 }
+base_strength = 1783
 
 [node name="DishSprite" parent="Desserts & Drinks/“Fluffy” Sweet Potatoes" index="1"]
 texture = ExtResource("48_c2jv8")
@@ -586,6 +628,7 @@ required_ingredients = {
 "FancyApple": 7,
 "WarmingGinger": 9
 }
+base_strength = 1788
 
 [node name="DishSprite" parent="Desserts & Drinks/“Ember” Ginger Tea" index="1"]
 texture = ExtResource("49_4ck62")
@@ -597,6 +640,7 @@ required_ingredients = {
 "FancyApple": 7,
 "SnoozyTomato": 9
 }
+base_strength = 1798
 
 [node name="DishSprite" parent="Desserts & Drinks/“Stalwart” Vegetable Juice" index="1"]
 texture = ExtResource("50_fiit5")
@@ -608,6 +652,7 @@ required_ingredients = {
 "FancyEgg": 8,
 "GreengrassSoybeans": 7
 }
+base_strength = 1798
 
 [node name="DishSprite" parent="Desserts & Drinks/“Cloud Nine” Soy Cake" index="1"]
 texture = ExtResource("51_yvbtj")
@@ -620,6 +665,7 @@ required_ingredients = {
 "MoomooMilk": 7,
 "PureOil": 10
 }
+base_strength = 2927
 
 [node name="DishSprite" parent="Desserts & Drinks/Big Malasada" index="1"]
 texture = ExtResource("52_no82s")
@@ -631,6 +677,7 @@ required_ingredients = {
 "GreengrassSoybeans": 15,
 "SoothingCacao": 8
 }
+base_strength = 3168
 
 [node name="DishSprite" parent="Desserts & Drinks/“Hustle” Protein Smoothie" index="1"]
 texture = ExtResource("53_kjy5h")
@@ -643,6 +690,7 @@ required_ingredients = {
 "PureOil": 9,
 "SoothingCacao": 7
 }
+base_strength = 3213
 
 [node name="DishSprite" parent="Desserts & Drinks/“Huge Power” Soy Donuts" index="1"]
 texture = ExtResource("54_km08j")
@@ -655,6 +703,7 @@ required_ingredients = {
 "MoomooMilk": 7,
 "SoothingCacao": 8
 }
+base_strength = 3280
 
 [node name="DishSprite" parent="Desserts & Drinks/“Sweet Scent” Chocolate Cake" index="1"]
 texture = ExtResource("55_ug15g")
@@ -666,6 +715,7 @@ required_ingredients = {
 "FancyApple": 11,
 "SoothingCacao": 11
 }
+base_strength = 3314
 
 [node name="DishSprite" parent="Desserts & Drinks/“Petal Dance” Chocolate Tart" index="1"]
 texture = ExtResource("56_6r1u3")
@@ -679,6 +729,7 @@ required_ingredients = {
 "MoomooMilk": 9,
 "SoothingCacao": 8
 }
+base_strength = 4734
 
 [node name="DishSprite" parent="Desserts & Drinks/“Lovely Kiss” Smoothie" index="1"]
 texture = ExtResource("57_nq72h")
@@ -692,6 +743,7 @@ required_ingredients = {
 "SoothingCacao": 5,
 "WarmingGinger": 12
 }
+base_strength = 4921
 
 [node name="DishSprite" parent="Desserts & Drinks/“Steadfast” Ginger Cookies" index="1"]
 texture = ExtResource("58_eetrd")
@@ -704,6 +756,7 @@ required_ingredients = {
 "TastyMushroom": 9,
 "WarmingGinger": 11
 }
+base_strength = 5065
 
 [node name="DishSprite" parent="Desserts & Drinks/Neroli’s Restorative Tea" index="1"]
 texture = ExtResource("59_v7ufy")
@@ -716,6 +769,7 @@ required_ingredients = {
 "MoomooMilk": 7,
 "PureOil": 14
 }
+base_strength = 6048
 
 [node name="DishSprite" parent="Desserts & Drinks/“Explosion” Popcorn" index="1"]
 texture = ExtResource("60_57t1e")
@@ -728,6 +782,7 @@ required_ingredients = {
 "Honey": 20,
 "MoomooMilk": 7
 }
+base_strength = 7594
 
 [node name="DishSprite" parent="Desserts & Drinks/Jigglypuff’s Fruity Flan" index="1"]
 texture = ExtResource("61_xma4y")
@@ -741,6 +796,7 @@ required_ingredients = {
 "MoomooMilk": 9,
 "WarmingGinger": 20
 }
+base_strength = 10925
 
 [node name="DishSprite" parent="Desserts & Drinks/“Teatime” Corn Scones" index="1"]
 texture = ExtResource("62_maph3")
@@ -754,6 +810,7 @@ required_ingredients = {
 "MoomooMilk": 10,
 "SoothingCacao": 25
 }
+base_strength = 13834
 
 [node name="DishSprite" parent="Desserts & Drinks/“Flower Gift” Macarons" index="1"]
 texture = ExtResource("63_5qnoi")
