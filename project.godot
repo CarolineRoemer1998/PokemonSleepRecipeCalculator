@@ -23,6 +23,8 @@ Globals="*res://globals.gd"
 
 [display]
 
+window/size/viewport_width=1344
+window/size/viewport_height=756
 window/size/initial_position_type=2
 window/stretch/mode="canvas_items"
 

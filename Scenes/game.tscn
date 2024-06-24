@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dfwtal43fxg01"]
+[gd_scene load_steps=28 format=3 uid="uid://dfwtal43fxg01"]
 
 [ext_resource type="PackedScene" uid="uid://wfbhut8n2ico" path="res://Components/ingredient.tscn" id="1_wlmam"]
 [ext_resource type="Texture2D" uid="uid://cwonw108svgyp" path="res://Images/Ingredients/FancyApple.webp" id="2_2dmkj"]
@@ -22,102 +22,165 @@
 [ext_resource type="Texture2D" uid="uid://c7hsk41raxixs" path="res://Styles/Buttons/bag.png" id="20_ib2xt"]
 [ext_resource type="PackedScene" uid="uid://biws6myxx57w5" path="res://Components/cooking_pot.tscn" id="21_oebyx"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jg51v"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 2.0
+bg_color = Color(0.996094, 0.996094, 0.996094, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+shadow_color = Color(0.785156, 0.667969, 0.484375, 1)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_meffj"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 2.0
+bg_color = Color(0.992157, 0.882353, 0.835294, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+shadow_color = Color(0.785156, 0.667969, 0.484375, 1)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utr0g"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 2.0
+bg_color = Color(0.207843, 0.0705882, 0.0117647, 0.0980392)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+shadow_color = Color(0.785156, 0.667969, 0.484375, 1)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xiyn7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 2.0
+bg_color = Color(0.929412, 0.929412, 0.792157, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+shadow_color = Color(0.785156, 0.667969, 0.484375, 1)
+shadow_size = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km4n8"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_ig3p1"]
 font_color = Color(0.494118, 0.211765, 0.0627451, 1)
 
 [node name="Game" type="Node2D"]
+y_sort_enabled = true
 
 [node name="IngredientSelection" type="CanvasLayer" parent="."]
 
 [node name="FancyApple" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(96, 76)
+position = Vector2(96, 96)
 
 [node name="IngredientSprite" parent="IngredientSelection/FancyApple" index="0"]
 texture = ExtResource("2_2dmkj")
 
 [node name="MoomooMilk" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(256, 76)
+position = Vector2(256, 96)
 
 [node name="IngredientSprite" parent="IngredientSelection/MoomooMilk" index="0"]
 texture = ExtResource("9_lpaym")
 
 [node name="GreengrassSoybeans" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(416, 76)
+position = Vector2(416, 96)
 
 [node name="IngredientSprite" parent="IngredientSelection/GreengrassSoybeans" index="0"]
 texture = ExtResource("6_k5yh4")
 
 [node name="Honey" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(576, 76)
+position = Vector2(576, 96)
 
 [node name="IngredientSprite" parent="IngredientSelection/Honey" index="0"]
 texture = ExtResource("7_wg3g3")
 
 [node name="BeanSausage" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(96, 236)
+position = Vector2(96, 272)
 
 [node name="WarmingGinger" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(256, 236)
+position = Vector2(256, 272)
 
 [node name="IngredientSprite" parent="IngredientSelection/WarmingGinger" index="0"]
 texture = ExtResource("16_21vmw")
 
 [node name="SnoozyTomato" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(416, 236)
+position = Vector2(416, 272)
 
 [node name="IngredientSprite" parent="IngredientSelection/SnoozyTomato" index="0"]
 texture = ExtResource("12_qrwms")
 
 [node name="FancyEgg" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(576, 236)
+position = Vector2(576, 272)
 
 [node name="IngredientSprite" parent="IngredientSelection/FancyEgg" index="0"]
 texture = ExtResource("3_ydjp1")
 
 [node name="PureOil" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(96, 396)
+position = Vector2(96, 448)
 
 [node name="IngredientSprite" parent="IngredientSelection/PureOil" index="0"]
 texture = ExtResource("10_yiwl2")
 
 [node name="SoftPotato" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(256, 396)
+position = Vector2(256, 448)
 
 [node name="IngredientSprite" parent="IngredientSelection/SoftPotato" index="0"]
 texture = ExtResource("13_5gjfr")
 
 [node name="FieryHerb" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(416, 396)
+position = Vector2(416, 448)
 
 [node name="IngredientSprite" parent="IngredientSelection/FieryHerb" index="0"]
 texture = ExtResource("4_dqmjl")
 
 [node name="GreengrassCorn" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(576, 396)
+position = Vector2(576, 448)
 
 [node name="IngredientSprite" parent="IngredientSelection/GreengrassCorn" index="0"]
 texture = ExtResource("5_dmusj")
 
 [node name="SoothingCacao" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(96, 556)
+position = Vector2(96, 624)
 
 [node name="IngredientSprite" parent="IngredientSelection/SoothingCacao" index="0"]
 texture = ExtResource("14_rixum")
 
 [node name="TastyMushroom" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(256, 556)
+position = Vector2(256, 624)
 
 [node name="IngredientSprite" parent="IngredientSelection/TastyMushroom" index="0"]
 texture = ExtResource("15_qxgb4")
 
 [node name="LargeLeek" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(416, 556)
+position = Vector2(416, 624)
 
 [node name="IngredientSprite" parent="IngredientSelection/LargeLeek" index="0"]
 texture = ExtResource("8_qixsi")
 
 [node name="SlowpokeTail" parent="IngredientSelection" instance=ExtResource("1_wlmam")]
-position = Vector2(576, 556)
+position = Vector2(576, 624)
 
 [node name="IngredientSprite" parent="IngredientSelection/SlowpokeTail" index="0"]
 texture = ExtResource("11_fm64m")
@@ -131,9 +194,30 @@ script = ExtResource("20_g23vq")
 [node name="CategoryHandler" parent="." instance=ExtResource("19_5utj8")]
 
 [node name="Bag" type="Sprite2D" parent="."]
-position = Vector2(1072, 588)
+position = Vector2(1247, 698)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("20_ib2xt")
+
+[node name="ButtonReset" type="Button" parent="Bag"]
+offset_left = 28.0
+offset_top = -240.0
+offset_right = 44.0
+offset_bottom = -221.0
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0.494118, 0.211765, 0.0627451, 1)
+theme_override_colors/font_pressed_color = Color(0.494118, 0.211765, 0.0627451, 1)
+theme_override_colors/font_hover_color = Color(0.494118, 0.211765, 0.0627451, 1)
+theme_override_colors/font_focus_color = Color(0.494118, 0.211765, 0.0627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.494118, 0.211765, 0.0627451, 1)
+theme_override_colors/font_disabled_color = Color(0.494118, 0.211765, 0.0627451, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_jg51v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_meffj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_utr0g")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xiyn7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_km4n8")
+disabled = true
+text = "↻"
 
 [node name="IngredientAmount" type="Label" parent="."]
 anchors_preset = 3
@@ -141,10 +225,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1092.0
-offset_top = 556.0
-offset_right = 1152.0
-offset_bottom = 582.0
+offset_left = 1267.0
+offset_top = 666.0
+offset_right = 1327.0
+offset_bottom = 692.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
@@ -153,6 +237,10 @@ text = "0"
 label_settings = SubResource("LabelSettings_ig3p1")
 
 [node name="CookingPot" parent="." instance=ExtResource("21_oebyx")]
+position = Vector2(1144, 695)
+
+[node name="CookingPotLid" parent="CookingPot/CookingPot" index="1"]
+layout_mode = 0
 
 [editable path="IngredientSelection/FancyApple"]
 [editable path="IngredientSelection/MoomooMilk"]
@@ -170,3 +258,4 @@ label_settings = SubResource("LabelSettings_ig3p1")
 [editable path="IngredientSelection/TastyMushroom"]
 [editable path="IngredientSelection/LargeLeek"]
 [editable path="IngredientSelection/SlowpokeTail"]
+[editable path="CookingPot"]

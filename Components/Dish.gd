@@ -11,7 +11,8 @@ class_name Dish
 @onready var dish_sprite: TextureRect = $DishSprite
 @onready var frame_selected: Sprite2D = $FrameSelected
 @onready var frame_contains_ingredient: Sprite2D = $FrameContainsIngredient
-@onready var dish_name: Label = $DishName
+@onready var dish_name: Label = $DishNameFrame/DishName
+@onready var dish_name_frame: Button = $DishNameFrame
 
 
 @export var required_ingredients = {}
@@ -90,7 +91,7 @@ func deselect():
 		animation_player.play_backwards("magnify")
 	selected = false
 	frame_selected.visible = false
-	dish_name.visible = false
+	dish_name_frame.visible = false
 	inventory.deselect_ingredients_required()
 
 func set_contains_ingredient(selected_ingredient : Ingredient):
