@@ -10,6 +10,7 @@ class_name Inventory
 @onready var ingredient_selection: CanvasLayer = $"../IngredientSelection"
 @onready var category_handler: CategoryHandler = $"../CategoryHandler"
 @onready var cooking_pot: Node2D = $"../CookingPot"
+@onready var button_reset: Button = $"../Bag/ButtonReset"
 
 var total_amount : int = 0
 
@@ -139,4 +140,20 @@ func _update_total_amount():
 	total_amount = amount
 	
 	ingredient_amount.text = str(total_amount)
+	if button_reset.disabled:
+		if total_amount > 0:
+			button_reset.disabled = false
+			button_reset.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	else:
+		if total_amount == 0:
+			button_reset.disabled = true
+			button_reset.mouse_default_cursor_shape = Control.CURSOR_ARROW
 
+func _on_button_reset_pressed() -> void:
+	for ingredient in ingredient_selection.get_children():
+		if ingredient is Ingredient:
+			for i in ingredients:
+				if i == ingredient.name and ingredients[i] > 0:
+					ingredient.play_remove_amount_animation("-" + str(ingredients[i]))
+					ingredient.amount_changer.subtract(ingredients[i])
+					reset_ingredient_amount(ingredient)

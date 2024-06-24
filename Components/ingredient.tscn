@@ -125,10 +125,14 @@ libraries = {
 script = ExtResource("3_xertk")
 
 [node name="RequiredAmountLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
 offset_left = 20.0
-offset_top = -56.0
-offset_right = 63.0
-offset_bottom = -30.0
+offset_top = -57.5
+offset_right = 65.0
+offset_bottom = -31.5
+grow_horizontal = 0
 label_settings = SubResource("LabelSettings_vlein")
 horizontal_alignment = 2
 

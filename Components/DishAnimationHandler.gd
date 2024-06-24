@@ -51,6 +51,7 @@ func _set_name_frame_size():
 	dish_name_frame.global_position.y = dish.global_position.y+40
 	dish_name_frame.global_position.x = dish_middle
 	
+	base_strength_label.size.y = 15
 	base_strength_label.global_position.y = dish.global_position.y+60
 	base_strength_label.global_position.x = dish_middle + (dish_name_frame.size.x - base_strength_label.size.x) - 10
 

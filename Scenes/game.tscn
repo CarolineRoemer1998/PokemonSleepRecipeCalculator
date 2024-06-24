@@ -200,9 +200,9 @@ texture = ExtResource("20_ib2xt")
 
 [node name="ButtonReset" type="Button" parent="Bag"]
 offset_left = 28.0
-offset_top = -240.0
+offset_top = -224.0
 offset_right = 44.0
-offset_bottom = -221.0
+offset_bottom = -205.0
 scale = Vector2(5, 5)
 theme_override_colors/font_color = Color(0.494118, 0.211765, 0.0627451, 1)
 theme_override_colors/font_pressed_color = Color(0.494118, 0.211765, 0.0627451, 1)
@@ -241,6 +241,8 @@ position = Vector2(1144, 695)
 
 [node name="CookingPotLid" parent="CookingPot/CookingPot" index="1"]
 layout_mode = 0
+
+[connection signal="pressed" from="Bag/ButtonReset" to="Inventory" method="_on_button_reset_pressed"]
 
 [editable path="IngredientSelection/FancyApple"]
 [editable path="IngredientSelection/MoomooMilk"]

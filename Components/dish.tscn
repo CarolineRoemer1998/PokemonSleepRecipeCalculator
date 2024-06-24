@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwijaq0m71pd5"]
+[gd_scene load_steps=14 format=3 uid="uid://dwijaq0m71pd5"]
 
 [ext_resource type="Script" path="res://Components/Dish.gd" id="1_nhefm"]
 [ext_resource type="Script" path="res://Components/DishAnimationHandler.gd" id="2_0xcd8"]
 [ext_resource type="Texture2D" uid="uid://cbq35gxj3ujm" path="res://Images/Recipes/CurriesAndStews/Mixed Curry.webp" id="2_nx6c8"]
 [ext_resource type="Texture2D" uid="uid://be6lmbctkivst" path="res://Styles/Particles/dotted_frame.png" id="4_e6ca7"]
 [ext_resource type="Texture2D" uid="uid://bftcqrti8yluu" path="res://Styles/Particles/frame.png" id="5_6wkac"]
+[ext_resource type="Texture2D" uid="uid://bx52f4ck6bc5a" path="res://Styles/Buttons/base_strength_fire.png" id="6_g2byj"]
 
 [sub_resource type="Animation" id="Animation_kn8x1"]
 length = 0.001
@@ -122,9 +123,9 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 bg_color = Color(1, 1, 1, 1)
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-expand_margin_left = 3.0
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 17.0
 expand_margin_right = 3.0
 shadow_color = Color(0.494118, 0.211765, 0.0627451, 0.588235)
 shadow_size = 2
@@ -132,19 +133,6 @@ shadow_size = 2
 [node name="Dish" type="Node2D"]
 top_level = true
 script = ExtResource("1_nhefm")
-
-[node name="DishSprite2" type="TextureRect" parent="."]
-visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = -48.0
-offset_top = -48.0
-offset_right = 48.0
-offset_bottom = 48.0
-scale = Vector2(1.1, 1.1)
-pivot_offset = Vector2(48, 48)
-mouse_default_cursor_shape = 2
-texture = ExtResource("2_nx6c8")
-expand_mode = 1
 
 [node name="DishSprite" type="TextureRect" parent="."]
 offset_left = -48.0
@@ -159,18 +147,6 @@ expand_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_vcxby")
 }
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -100.0
-offset_top = 40.0
-offset_right = 100.0
-offset_bottom = 60.0
-grow_horizontal = 2
-pivot_offset = Vector2(100, 0)
-size_flags_horizontal = 4
 
 [node name="AnimationHandler" type="Node" parent="."]
 script = ExtResource("2_0xcd8")
@@ -222,7 +198,6 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="BaseStrength" type="Button" parent="DishNameFrame"]
-visible = false
 show_behind_parent = true
 top_level = true
 z_index = 1
@@ -232,20 +207,23 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -672.0
 offset_top = 60.0
-offset_right = -622.0
-offset_bottom = 80.0
+offset_right = -654.0
+offset_bottom = 75.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 mouse_filter = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.494118, 0.211765, 0.0627451, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_hj8sd")
-text = "13254"
+text = "132"
 
-[connection signal="gui_input" from="DishSprite2" to="AnimationHandler" method="_on_dish_sprite_gui_input"]
-[connection signal="mouse_entered" from="DishSprite2" to="AnimationHandler" method="_on_dish_sprite_mouse_entered"]
-[connection signal="mouse_exited" from="DishSprite2" to="AnimationHandler" method="_on_dish_sprite_mouse_exited"]
+[node name="BaseStrengthFire" type="Sprite2D" parent="DishNameFrame/BaseStrength"]
+z_index = 1
+position = Vector2(-6, 8)
+scale = Vector2(0.140951, 0.140951)
+texture = ExtResource("6_g2byj")
+
 [connection signal="gui_input" from="DishSprite" to="AnimationHandler" method="_on_dish_sprite_gui_input"]
 [connection signal="mouse_entered" from="DishSprite" to="AnimationHandler" method="_on_dish_sprite_mouse_entered"]
 [connection signal="mouse_exited" from="DishSprite" to="AnimationHandler" method="_on_dish_sprite_mouse_exited"]
